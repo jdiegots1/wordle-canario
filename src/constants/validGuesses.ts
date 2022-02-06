@@ -537,4 +537,6 @@ export const VALIDGUESSES = [
   'pulpa',
   'punta',
   'puyon',
+  'pella',
+  'teide',
 ]
