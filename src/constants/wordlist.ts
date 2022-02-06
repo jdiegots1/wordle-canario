@@ -541,5 +541,6 @@ export const WORDS = [
   'teide',
   'tirma',
   'papas',
+  'pisco',
 ]
 
