@@ -541,4 +541,5 @@ export const VALIDGUESSES = [
   'teide',
   'tirma',
   'papas',
+  'pisco',
 ]
