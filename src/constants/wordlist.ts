@@ -36,6 +36,7 @@ export const WORDS = [
   'balde',
   'baleo',
   'bamba',
+  'millo',
   'banda',
   'banco',
   'bando',
