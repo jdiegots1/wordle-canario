@@ -25,25 +25,25 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
-        <Cell value="F" />
-        <Cell value="L" />
         <Cell value="E" status="present" />
+        <Cell value="L" />
+        <Cell value="F" status="present" />
         <Cell value="J" />
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        La letra E está en la palabra pero en el lugar equivocado.
+        La letra E y F están en la palabra pero en el lugar equivocado.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
         <Cell value="B" />
         <Cell value="R" />
-        <Cell value="E" />
-        <Cell value="G" status="absent" />
+        <Cell value="O" status="absent" />
+        <Cell value="G" />
         <Cell value="A" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        La letra G no está en la palabra en ningún lugar.
+        La letra O no está en la palabra en ningún lugar.
         
         
       </p>
