@@ -538,6 +538,8 @@ export const WORDS = [
   'punta',
   'puyon',
   'pella',
-  'teide,
+  'teide',
+  'tirma',
+  'papas',
 ]
 
