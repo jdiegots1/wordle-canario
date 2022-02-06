@@ -44,6 +44,8 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         La letra G no está en la palabra en ningún lugar.
+        
+        Las palabras deben estar incluidas en la Academia Canaria de la Lengua o ser un municipio de las Islas Canarias. Así, por ejemplo, la palabra 'Teide' se considera que "no existe".
       </p>
     </BaseModal>
   )
