@@ -8,9 +8,9 @@ type Props = {
 
 export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="How to play" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="C√≥mo jugar" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Adivina la palabra en seis intentos. DespuÈs de cada intento, el color de las letras se cambia para mostrar quÈ tan cerca est·s de la palabra.
+        Adivina la palabra en seis intentos. Despu√©s de cada intento, el color de las letras se cambia para mostrar qu√© tan cerca est√°s de la palabra.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -21,7 +21,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="O" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        La letra F est· en la palabra y en el lugar correcto.
+        La letra F est√° en la palabra y en el lugar correcto.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -32,7 +32,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="E" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        La letra E est· en la palabra pero en el lugar equivocado.
+        La letra E est√° en la palabra pero en el lugar equivocado.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
@@ -43,7 +43,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
         <Cell value="A" />
       </div>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        La letra G no est· en la palabra en ning˙n lugar.
+        La letra G no est√° en la palabra en ning√∫n lugar.
       </p>
     </BaseModal>
   )
