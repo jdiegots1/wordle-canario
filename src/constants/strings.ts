@@ -1,10 +1,10 @@
 export const GAME_TITLE = 'WORDLE CANARIO'
 
-export const WIN_MESSAGES = ['De locos', 'De locos', 'De locos']
+export const WIN_MESSAGES = ['De locos', 'Estás hecho un puntal', 'De locos']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
 export const ABOUT_GAME_MESSAGE = 'Sobre este juego'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'No hay suficientes letras'
-export const WORD_NOT_FOUND_MESSAGE = 'Escribe una palabra que exista, por favor'
+export const WORD_NOT_FOUND_MESSAGE = ['Escribe una palabra que exista, por favor', 'La palabra existe, sí, pero en San Borondón, mi niño. Pon una palabrita que exista, hazme el favor.']
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `La palabra era ${solution}`
 export const ENTER_TEXT = 'Palante'
