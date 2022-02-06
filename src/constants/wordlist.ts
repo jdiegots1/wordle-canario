@@ -537,5 +537,7 @@ export const WORDS = [
   'pulpa',
   'punta',
   'puyon',
+  'pella',
+  'teide,
 ]
 
