@@ -29,9 +29,3 @@ export const generateEmojiGrid = (guesses: string[]) => {
     })
     .join('\n')
 }
-
-export const shareStatus = (guesses: string[], lost: boolean) => {
-  navigator.clipboard.writeText(
-    `${href="https://wordle-canario.vercel.app/"` +
-  )
-}
