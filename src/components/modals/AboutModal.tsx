@@ -7,14 +7,14 @@ type Props = {
 
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="About" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="Sobre este juego" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Por @JDiegoTejeraS - A partir del código abierto -{' '}
+        Por @JDiegoTejeraS - A partir del cÃ³digo abierto -{' '}
         <a
           href="https://github.com/hannahcode/GAME"
           className="underline font-bold"
         >
-          encuentra el código aquí
+          encuentra el cÃ³digo aquÃ­
         </a>{' '}
       </p>
     </BaseModal>
