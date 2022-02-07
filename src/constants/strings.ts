@@ -4,7 +4,7 @@ export const WIN_MESSAGES = ['De locos', 'Estás hecho un puntal', 'Creeeema']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
 export const ABOUT_GAME_MESSAGE = 'Sobre este juego'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'No hay suficientes letras'
-export const WORD_NOT_FOUND_MESSAGE = 'Escribe una palabra que exista, por favor'
+export const WORD_NOT_FOUND_MESSAGE = ['A otro, que sea más primo, vale, pero a mí no. Escribe una palabra que exista, hazme el favor.', 'Métele mano a eso, que esa palabra no existe']
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
   `La palabra era ${solution}`
 export const ENTER_TEXT = 'Palante'
