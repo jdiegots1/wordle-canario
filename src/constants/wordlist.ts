@@ -37,7 +37,6 @@ export const WORDS = [
   'halar',
   'jairo',
   'millo',
-  'folia',
   'naife',
   'balde',
   'folia',
