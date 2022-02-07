@@ -40,6 +40,7 @@ export const WORDS = [
   'folia',
   'naife',
   'balde',
+  'folia',
   'drago',
   'clavo',
   'banda',
