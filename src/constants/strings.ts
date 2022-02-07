@@ -1,4 +1,5 @@
 export const GAME_TITLE = 'WORDLE CANARIO'
+export const GAME_SUBTITLE = 'Para palicar con fundamento'
 
 export const WIN_MESSAGES = ['De locos', 'Estás hecho un puntal', 'Creeeema']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
