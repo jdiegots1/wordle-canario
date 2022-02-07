@@ -222,7 +222,7 @@ function App() {
 
       <Alert message={NOT_ENOUGH_LETTERS_MESSAGE} isOpen={isNotEnoughLetters} />
       <Alert
-        message={WORD_NOT_FOUND_MESSAGE}
+        message={WORD_NOT_FOUND_MESSAGE[Math.floor(Math.random() * WORD_NOT_FOUND_MESSAGE.length)]}
         isOpen={isWordNotFoundAlertOpen}
       />
       <Alert message={CORRECT_WORD_MESSAGE(solution)} isOpen={isGameLost} />
