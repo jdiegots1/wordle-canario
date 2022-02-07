@@ -4,7 +4,7 @@ import { GAME_TITLE } from '../constants/strings'
 
 export const shareStatus = (guesses: string[], lost: boolean) => {
   navigator.clipboard.writeText(
-    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n https://wordle-canario.vercel.app/ \n` +
+    `${GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n https://wordle-canario.vercel.app/ \n\n` +
       generateEmojiGrid(guesses)
   )
 }
