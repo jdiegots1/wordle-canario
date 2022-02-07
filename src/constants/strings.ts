@@ -1,4 +1,4 @@
-export const GAME_TITLE = '🇮🇨 WORDLE CANARIO / Para palicar con fundamento'
+export const GAME_TITLE = 'WORDLE CANARIO / Para palicar con fundamento'
 export const GAME_SUBTITLE = 'Para palicar con fundamento'
 
 export const WIN_MESSAGES = ['De locos', 'Estás hecho un puntal', 'Creeeema']
