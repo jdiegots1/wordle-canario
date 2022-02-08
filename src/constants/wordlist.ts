@@ -38,6 +38,7 @@ export const WORDS = [
   'jairo',
   'millo',
   'folia',
+  'baifo',
   'naife',
   'balde',
   'drago',
