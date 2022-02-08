@@ -38,6 +38,7 @@ export const WORDS = [
   'jairo',
   'millo',
   'folia',
+  'bucio',
   'baifo',
   'naife',
   'balde',
@@ -205,7 +206,6 @@ export const WORDS = [
   'nuevo',
   'bomba',
   'tizon',
-  'folia',
   'traza',
   'ruama',
   'relva',
@@ -310,9 +310,7 @@ export const WORDS = [
   'clico',
   'gasia',
   'fisga',
-  'naife',
   'bando',
-  'baifo',
   'liudo',
   'boban',
   'curia',
@@ -544,5 +542,6 @@ export const WORDS = [
   'lista',
   'chozo',
   'mojon',
+  'isora',
 ]
 
