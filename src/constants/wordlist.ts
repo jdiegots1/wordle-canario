@@ -1,5 +1,5 @@
 export const WORDS = [
-    'padre',
+  'padre',
   'roque',
   'baifa',
   'mecha',
@@ -373,7 +373,7 @@ export const WORDS = [
   'brota',
   'fatar',
   'sacar',
-'abade',
+  'abade',
   'durez',
   'feira',
   'bardo',
@@ -544,4 +544,3 @@ export const WORDS = [
   'mojon',
   'isora',
 ]
-
