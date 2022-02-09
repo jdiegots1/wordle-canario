@@ -3,6 +3,8 @@ import {
   ChartBarIcon,
   SunIcon,
   MoonIcon,
+  CakeIcon,
+  AcademicCapIcon,
 } from '@heroicons/react/outline'
 import { useState, useEffect } from 'react'
 import { Alert } from './components/alerts/Alert'
@@ -20,8 +22,19 @@ import {
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
 } from './constants/strings'
-import { MAX_WORD_LENGTH, MAX_CHALLENGES } from './constants/settings'
-import { isWordInWordList, isWinningWord, solution } from './lib/words'
+import {
+  MAX_WORD_LENGTH,
+  MAX_CHALLENGES,
+  ALERT_TIME_MS,
+  REVEAL_TIME_MS,
+  GAME_LOST_INFO_DELAY,
+} from './constants/settings'
+import {
+  isWordInWordList,
+  isWinningWord,
+  solution,
+  findFirstUnusedReveal,
+} from './lib/words'
 import { addStatsForCompletedGame, loadStats } from './lib/stats'
 import {
   loadGameStateFromLocalStorage,
@@ -29,8 +42,6 @@ import {
 } from './lib/localStorage'
 
 import './App.css'
-
-const ALERT_TIME_MS = 3500
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -53,6 +64,7 @@ function App() {
       : false
   )
   const [successAlert, setSuccessAlert] = useState('')
+  const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -70,6 +82,16 @@ function App() {
 
   const [stats, setStats] = useState(() => loadStats())
 
+  const [isHardMode, setIsHardMode] = useState(
+    localStorage.getItem('gameMode')
+      ? localStorage.getItem('gameMode') === 'hard'
+      : false
+  )
+
+  const [isMissingPreviousLetters, setIsMissingPreviousLetters] =
+    useState(false)
+  const [missingLetterMessage, setIsMissingLetterMessage] = useState('')
+
   useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add('dark')
@@ -83,24 +105,32 @@ function App() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light')
   }
 
+  const handleHardMode = (isHard: boolean) => {
+    setIsHardMode(isHard)
+    localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
+  }
+
   useEffect(() => {
     saveGameStateToLocalStorage({ guesses, solution })
   }, [guesses])
 
   useEffect(() => {
     if (isGameWon) {
-      setSuccessAlert(
-        WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
-      )}
       setTimeout(() => {
-        setSuccessAlert('')
-        setIsStatsModalOpen(true)
-      }, ALERT_TIME_MS)
+        setSuccessAlert(
+          WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
+        )
+
+        setTimeout(() => {
+          setSuccessAlert('')
+          setIsStatsModalOpen(true)
+        }, ALERT_TIME_MS)
+      }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
     }
     if (isGameLost) {
       setTimeout(() => {
         setIsStatsModalOpen(true)
-      }, ALERT_TIME_MS)
+      }, GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost])
 
@@ -136,6 +166,25 @@ function App() {
       }, ALERT_TIME_MS)
     }
 
+    // enforce hard mode - all guesses must contain all previously revealed letters
+    if (isHardMode) {
+      const firstMissingReveal = findFirstUnusedReveal(currentGuess, guesses)
+      if (firstMissingReveal) {
+        setIsMissingLetterMessage(firstMissingReveal)
+        setIsMissingPreviousLetters(true)
+        return setTimeout(() => {
+          setIsMissingPreviousLetters(false)
+        }, ALERT_TIME_MS)
+      }
+    }
+
+    setIsRevealing(true)
+    // turn this back off after all
+    // chars have been revealed
+    setTimeout(() => {
+      setIsRevealing(false)
+    }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+
     const winningWord = isWinningWord(currentGuess)
 
     if (
@@ -159,11 +208,22 @@ function App() {
   }
 
   return (
-    <div className="py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
-      <div className="flex w-80 mx-auto items-center mb-8 mt-12">
+    <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
+      <div className="flex w-80 mx-auto items-center mb-8 mt-20">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
         </h1>
+        {isHardMode ? (
+          <AcademicCapIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => handleHardMode(!isHardMode)}
+          />
+        ) : (
+          <CakeIcon
+            className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
+            onClick={() => handleHardMode(!isHardMode)}
+          />
+        )}
         {isDarkMode ? (
           <SunIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -184,12 +244,17 @@ function App() {
           onClick={() => setIsStatsModalOpen(true)}
         />
       </div>
-      <Grid guesses={guesses} currentGuess={currentGuess} />
+      <Grid
+        guesses={guesses}
+        currentGuess={currentGuess}
+        isRevealing={isRevealing}
+      />
       <Keyboard
         onChar={onChar}
         onDelete={onDelete}
         onEnter={onEnter}
         guesses={guesses}
+        isRevealing={isRevealing}
       />
       <InfoModal
         isOpen={isInfoModalOpen}
@@ -206,6 +271,7 @@ function App() {
           setSuccessAlert(GAME_COPIED_MESSAGE)
           return setTimeout(() => setSuccessAlert(''), ALERT_TIME_MS)
         }}
+        isHardMode={isHardMode}
       />
       <AboutModal
         isOpen={isAboutModalOpen}
@@ -222,10 +288,14 @@ function App() {
 
       <Alert message={NOT_ENOUGH_LETTERS_MESSAGE} isOpen={isNotEnoughLetters} />
       <Alert
-        message={WORD_NOT_FOUND_MESSAGE[Math.floor(Math.random() * WORD_NOT_FOUND_MESSAGE.length)]}
+        message={WORD_NOT_FOUND_MESSAGE}
         isOpen={isWordNotFoundAlertOpen}
       />
-      <Alert message={CORRECT_WORD_MESSAGE(solution)} isOpen={isGameLost} />
+      <Alert message={missingLetterMessage} isOpen={isMissingPreviousLetters} />
+      <Alert
+        message={CORRECT_WORD_MESSAGE(solution)}
+        isOpen={isGameLost && !isRevealing}
+      />
       <Alert
         message={successAlert}
         isOpen={successAlert !== ''}
