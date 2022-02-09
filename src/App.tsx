@@ -91,7 +91,7 @@ function App() {
     if (isGameWon) {
       setSuccessAlert(
         WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
-      )
+      )}
       setTimeout(() => {
         setSuccessAlert('')
         setIsStatsModalOpen(true)
