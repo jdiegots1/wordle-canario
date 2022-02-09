@@ -39,6 +39,7 @@ export const WORDS = [
   'millo',
   'folia',
   'naife',
+  'magua',
   'balde',
   'drago',
   'clavo',
