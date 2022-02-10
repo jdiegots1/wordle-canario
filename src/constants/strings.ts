@@ -1,7 +1,7 @@
 export const GAME_TITLE = 'WORDLE CANARIO'
 export const GAME_SUBTITLE = 'Para palicar con fundamento'
 
-export const WIN_MESSAGES = [<img src="pepe.jpg", 'Ossss', 'Chacho, me cambaste la peluca, correctísimo', 'De locos', 'Estás hecho un puntal', 'Creeeema', 'Chiquito jeito tienes pa esto, hermano 👌']
+export const WIN_MESSAGES = [var image = new Image(100,200);image.src = 'pepe.jpg';console.log(image);, 'Ossss', 'Chacho, me cambaste la peluca, correctísimo', 'De locos', 'Estás hecho un puntal', 'Creeeema', 'Chiquito jeito tienes pa esto, hermano 👌']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
 export const ABOUT_GAME_MESSAGE = 'Sobre este juego'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'No hay suficientes letras'
