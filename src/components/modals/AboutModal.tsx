@@ -7,7 +7,7 @@ type Props = {
 
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="Sobre este juego" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="Sobre el juego" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
         Por <a href="https://twitter.com/JDiegoTejeraS" className="underline font-bold">@JDiegoTejeraS</a> - A partir del código abierto y los canarismos de la Academia Canaria de la Lengua -{' '}
         <a
