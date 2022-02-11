@@ -3,7 +3,7 @@ export const GAME_SUBTITLE = 'Para palicar con fundamento'
 
 export const WIN_MESSAGES = ['Ossss', 'Chacho, me cambaste la peluca, correctísimo', 'De locos', 'Estás hecho un puntal', 'Creeeema', 'Chiquito jeito tienes pa esto, hermano 👌']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
-export const ABOUT_GAME_MESSAGE = 'Sobre este juego'
+export const ABOUT_GAME_MESSAGE = 'Sobre el juego'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'No hay suficientes letras'
 export const WORD_NOT_FOUND_MESSAGE = ['Pon una palabra más que no exista y la isla se te queda chica, hermano. Corrige eso', 'A otro, que sea más primo, vale, pero a mí no. Escribe una palabra que exista, hazme el favor.', 'Métele mano a eso, que esa palabra no existe', 'Venga, sí. Esa palabra 1, Las Palmas 2. Pon una palabra que exista, hermano', 'Venga, estás bonito tú. Pon una palabra que exista, hazme el favor', ]
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
