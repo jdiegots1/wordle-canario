@@ -9,7 +9,7 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="Sobre este juego" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Por @JDiegoTejeraS - A partir del código abierto y los canarismos de la Academia Canaria de la Lengua -{' '}
+        Por <a href="https://twitter.com/JDiegoTejeraS">@JDiegoTejeraS</a> - A partir del código abierto y los canarismos de la Academia Canaria de la Lengua -{' '}
         <a
           href="https://github.com/hannahcode/GAME"
           className="underline font-bold"
