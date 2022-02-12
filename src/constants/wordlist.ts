@@ -41,6 +41,7 @@ export const WORDS = [
   'naife',
   'magua',
   'buche',
+  'balde',
   'drago',
   'balde',
   'ñoños',
