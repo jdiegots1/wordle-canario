@@ -43,6 +43,7 @@ export const WORDS = [
   'buche',
   'balde',
   'ñoños',
+  'fonil',
   'drago',
   'balde',
   'ñoños',
