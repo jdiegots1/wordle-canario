@@ -45,6 +45,7 @@ export const WORDS = [
   'ñoños',
   'fonil',
   'ñanga',
+  'tupir',
   'taifa',
   'jameo',
   'tifar',
