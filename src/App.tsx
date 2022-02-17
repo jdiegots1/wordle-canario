@@ -31,7 +31,7 @@ import {
 
 import './App.css'
 
-const ALERT_TIME_MS = 3500
+const ALERT_TIME_MS = 8500
 
 function App() {
   const prefersDarkMode = window.matchMedia(
