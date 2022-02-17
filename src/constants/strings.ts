@@ -1,13 +1,13 @@
 export const GAME_TITLE = 'WORDLE CANARIO'
 export const GAME_SUBTITLE = 'Para palicar con fundamento'
 
-export const WIN_MESSAGES = ['Lo mínimo que te mereces después de acertar es un anochecer en Las Canteras, un viajecito a La Palma para comer papas locas o ir a un buen guachinche en Tenerife. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda', 'Naa, me tienes enchochadísimo 😍. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda', 'Estás hecho un puntal. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda', 'Creeeema. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda', 'Chiquito jeito tienes pa esto, hermano 👌. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda', 'Lo mínimo que te mereces después de acertar es una buena verbena 🕺💃. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda']
+export const WIN_MESSAGES = ['Lo mínimo que te mereces después de acertar es un anochecer en Las Canteras, un viajecito a La Palma para comer papas locas o ir a un buen guachinche en Tenerife', 'Naa, me tienes enchochadísimo 😍', 'Estás hecho un puntal', 'Creeeema', 'Chiquito jeito tienes pa esto, hermano 👌', 'Lo mínimo que te mereces después de acertar es una buena verbena 🕺💃']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
 export const ABOUT_GAME_MESSAGE = 'Sobre el juego'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'No hay suficientes letras'
 export const WORD_NOT_FOUND_MESSAGE = ['Pon una palabra más que no exista y la isla se te queda chica, hermano. Corrige eso', 'A otro, que sea más primo, vale, pero a mí no. Escribe una palabra que exista, hazme el favor.', 'Métele mano a eso, que esa palabra no existe', 'Venga, sí. Esa palabra 1, Las Palmas 2. Pon una palabra que exista, hermano', 'Venga, estás bonito tú. Pon una palabra que exista, hazme el favor', ]
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
-  `El conejo te enriscó la perra: la palabra era ${solution}. Calda es lo mismo que decir paliza. Antes, si llegabas tarde a tu casa, te esperaba una buena calda.`
+  `El conejo te enriscó la perra: la palabra era ${solution}`
 export const ENTER_TEXT = 'Palante'
 export const DELETE_TEXT = 'Patrás'
 export const STATISTICS_TITLE = 'Estadísticas'
