@@ -47,6 +47,7 @@ export const WORDS = [
   'ñanga',
   'tupir',
   'calda',
+  'taifa',
   'tifar',
   'taifa',
   'jameo',
