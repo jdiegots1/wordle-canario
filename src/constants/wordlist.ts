@@ -48,6 +48,7 @@ export const WORDS = [
   'tupir',
   'calda',
   'taifa',
+  'jable',
   'tifar',
   'taifa',
   'jameo',
