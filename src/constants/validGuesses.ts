@@ -2397,7 +2397,6 @@ export const VALIDGUESSES = [
 'filin',
 'filin',
 'filis',
-'fillo',
 'filme',
 'filon',
 'final',
