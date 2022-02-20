@@ -13,7 +13,6 @@ import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import {
   GAME_TITLE,
-  GAME_SUBTITLE,
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
   ABOUT_GAME_MESSAGE,
@@ -31,7 +30,7 @@ import {
 
 import './App.css'
 
-const ALERT_TIME_MS = 8500
+const ALERT_TIME_MS = 3500
 
 function App() {
   const prefersDarkMode = window.matchMedia(
@@ -160,7 +159,7 @@ function App() {
   }
 
   return (
-    <div className="text-black dark:text-white bg-white dark:bg-gray-900 py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
+    <div className="text-black dark:text-white bg-white dark:bg-gray-900 transition-all py-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8 mt-12">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
           {GAME_TITLE}
