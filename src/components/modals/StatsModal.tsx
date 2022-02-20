@@ -3,7 +3,7 @@ import { StatBar } from '../stats/StatBar'
 import { Histogram } from '../stats/Histogram'
 import { GameStats } from '../../lib/localStorage'
 import { shareStatus } from '../../lib/share'
-import { tomorrow } from '../../lib/words'
+import { solution, definition, tomorrow } from '../../lib/words'
 import { BaseModal } from './BaseModal'
 import {
   STATISTICS_TITLE,
@@ -11,6 +11,7 @@ import {
   NEW_WORD_TEXT,
   SHARE_TEXT,
 } from '../../constants/strings'
+import { GIF_URL } from '../../constants/settings'
 
 type Props = {
   isOpen: boolean
@@ -43,12 +44,33 @@ export const StatsModal = ({
     )
   }
   return (
-    <BaseModal
-      title={STATISTICS_TITLE}
-      isOpen={isOpen}
-      handleClose={handleClose}
-    >
-      <StatBar gameStats={gameStats} />
+    <BaseModal title="" isOpen={isOpen} handleClose={handleClose}>
+      {(isGameLost || isGameWon) && (
+        <div>
+          <h4 className="text-black dark:text-white bg-white dark:bg-gray-900">
+            Definición
+          </h4>
+          <div>
+            <h5 className="text-black dark:text-white">
+              <strong>{solution}</strong> — {definition.definition} <br />{' '}
+              <i>E.j: "{definition.example}"</i>
+            </h5>
+            {isGameWon && (
+              <div className="mt-0">
+                {' '}
+                <img src={GIF_URL(solution)} alt="" />{' '}
+              </div>
+            )}
+            {isGameLost && (
+              <div className="mt-5">
+                {' '}
+                <img src={GIF_URL('boludle')} alt="" />{' '}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+          
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         {GUESS_DISTRIBUTION_TEXT}
       </h4>
