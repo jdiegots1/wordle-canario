@@ -6,11 +6,6 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'zafra',
-        definition: 'del verbo asar.',
-        example: 'hola qué haces',
-    },
-    {
         word: 'tollo',
         definition: 'persona torpe, ruda, tarda en comprender.',
         example: 'En el último partido los jugadores de Las Palmas parecían unos tollos.'
