@@ -47,7 +47,7 @@ export const StatsModal = ({
     <BaseModal title="" isOpen={isOpen} handleClose={handleClose}>
       {(isGameLost || isGameWon) && (
         <div>
-          <h4 className="text-black dark:text-white bg-white dark:bg-gray-900">
+          <h4 className="text-black dark:text-white">
             Definición
           </h4>
           <div>
