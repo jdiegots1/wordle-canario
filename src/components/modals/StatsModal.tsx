@@ -53,7 +53,7 @@ export const StatsModal = ({
           <div>
             <h5 className="text-black dark:text-white">
               <strong>{solution}</strong> — {definition.definition} <br />{' '}
-              <i>E.j: "{definition.example}"</i>
+              <i>"{definition.example}"</i>
             </h5>
             {isGameWon && (
               <div className="mt-0">
