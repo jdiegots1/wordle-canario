@@ -8,7 +8,7 @@ const DEFINITIONS: Definition[] = [
     {
         word: 'urrar',
         definition: 'dar urridos: la voz característa de las reses vacunas o también puede ser un grito fuerte y desgarrado a causa de un dolor.',
-        example: 'El pibe empezó a urrar cuando su meñique golpeó el mueble.'
+        example: 'Cuando lo oían llegar con el brazado de millo seco, los urridos se oían desde lejos.'
     },
 ]
 
