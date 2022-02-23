@@ -6,8 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'urrar',
-        definition: 'dar urridos: la voz característa de las reses vacunas o también puede ser un grito fuerte y desgarrado a causa de un dolor.',
+        word: 'baifo',
+        definition: 'es la cría de la cabra. Si “se te va el baifo” es que se te olvidó lo que ibas a hacer o ibas a decir',
+
         example: 'Cuando lo oían llegar con el brazado de millo seco, los urridos se oían desde lejos.'
     },
 ]
