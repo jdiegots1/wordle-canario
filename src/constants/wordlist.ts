@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'baifo',
-        definition: 'es la cría de la cabra. Si “se te va el baifo” es que se te olvidó lo que ibas a hacer o ibas a decir',
-        example: ''
+        word: 'bucio',
+        definition: 'caracola de mar grande, utilizada también como bocina antiguamente por los aborígenes canarios y hoy día en festividades.',
+        example: 'Todos los años en la romería hacía sonar el bucio que daba gloria.'
     },
 ]
 
