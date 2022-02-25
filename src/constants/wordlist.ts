@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'bucio',
-        definition: 'caracola de mar grande, utilizada también como bocina antiguamente por los aborígenes canarios y hoy día en festividades.',
-        example: 'Todos los años en la romería hacía sonar el bucio que daba gloria.'
+        word: 'matul',
+        definition: 'Bulto, paquete grande, tareco.',
+        example: 'Puso los matules en el portabulto.'
     },
 ]
 
