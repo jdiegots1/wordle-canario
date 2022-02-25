@@ -165,9 +165,9 @@ function App() {
           {GAME_TITLE}
         </h1>
         Para palicar con fundamento
-        <h5 className="text-xl ml-2.5 grow font-bold dark:text-white">
+        <br><h5>
           Cada día, entre las 08:00 y 08:30, nueva palabra
-        </h5>
+          </h5></br>
         {isDarkMode ? (
           <SunIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
