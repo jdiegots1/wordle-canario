@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'matul',
-        definition: 'Bulto, paquete grande, tareco.',
-        example: 'Puso los matules en el portabulto.'
+        word: 'cuico',
+        definition: 'Dicho de una persona, que habla o actúa con astucia o disimulo.',
+        example: 'Como era muy cuico, siempre se las ingeniaba para quedar bien con el jefe.'
     },
 ]
 
