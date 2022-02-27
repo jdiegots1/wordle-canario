@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'cuico',
-        definition: 'Dicho de una persona, que habla o actúa con astucia o disimulo.',
-        example: 'Como era muy cuico, siempre se las ingeniaba para quedar bien con el jefe.'
+        word: 'sajar',
+        definition: 'Cortar, rajar produciendo una herida.',
+        example: 'Estaba arreglando el pescado y se sajó un dedo.'
     },
 ]
 
