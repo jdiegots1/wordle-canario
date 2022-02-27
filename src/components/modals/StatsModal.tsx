@@ -97,6 +97,10 @@ export const StatsModal = ({
           </button>
         </div>
       )}
+      
+      <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
+        {GUESS_DISTRIBUTION_TEXT}
+      </h4>
     </BaseModal>
   )
 }
