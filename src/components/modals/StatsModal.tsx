@@ -99,8 +99,11 @@ export const StatsModal = ({
       )}
       
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
-        {GUESS_DISTRIBUTION_TEXT}
+        <br />
+        {STATISTICS_TITLE}
       </h4>
+
+      <StatBar gameStats={gameStats} />
     </BaseModal>
   )
 }
