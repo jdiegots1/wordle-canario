@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'sajar',
-        definition: 'Cortar, rajar produciendo una herida.',
-        example: 'Estaba arreglando el pescado y se sajó un dedo.'
+        word: 'sitar',
+        definition: 'Llamar a una persona emitiendo un sonido silbante corto y reiterado.',
+        example: 'Se ofendía si lo sitaban en lugar de llamarlo por su nombre.'
     },
 ]
 
