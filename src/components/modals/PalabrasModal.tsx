@@ -11,7 +11,7 @@ export const PalabrasModal = ({ isOpen, handleClose }: Props) => {
       <p className="text-sm text-gray-500 dark:text-gray-300">
         Mira el listado de palabras que aparecieron en días anteriores {' '}
         <a
-          href="wordlecanariopalabras.html"
+          href="./wordlecanariopalabras.html"
           className="underline font-bold"
         >
           aquí
