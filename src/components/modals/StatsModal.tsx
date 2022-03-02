@@ -100,7 +100,7 @@ export const StatsModal = ({
       
       <div>
         <h4 className="text-black dark:text-white">Mira todas las palabras que ya salieron en días anteriores{' '}
-        <a href="https//www.palabras-wordle-canario.vercel.app" className="underline font-bold">
+        <a href="https://palabras-wordle-canario.vercel.app/" className="underline font-bold">
           aquí
         </a>{' '}</h4>
         </div>
