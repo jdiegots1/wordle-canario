@@ -4,6 +4,7 @@ export const GAME_SUBTITLE = 'Para palicar con fundamento'
 export const WIN_MESSAGES = ['Lo mínimo que te mereces después de acertar es que te inviten a un anochecer en el Roque Nublo 🌄 ', 'Lo mínimo que te mereces después de acertar es un viajecito a La Palma para comerte unas buenas papas locas 🤤', 'Lo mínimo que te mereces después de acertar es ir a un buen guachinche 🍷', 'Naa, me tienes enchochadísimo 😍 ', 'Estás hecho un puntal. ', 'De locos', 'Chiquito jeito tienes pa esto, hermano 👌 ', 'Lo mínimo que te mereces después de acertar es una buena verbena 🕺💃']
 export const GAME_COPIED_MESSAGE = 'Copiado en el portapapeles'
 export const ABOUT_GAME_MESSAGE = 'Sobre el juego'
+export const PALABRAS_GAME_MESSAGE = 'Glosario'
 export const NOT_ENOUGH_LETTERS_MESSAGE = 'No hay suficientes letras'
 export const WORD_NOT_FOUND_MESSAGE = ['Pon una palabra más que no exista y la isla se te queda chica, hermano. Corrige eso', 'A otro, que sea más primo, vale, pero a mí no. Escribe una palabra que exista, hazme el favor.', 'Métele mano a eso, que esa palabra no existe', 'Venga, sí. Esa palabra 1, Las Palmas 2. Pon una palabra que exista, hermano', 'Venga, estás bonito tú. Pon una palabra que exista, hazme el favor', ]
 export const CORRECT_WORD_MESSAGE = (solution: string) =>
