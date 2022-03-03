@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'tolmo',
-        definition: 'Piedra grande',
-        example: 'Con las lluvias cayeron unos tolmos a la carretera que impidieron la circulación.'
+        word: 'murga',
+        definition: 'Agrupación carnavalesca que, acompañándose de instrumentos de imitación, toca canciones muy conocidas o de actualidad adaptándoles una letra satírica',
+        example: 'El Concurso de Murgas es una de las partes más importantes de nuestro Carnaval.'
     },
 ]
 
