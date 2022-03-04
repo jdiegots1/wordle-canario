@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'murga',
-        definition: 'Agrupación carnavalesca que, acompañándose de instrumentos de imitación, toca canciones muy conocidas o de actualidad adaptándoles una letra satírica',
-        example: 'El Concurso de Murgas es una de las partes más importantes de nuestro Carnaval.'
+        word: 'drago',
+        definition: 'Árbol de la familia de las dracaenáceas, que puede alcanzar entre 12 y 14 metros de altura. La savia, llamada por su color rojizo sangre de drago, es usada en medicina y en la elaboración de tintes y barnices. Es una especie endémica de la región macaronésica.',
+        example: ''
     },
 ]
 
