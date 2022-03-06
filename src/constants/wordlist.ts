@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'fleje',
-        definition: 'Gran cantidad de personas, animales o cosas.',
-        example: 'A la entrada del estadio había un fleje de policías.'
+        word: 'piola',
+        definition: 'Juego que consiste en saltar, según ciertas reglas, por encima de uno que se pone encorvado cantidad de personas.',
+        example: 'Mi padre era un puntal jugando a la piola cuando era un chinijo.'
     },
 ]
 
