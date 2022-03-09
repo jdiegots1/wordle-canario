@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'tifar',
-        definition: 'Robar, birlar.',
-        example: 'Le tifaron la cartera del bolsillo.'
+        word: 'piche',
+        definition: 'Asfalto, alquitrán.',
+        example: 'Cuando hace un fleje de sol, el piche se derrite.'
     },
 ]
 
