@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'piche',
-        definition: 'Asfalto, alquitrán.',
-        example: 'Cuando hace un fleje de sol, el piche se derrite.'
+        word: 'brega',
+        definition: 'Acción de bregar, que es competir en el deporte de la lucha canaria.',
+        example: 'El puntal del equipo local dejó fuera de brega a tres luchadores del equipo visitante..'
     },
 ]
 
