@@ -8,7 +8,7 @@ const DEFINITIONS: Definition[] = [
     {
         word: 'jeito',
         definition: 'Puede ser un novimiento brusco, que puede producir una torcedura, y también la maña o habilidad para hacer algo.',
-        example: 'el abuelo era el que tenía más jeito para tocar el timple.'
+        example: 'El abuelo era el que tenía más jeito para tocar el timple.'
     },
 ]
 
