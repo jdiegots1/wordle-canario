@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'brega',
-        definition: 'Acción de bregar, que es competir en el deporte de la lucha canaria.',
-        example: 'El puntal del equipo local dejó fuera de brega a tres luchadores del equipo visitante..'
+        word: 'jeito',
+        definition: 'Puede ser un novimiento brusco, que puede producir una torcedura, y también la maña o habilidad para hacer algo.',
+        example: 'el abuelo era el que tenía más jeito para tocar el timple.'
     },
 ]
 
