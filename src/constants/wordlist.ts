@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'lasca',
-        definition: 'Trozo ancho, largo y poco grueso que se corta de una cosa.',
-        example: 'Puso en un plato unas lascas de queso y de jamón.'
+        word: 'orasa',
+        definition: 'Viento fresco y continuado de cierta intensidad.',
+        example: 'Con orasa también se puede salir a pescar.'
     },
 ]
 
