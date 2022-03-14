@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'orasa',
-        definition: 'Viento fresco y continuado de cierta intensidad.',
-        example: 'Con orasa también se puede salir a pescar.'
+        word: 'borno',
+        definition: 'También en femenino, aplicado a los líquidos, poco caliente, tibio.',
+        example: 'Primero se lava la herida con agua bornita, y luego se le pone una venda.'
     },
 ]
 
