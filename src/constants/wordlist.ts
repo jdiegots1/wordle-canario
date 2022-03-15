@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'borno',
-        definition: 'También en femenino, aplicado a los líquidos, poco caliente, tibio.',
-        example: 'Primero se lava la herida con agua bornita, y luego se le pone una venda.'
+        word: 'arife',
+        definition: 'Aire muy caliente que produce un calor sofocante.',
+        example: 'Se metió un arife que acabó con las pocas plantas que quedaban.'
     },
 ]
 
