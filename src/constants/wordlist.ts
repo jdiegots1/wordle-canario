@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'arife',
-        definition: 'Aire muy caliente que produce un calor sofocante.',
-        example: 'Se metió un arife que acabó con las pocas plantas que quedaban.'
+        word: 'gamia',
+        definition: 'Pequeña porción de gofio en polvo que se coge con los dedos o con una cuchara y que se usa como tapa para acompañar el vino.',
+        example: 'Tu tía Cathaysa se conforma con una gamia y un vasito de vino.'
     },
 ]
 
