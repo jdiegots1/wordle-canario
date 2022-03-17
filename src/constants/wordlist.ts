@@ -6,10 +6,10 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'gamia',
-        definition: 'Pequeña porción de gofio en polvo que se coge con los dedos o con una cuchara y que se usa como tapa para acompañar el vino.',
-        example: 'Tu tía Cathaysa se conforma con una gamia y un vasito de vino.'
-    },
+        word: 'mamar',
+        definition: 'Obtener provecho indebidamente a costa de otro, de empresas o de instituciones públicas o privadas; tomar para sí lo ajeno, birlar.',
+        example: 'La política canaria está llena de mamones.'
+    },.
 ]
 
 let WORDS: string[] = []
