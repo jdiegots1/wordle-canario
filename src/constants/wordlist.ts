@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'fecho',
-        definition: 'Pasador, pestillo.',
-        example: ''
+        word: 'teque',
+        definition: 'Palabra que, usada reiteradamente, se emplea con el significado de paso a paso.',
+        example: 'A las siete de la mañana ya lo ves teque teque para el trabajo.'
     },
 ]
 
