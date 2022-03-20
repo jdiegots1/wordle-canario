@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'teque',
-        definition: 'Palabra que, usada reiteradamente, se emplea con el significado de paso a paso.',
-        example: 'A las siete de la mañana ya lo ves teque teque para el trabajo.'
+        word: 'rosca',
+        definition: 'Grano de millo que, al tostarse o freírse, se abre en forma de flor.',
+        example: 'Antes de entrar al cine, compramos roscas.'
     },
 ]
 
