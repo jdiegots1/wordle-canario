@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'rosca',
-        definition: 'Grano de millo que, al tostarse o freírse, se abre en forma de flor.',
-        example: 'Antes de entrar al cine, compramos roscas.'
+        word: 'papas',
+        definition: 'Tubérculo de dicha planta.',
+        example: 'En la comida del canario no podían faltar las papas y el gofio.'
     },
 ]
 
