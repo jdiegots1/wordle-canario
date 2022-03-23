@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'vaina',
-        definition: 'En femenino se emplea para referirse a una cosa o situación embarazosa o molesta y en masculino para referirse a una persona de poca formalidad y fundamento.',
-        example: 'Lo que menos le gusta es la vaina de tener que estar con tanto papeleo.'
+        word: 'momio',
+        definition: 'Blando, flojo, sin consistencia, que no tiene la tensión que naturalmente debe tener.',
+        example: 'Esos plátanos están muy maduros, medio momios.'
     },
 ]
 
