@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'momio',
-        definition: 'Blando, flojo, sin consistencia, que no tiene la tensión que naturalmente debe tener.',
-        example: 'Esos plátanos están muy maduros, medio momios.'
+        word: 'chopa',
+        definition: 'Nariz, especialmente abultada. En Gran Canaria, Lanzarote y La Palma se les llama a las cucarachas de tamaño grande, que se les conoce como salema en otras zonas de Canarias.',
+        example: 'Con el catarro, tenía la chopa roja de tanto sonarse.'
     },
 ]
 
