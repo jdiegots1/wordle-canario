@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'chopa',
-        definition: 'Nariz, especialmente abultada. En Gran Canaria, Lanzarote y La Palma se les llama a las cucarachas de tamaño grande, que se les conoce como salema en otras zonas de Canarias.',
-        example: 'Con el catarro, tenía la chopa roja de tanto sonarse.'
+        word: 'breva',
+        definition: 'Podemos referirnos a una persona que llora mucho y con facilidad o a una variedad de higo alargado, de cáscara fina, color canelo negruzco y pulpa blanda y suave..',
+        example: 'No le puedes decir nada, porque es un breva.'
     },
 ]
 
