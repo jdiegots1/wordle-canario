@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'breva',
-        definition: 'Podemos referirnos a una persona que llora mucho y con facilidad o a una variedad de higo alargado, de cáscara fina, color canelo negruzco y pulpa blanda y suave..',
-        example: 'No le puedes decir nada, porque es un breva.'
+        word: 'fuche',
+        definition: 'Expresión imperativa que se usa con el valor de fastídiate, jeríngate.',
+        example: ''
     },
 ]
 
