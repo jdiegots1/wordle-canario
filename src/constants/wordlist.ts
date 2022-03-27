@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'fuche',
-        definition: 'Expresión imperativa que se usa con el valor de fastídiate, jeríngate.',
-        example: ''
+        word: 'mecha',
+        definition: 'Embuste, mentira de consideración.',
+        example: '¡Fuerte mecha le metió con lo de que se iba a casar!'
     },
 ]
 
