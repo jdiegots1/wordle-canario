@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'mecha',
-        definition: 'Embuste, mentira de consideración.',
-        example: '¡Fuerte mecha le metió con lo de que se iba a casar!'
+        word: 'venta',
+        definition: 'Así le llamamos en Fuerteventura, Tenerife y La Palma a las tiendas de comestibles.',
+        example: 'En la venta trabajaba toda la familia.'
     },
 ]
 
