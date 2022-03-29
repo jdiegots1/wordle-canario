@@ -110,6 +110,8 @@ export const StatsModal = ({
         <a href="mailto:jdiegotejeras@gmail.com" className="underline font-bold">
           correo
         </a>{' '}
+      </div>
+      
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         <br />
         {STATISTICS_TITLE}
