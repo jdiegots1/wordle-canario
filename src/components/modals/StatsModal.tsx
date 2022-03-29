@@ -105,6 +105,11 @@ export const StatsModal = ({
         </div>
       )}
       
+      <div className="mt-5">
+        Envíame tus sugerencias via{' '}
+        <a href="mailto:jdiegotejeras@gmail.com" className="underline font-bold">
+          correo
+        </a>{' '}
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         <br />
         {STATISTICS_TITLE}
