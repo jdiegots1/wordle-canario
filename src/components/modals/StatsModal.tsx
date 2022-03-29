@@ -70,13 +70,14 @@ export const StatsModal = ({
           </div>
         </div>
       )}
+      <br />
       
-      <div>
-        <h4 className="text-black dark:text-white">Mira todas las palabras que ya salieron en días anteriores{' '}
-        <a href="https://palabras-wordle-canario.vercel.app/" className="underline font-bold">
-          aquí
-          </a>{' '}</h4>
-        </div>
+      <div className="mt-5">
+        Envíame tus sugerencias via{' '}
+        <a href="mailto:jdiegotejeras@gmail.com" className="underline font-bold">
+          correo
+        </a>{' '}
+      </div>
           
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         {GUESS_DISTRIBUTION_TEXT}
@@ -105,12 +106,12 @@ export const StatsModal = ({
         </div>
       )}
       
-      <div className="mt-5">
-        Envíame tus sugerencias via{' '}
-        <a href="mailto:jdiegotejeras@gmail.com" className="underline font-bold">
-          correo
-        </a>{' '}
-      </div>
+      <div>
+        <h4 className="text-black dark:text-white">Mira todas las palabras que ya salieron en días anteriores{' '}
+        <a href="https://palabras-wordle-canario.vercel.app/" className="underline font-bold">
+          aquí
+          </a>{' '}</h4>
+        </div>
       
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         <br />
