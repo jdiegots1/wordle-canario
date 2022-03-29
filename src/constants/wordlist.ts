@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'venta',
-        definition: 'Así le llamamos en Fuerteventura, Tenerife y La Palma a las tiendas de comestibles.',
-        example: 'En la venta trabajaba toda la familia.'
+        word: 'bemba',
+        definition: 'Labio grueso.',
+        example: 'El mojo me dejó las bembas ardiendo.'
     },
 ]
 
