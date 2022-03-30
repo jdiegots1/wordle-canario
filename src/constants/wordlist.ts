@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'bemba',
-        definition: 'Labio grueso.',
-        example: 'El mojo me dejó las bembas ardiendo.'
+        word: 'rente',
+        definition: 'A ras, de raíz; en la expresión "bobo rente", completamente, en extremo.',
+        example: 'Esa mata me la cortas rente.'
     },
 ]
 
