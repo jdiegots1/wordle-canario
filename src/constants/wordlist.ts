@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'rente',
-        definition: 'A ras, de raíz; en la expresión "bobo rente", completamente, en extremo.',
-        example: 'Esa mata me la cortas rente.'
+        word: 'chola',
+        definition: 'Calzado cómo y ligero, que se emplea para estar en casa, ir a la playa…',
+        example: 'Con el calor que hacía, no se podía andar por la playa sin cholas.'
     },
 ]
 
