@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'chola',
-        definition: 'Calzado cómo y ligero, que se emplea para estar en casa, ir a la playa…',
-        example: 'Con el calor que hacía, no se podía andar por la playa sin cholas.'
+        word: 'sargo',
+        definition: 'Persona astuta, taimada',
+        example: 'Ten cuidado con esos gangocheros, que son unos sargos y te meten gato por liebre.'
     },
 ]
 
