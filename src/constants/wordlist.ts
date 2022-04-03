@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'picon',
-        definition: 'Puede ser lo dicho de ciertos condimentos, como la pimienta o la guindilla, y de las salsas que se hacen con ellos, que produce ardor en el paladar o arena volcánica.',
-        example: 'A estas pimientas hay que quitarles la granilla porque, si no, el mojo sale muy picón.'
+        word: 'minar',
+        definition: 'Llenar o cubrir algo, generalmente de una cosa nociva o no conveniente.',
+        example: 'Esa costa está minada de hoteles.'
     },
 ]
 
