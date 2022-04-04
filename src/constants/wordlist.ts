@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'minar',
-        definition: 'Llenar o cubrir algo, generalmente de una cosa nociva o no conveniente.',
-        example: 'Esa costa está minada de hoteles.'
+        word: 'meneo',
+        definition: 'Ajetreo, trajón, gran actividad comercial.',
+        example: 'Ahora en Navidades hay mucho meneo en la zona de las tiendas.'
     },
 ]
 
