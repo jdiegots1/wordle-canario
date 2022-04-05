@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'meneo',
-        definition: 'Ajetreo, trajón, gran actividad comercial.',
-        example: 'Ahora en Navidades hay mucho meneo en la zona de las tiendas.'
+        word: 'frior',
+        definition: 'Frío intenso.',
+        example: 'Los tomateros tenían las hojas quemadas por el frior.'
     },
 ]
 
