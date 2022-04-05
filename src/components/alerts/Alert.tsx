@@ -29,7 +29,7 @@ export const Alert = ({ isOpen, message, variant = 'warning' }: Props) => {
       leaveTo="opacity-0"
     >
       <div className={classes}>
-        <div className="p-4">
+        <div className="p-2">
           <p className="text-sm text-center font-medium text-gray-900">
             {message}
           </p>
