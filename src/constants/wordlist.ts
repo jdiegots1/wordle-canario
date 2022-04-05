@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'frior',
-        definition: 'Frío intenso.',
-        example: 'Los tomateros tenían las hojas quemadas por el frior.'
+        word: 'pejes',
+        definition: 'Cualquier animal acuático vertebrado.',
+        example: 'La ballena es el peje más grande que hay.'
     },
 ]
 
