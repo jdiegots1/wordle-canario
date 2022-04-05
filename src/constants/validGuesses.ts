@@ -1,4 +1,5 @@
 export const VALIDGUESSES = [
+  'flipo',
   'voime',
   'tufio',
   'molio',
