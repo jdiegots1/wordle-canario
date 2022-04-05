@@ -10,7 +10,7 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
   return (
     <BaseModal title="Cómo jugar" isOpen={isOpen} handleClose={handleClose}>
       <p className="text-sm text-gray-500 dark:text-gray-300">
-        Adivina la palabra en seis intentos. Las palabras deben estar incluidas en la Academia Canaria de la Lengua o ser un municipio de las Islas Canarias. Después de cada intento, el color de las letras se cambia para mostrar qué tan cerca estás de la palabra.
+        Adivina la palabra en seis intentos. Después de cada intento, el color de las letras se cambia para mostrar qué tan cerca estás de la palabra.
       </p>
 
       <div className="flex justify-center mb-1 mt-4">
