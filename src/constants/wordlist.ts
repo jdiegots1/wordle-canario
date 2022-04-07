@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'pejes',
-        definition: 'Cualquier animal acuático vertebrado.',
-        example: 'La ballena es el peje más grande que hay.'
+        word: 'guata',
+        definition: 'Trozo de algodón limpio y esterilizado para limpiar heridas.',
+        example: 'La madre trajo guatas después de que se cayera el chiquillo.'
     },
 ]
 
