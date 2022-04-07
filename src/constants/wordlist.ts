@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'guata',
-        definition: 'Trozo de algodón limpio y esterilizado para limpiar heridas.',
-        example: 'La madre trajo guatas después de que se cayera el chiquillo.'
+        word: 'posma',
+        definition: 'Llovizna muy fina y persistente.',
+        example: 'La posma le viene bien al campo.'
     },
 ]
 
