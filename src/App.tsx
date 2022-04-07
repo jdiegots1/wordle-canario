@@ -170,7 +170,7 @@ function App() {
             width="212"
             height="100"
           />
-        Para palicar con fundamento
+        
         {isDarkMode ? (
           <SunIcon
             className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
