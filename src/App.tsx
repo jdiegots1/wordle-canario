@@ -167,8 +167,8 @@ function App() {
         <img
             src="WORDLE_CANARIO_LOGO.png"
             alt="WordleCanario"
-            width="106"
-            height="50"
+            width="212"
+            height="100"
           />
         Para palicar con fundamento
         {isDarkMode ? (
