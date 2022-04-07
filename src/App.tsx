@@ -170,9 +170,6 @@ function App() {
             width="106"
             height="50"
           />
-        <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE}
-        </h1>
         Para palicar con fundamento
         {isDarkMode ? (
           <SunIcon
