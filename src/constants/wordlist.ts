@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'posma',
-        definition: 'Llovizna muy fina y persistente.',
-        example: 'La posma le viene bien al campo.'
+        word: 'cucar',
+        definition: 'Nos podemos referir a tocar a alguien cautelosamente, sobre todo con el codo o con el pie, en demanda de complicidad; o incitar con malicia.',
+        example: 'Cuando nos llamaban la atención, se ponía a cucarme para hacerme reír.'
     },
 ]
 
