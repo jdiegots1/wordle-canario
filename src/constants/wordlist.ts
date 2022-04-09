@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'cucar',
-        definition: 'Nos podemos referir a tocar a alguien cautelosamente, sobre todo con el codo o con el pie, en demanda de complicidad; o incitar con malicia.',
-        example: 'Cuando nos llamaban la atención, se ponía a cucarme para hacerme reír.'
+        word: 'añero',
+        definition: 'Dicho de una planta, que en un año da mucho fruto y poco o ninguno en otro.',
+        example: 'Aquí en esta finca hay muchos árboles que son añero: ese duraznero el año pasado no dio ni un durazno, y este año míralo cómo viene cargadito.'
     },
 ]
 
