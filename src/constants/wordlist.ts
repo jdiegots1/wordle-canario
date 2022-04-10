@@ -7,7 +7,7 @@ type Definition = {
 const DEFINITIONS: Definition[] = [
     {
         word: 'jalio',
-        definition: 'Mar agitada en la costa por el continuo oleaje. En las islas orientales se le llama así a la respiración dificultados. En Fuerteventura, al bramido del viento.',
+        definition: 'Mar agitada en la costa por el continuo oleaje. En Fuerteventura se le conoce así al bramido del viento.',
         example: 'El agua estaba muy revuelta, porque había jalío.'
     },
 ]
