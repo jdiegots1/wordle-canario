@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'añero',
-        definition: 'Dicho de una planta, que en un año da mucho fruto y poco o ninguno en otro.',
-        example: 'Aquí en esta finca hay muchos árboles que son añero: ese duraznero el año pasado no dio ni un durazno, y este año míralo cómo viene cargadito.'
+        word: 'jalio',
+        definition: 'Mar agitada en la costa por el continuo oleaje. En las islas orientales se le llama así a la respiración dificultados. En Fuerteventura, al bramido del viento.',
+        example: 'El agua estaba muy revuelta, porque había jalío.'
     },
 ]
 
