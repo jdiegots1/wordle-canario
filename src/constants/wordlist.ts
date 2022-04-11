@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'jalio',
-        definition: 'Mar agitada en la costa por el continuo oleaje. En Fuerteventura se le conoce así al bramido del viento.',
-        example: 'El agua estaba muy revuelta, porque había jalío.'
+        word: 'clico',
+        definition: 'Tener el ojo y la mirada torcida.',
+        example: 'Usaba gafas de sol para disimular que era medio clico.'
     },
 ]
 
