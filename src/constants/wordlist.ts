@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'clico',
-        definition: 'Tener el ojo y la mirada torcida.',
-        example: 'Usaba gafas de sol para disimular que era medio clico.'
+        word: 'rasca',
+        definition: 'Borrachera.',
+        example: 'El día de la boda todos se cogieron una rasca'
     },
 ]
 
