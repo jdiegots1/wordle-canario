@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'rasca',
-        definition: 'Borrachera.',
-        example: 'El día de la boda todos se cogieron una rasca'
+        word: 'tonga',
+        definition: 'Porción de cosas apiladas en orden; gran abundancia de cosas; o un conjunto grande de personas o animales.',
+        example: 'En la mesa dejó una tonga de libros.'
     },
 ]
 
