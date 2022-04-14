@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'tonga',
-        definition: 'Porción de cosas apiladas en orden; gran abundancia de cosas; o un conjunto grande de personas o animales.',
-        example: 'En la mesa dejó una tonga de libros.'
+        word: 'gongo',
+        definition: 'Pequeño hoyo semiesférico utilizado por los niños en el juego del boliche.',
+        example: 'Muchos chicos eran capaces de meter el boliche en el gongo desde lejos.'
     },
 ]
 
