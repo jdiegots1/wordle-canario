@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'gongo',
-        definition: 'Pequeño hoyo semiesférico utilizado por los niños en el juego del boliche.',
-        example: 'Muchos chicos eran capaces de meter el boliche en el gongo desde lejos.'
+        word: 'fisco',
+        definition: 'Pequeña cantidad de algo.',
+        example: 'Apenas desayuna un fisco de pan con queso.'
     },
 ]
 
