@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'fisco',
-        definition: 'Pequeña cantidad de algo.',
-        example: 'Apenas desayuna un fisco de pan con queso.'
+        word: 'sable',
+        definition: 'Arena volcánica.',
+        example: ''
     },
 ]
 
