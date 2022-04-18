@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'airon',
-        definition: 'Podemos referirnos a la corriente de aire súbita que puede producir efectos perjudiciales para la salud o a la jaqueca o malestar causado por una corriente de aire.',
-        example: 'Ella siempre decía que había que tener cuidado con las corriente porque podías coger un airón.'
+        word: 'chijo',
+        definition: 'Puede ser un chorro delgado de cualquier líquido, sobre todo cuando sale a presión; pequeña porción de vino u otro líquido que se bebe o se puede beber de una vez; y en Lanzarote, Fuerteventura y Tenerife es sinónimo de miedo.',
+        example: 'De la fuente ya no venía sino un chijito de agua.'
     },
 ]
 
