@@ -74,7 +74,7 @@ export const StatsModal = ({
       
       <div className="mt-5">
         Envíame tus sugerencias via{' '}
-        <a href="mailto:jdiegotejeras@gmail.com" className="underline font-bold">
+        <a href="mailto:wordlecanario@gmail.com" className="underline font-bold">
           correo
         </a>{' '}
       </div>
