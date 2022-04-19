@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'chijo',
-        definition: 'Puede ser un chorro delgado de cualquier líquido, sobre todo cuando sale a presión; pequeña porción de vino u otro líquido que se bebe o se puede beber de una vez; y en Lanzarote, Fuerteventura y Tenerife es sinónimo de miedo.',
-        example: 'De la fuente ya no venía sino un chijito de agua.'
+        word: 'chavo',
+        definition: 'Moneda de poco valor.',
+        example: 'No podíamos ir al cine, porque no teníamos ni un chavo.'
     },
 ]
 
