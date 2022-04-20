@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'chavo',
-        definition: 'Moneda de poco valor.',
-        example: 'No podíamos ir al cine, porque no teníamos ni un chavo.'
+        word: 'casal',
+        definition: 'Pareja de macho y hembra.',
+        example: 'Como sabe que le gustan los animales, le regaló un casal de conejos.'
     },
 ]
 
