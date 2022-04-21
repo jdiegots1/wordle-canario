@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'casal',
-        definition: 'Pareja de macho y hembra.',
-        example: 'Como sabe que le gustan los animales, le regaló un casal de conejos.'
+        word: 'sacho',
+        definition: 'Instrumento que consiste en una lámina de hierro en forma de media luna, con un cabo largo que encaja en un anillo situado bajo el borde de la parte superior del lado curvo, que se emplea para cavar la tierra.',
+        example: 'Tuvo que comprar otro sacho porque ese ya tenía las puntas romas.'
     },
 ]
 
