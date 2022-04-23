@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'mareo',
-        definition: 'Persona que molesta o importuna a causa de su insistencia o monotonía.',
-        example: 'Llévate al mareo este de aquí, que me tiene la cabeza loca.'
+        word: 'arepa',
+        definition: 'La palabra "arepa" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Especie de torta de forma circular, hecha con millo ablandado a fuego lento y luego molido, o con harina de millo precocida, cocinada sobre una plancha o frita. ',
+        example: 'Las arepas se empezaron a comer aquí por la gente que venía de Venezuela.'
     },
 ]
 
