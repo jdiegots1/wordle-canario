@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'arepa',
-        definition: 'La palabra "arepa" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Especie de torta de forma circular, hecha con millo ablandado a fuego lento y luego molido, o con harina de millo precocida, cocinada sobre una plancha o frita. ',
-        example: 'Las arepas se empezaron a comer aquí por la gente que venía de Venezuela.'
+        word: 'iscar',
+        definition: 'La palabra "iscar" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Es ponerle carnada al anzuelo, y en Tenerife y La Palma se refiere sobre todo a las papas, cuando comienza a pudrirse los frutos por efecto de condiciones metereológicas adversas.',
+        example: 'Se iscaron las papas de tanta agua.'
     },
 ]
 
