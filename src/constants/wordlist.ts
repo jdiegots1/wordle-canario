@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'iscar',
-        definition: 'La palabra "iscar" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Es ponerle carnada al anzuelo, y en Tenerife y La Palma se refiere sobre todo a las papas, cuando comienza a pudrirse los frutos por efecto de condiciones metereológicas adversas.',
-        example: 'Se iscaron las papas de tanta agua.'
+        word: 'jacio',
+        definition: 'La palabra "jacío" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Puede ser alma momentánea del mar, la escampada al llover, o en Fuerteventura, Gran Canaria, La Gomera y La Palma nos referimos al cese momentáneo de una actividad laboral.',
+        example: 'Había que esperar que hubiera un jacío para poder meter el barco en la playa.'
     },
 ]
 
