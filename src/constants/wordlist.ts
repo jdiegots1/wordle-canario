@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'jacio',
-        definition: 'La palabra "jacío" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Puede ser alma momentánea del mar, la escampada al llover, o en Fuerteventura, Gran Canaria, La Gomera y La Palma nos referimos al cese momentáneo de una actividad laboral.',
-        example: 'Había que esperar que hubiera un jacío para poder meter el barco en la playa.'
+        word: 'criar',
+        definition: 'La palabra "criar" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Infectarse una herida llenándose de pus.',
+        example: 'Enseguida le puso agua oxigenada en la herida para que no le criara.'
     },
 ]
 
