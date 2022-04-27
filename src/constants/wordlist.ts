@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'criar',
-        definition: 'La palabra "criar" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Infectarse una herida llenándose de pus.',
-        example: 'Enseguida le puso agua oxigenada en la herida para que no le criara.'
+        word: 'sabro',
+        definition: 'La palabra "sabro" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. La sabro es una variedad de uva (Vitis vinifera) blanca autóctona de las Islas Canarias.',
+        example: ''
     },
 ]
 
