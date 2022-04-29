@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'sabro',
-        definition: 'La palabra "sabro" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. La sabro es una variedad de uva (Vitis vinifera) blanca autóctona de las Islas Canarias.',
-        example: ''
+        word: 'fatar',
+        definition: 'La palabra "fatar" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Meter la camisa por dentro de los pantalones y ajustarlos.',
+        example: 'La madre siempre estaba pendiente de fatarle la camisa al niño.'
     },
 ]
 
