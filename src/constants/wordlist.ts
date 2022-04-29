@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'fatar',
-        definition: 'La palabra "fatar" está incluída en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Meter la camisa por dentro de los pantalones y ajustarlos.',
-        example: 'La madre siempre estaba pendiente de fatarle la camisa al niño.'
+        word: 'jallo',
+        definition: 'La palabra "jallo" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Objeto que arrastra la marea y que generalmente se encuentra en las playas y callaos.',
+        example: 'Fue a dar una vuelta por la playa, a ver si encontraba algún jallo.'
     },
 ]
 
