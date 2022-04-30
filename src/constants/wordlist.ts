@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'jallo',
-        definition: 'La palabra "jallo" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Objeto que arrastra la marea y que generalmente se encuentra en las playas y callaos.',
-        example: 'Fue a dar una vuelta por la playa, a ver si encontraba algún jallo.'
+        word: 'echon',
+        definition: 'La palabra "echón" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Que hace alardes de poder, riquezas o influencias.',
+        example: 'Siempre fue muy echón, y por eso le tenían ojeriza.'
     },
 ]
 
