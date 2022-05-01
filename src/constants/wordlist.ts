@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'echon',
-        definition: 'La palabra "echón" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Que hace alardes de poder, riquezas o influencias.',
-        example: 'Siempre fue muy echón, y por eso le tenían ojeriza.'
+        word: 'fusto',
+        definition: 'La palabra "fusto" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. En La Palma le llamamos al olor y sabor característicos que tienen algunos productos alimenticios.',
+        example: 'Este queso tiene mucho fusto.'
     },
 ]
 
