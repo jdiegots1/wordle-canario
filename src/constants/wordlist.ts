@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'fusto',
-        definition: 'La palabra "fusto" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. En La Palma le llamamos al olor y sabor característicos que tienen algunos productos alimenticios.',
-        example: 'Este queso tiene mucho fusto.'
+        word: 'raspa',
+        definition: 'La palabra "raspa" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Residuo de comida que queda adherido en una olla.',
+        example: 'Mi abuela hacía unas natillas tan buenas, que nos comíamos hasta las raspas.'
     },
 ]
 
