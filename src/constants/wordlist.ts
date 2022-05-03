@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'raspa',
-        definition: 'La palabra "raspa" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Residuo de comida que queda adherido en una olla.',
-        example: 'Mi abuela hacía unas natillas tan buenas, que nos comíamos hasta las raspas.'
+        word: 'rolar',
+        definition: 'La palabra "rolar" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Comer triturando alimentos duros; en Lanzarote, Fuerteventura, Tenerife y La Palma también es utilizado como sinónimo de moler el grano, especialmente el millo, dejándolo grueso.',
+        example: 'Estuvo rolando castañas toda la tarde.'
     },
 ]
 
