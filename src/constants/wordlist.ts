@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'rolar',
-        definition: 'La palabra "rolar" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Comer triturando alimentos duros; en Lanzarote, Fuerteventura, Tenerife y La Palma también es utilizado como sinónimo de moler el grano, especialmente el millo, dejándolo grueso.',
-        example: 'Estuvo rolando castañas toda la tarde.'
+        word: 'tarro',
+        definition: 'La palabra "tarro" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Cuerno de los animales.',
+        example: 'A la cabra que tiene los tarros abiertos la llaman ballestera.'
     },
 ]
 
