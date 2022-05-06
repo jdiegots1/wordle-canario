@@ -98,7 +98,7 @@ export const Keyboard = ({
         ))}
       </div>
       <div className="flex justify-center">
-        <Key width={65.4} value="BORRAR" onClick={onClick}>
+        <Key width={65.4} value="ELIMINAR" onClick={onClick}>
           {DELETE_TEXT}
         </Key>
         {[
@@ -118,7 +118,7 @@ export const Keyboard = ({
             isRevealing={isRevealing}
           />
         ))}
-        <Key width={65.4} value="PROBAR" onClick={onClick}>
+        <Key width={65.4} value="PALANTE" onClick={onClick}>
           {ENTER_TEXT}
         </Key>
       </div>
