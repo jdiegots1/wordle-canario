@@ -6,9 +6,9 @@ type Definition = {
 
 const DEFINITIONS: Definition[] = [
     {
-        word: 'tarro',
-        definition: 'La palabra "tarro" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Cuerno de los animales.',
-        example: 'A la cabra que tiene los tarros abiertos la llaman ballestera.'
+        word: 'rabon',
+        definition: 'La palabra "rabón" se encuentra en el Diccionario Básico de Canarismos de la Academia Canaria de la Lengua. Se aplica a lo que es más corto que lo ordinario.',
+        example: 'Pelaba las papas con un cuchillito rabón que tenía.'
     },
 ]
 
