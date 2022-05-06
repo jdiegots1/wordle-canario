@@ -6,7 +6,7 @@ export const WIN_MESSAGES = [
 export const GAME_COPIED_MESSAGE = 'Copiado al portapapeles'
 export const NOT_ENOUGH_LETTERS_MESSAGE =
   'No hay suficientes letras'
-export const WORD_NOT_FOUND_MESSAGE = ['Métele mano a eso, hermano. Prueba con otra palabra', 'Esa palabra 1, Las Palmas 2. ¡Sigue intentándolo!']
+export const WORD_NOT_FOUND_MESSAGE = 'Métele mano a eso, hermano. Prueba con otra palabra'
 export const HARD_MODE_ALERT_MESSAGE =
   'Hard Mode can only be enabled at the start!'
 export const HARD_MODE_DESCRIPTION =
