@@ -1,15 +1,54 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
 import { GAME_TITLE } from '../constants/strings'
+import { MAX_CHALLENGES } from '../constants/settings'
+import { UAParser } from 'ua-parser-js'
 
-export const shareStatus = (guesses: string[], lost: boolean) => {
-  navigator.clipboard.writeText(
-    `🇮🇨 ${GAME_TITLE} #${solutionIndex} ${lost ? 'X' : guesses.length}/6\n\n https://wordle-canario.vercel.app/ \n\n` +
-      generateEmojiGrid(guesses)
-  )
+const webShareApiDeviceTypes: string[] = ['mobile', 'smarttv', 'wearable']
+const parser = new UAParser()
+const browser = parser.getBrowser()
+const device = parser.getDevice()
+
+export const shareStatus = (
+  guesses: string[],
+  lost: boolean,
+  isHardMode: boolean,
+  isDarkMode: boolean,
+  isHighContrastMode: boolean,
+  handleShareToClipboard: () => void
+) => {
+  const textToShare =
+    `🇮🇨 wordlecanario.com #${solutionIndex} ${
+      lost ? 'X' : guesses.length
+    }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
+    generateEmojiGrid(guesses, getEmojiTiles(false, false)) +
+    '\n\n' +
+    '@WordleCanario'
+
+  const shareData = { text: textToShare }
+
+  let shareSuccess = false
+
+  try {
+    if (attemptShare(shareData)) {
+      navigator.share(shareData)
+      fetch("https://api.countapi.xyz/hit/wordlecanario.com/sharetotal")
+      fetch("https://api.countapi.xyz/hit/wordlecanario.com/sharefancy")
+      shareSuccess = true
+    }
+  } catch (error) {
+    shareSuccess = false
+  }
+
+  if (!shareSuccess) {
+    navigator.clipboard.writeText(textToShare)
+    handleShareToClipboard()
+    fetch("https://api.countapi.xyz/hit/wordlecanario.com/sharetotal")
+    fetch("https://api.countapi.xyz/hit/wordlecanario.com/shareclipboard")
+  }
 }
 
-export const generateEmojiGrid = (guesses: string[]) => {
+export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
   return guesses
     .map((guess) => {
       const status = getGuessStatuses(guess)
@@ -18,14 +57,33 @@ export const generateEmojiGrid = (guesses: string[]) => {
         .map((_, i) => {
           switch (status[i]) {
             case 'correct':
-              return '🟦'
+              return tiles[0]
             case 'present':
-              return '🟨'
+              return tiles[1]
             default:
-              return '⬜'
+              return tiles[2]
           }
         })
         .join('')
     })
     .join('\n')
+}
+
+const attemptShare = (shareData: object) => {
+  return (
+    // Deliberately exclude Firefox Mobile, because its Web Share API isn't working correctly
+    browser.name?.toUpperCase().indexOf('FIREFOX') === -1 &&
+    webShareApiDeviceTypes.indexOf(device.type ?? '') !== -1 &&
+    navigator.canShare &&
+    navigator.canShare(shareData) &&
+    navigator.share
+  )
+}
+
+export const getEmojiTiles = (isDarkMode: boolean, isHighContrastMode: boolean) => {
+  let tiles: string[] = []
+  tiles.push(isHighContrastMode ? '🟪' : '🟨')
+  tiles.push(isHighContrastMode ? '🟪' : '🟦')
+  tiles.push(isDarkMode ? '🟪' : '⬜')
+  return tiles
 }

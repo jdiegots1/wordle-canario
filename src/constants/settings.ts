@@ -1,4 +1,6 @@
-export const MAX_WORD_LENGTH = 5
+export const MAX_WORD_LENGTH = 6
 export const MAX_CHALLENGES = 6
-export const GIF_URL = (solution: string) =>
-  `https://github.com/jdiegots1/wordleprueba/blob/A-VER/src/constants/pepe.jpg`
+export const ALERT_TIME_MS = 2800
+export const REVEAL_TIME_MS = 250
+export const GAME_LOST_INFO_DELAY = (MAX_WORD_LENGTH + 1) * REVEAL_TIME_MS
+export const WELCOME_INFO_MODAL_MS = 350
