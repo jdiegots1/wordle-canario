@@ -18,8 +18,8 @@ export const WRONG_SPOT_MESSAGE = (letter: string, pos: number) =>
   `Debes usar ${letter} en la posición ${pos}`
 export const NOT_CONTAINED_MESSAGE = (letter: string) =>
   `La palabra debe contener ${letter}`
-export const ENTER_TEXT = 'Probar'
-export const DELETE_TEXT = 'Borrar'
+export const ENTER_TEXT = 'Palante'
+export const DELETE_TEXT = 'Eliminar'
 export const STATISTICS_TITLE = 'Estadísticas individuales'
 export const GUESS_DISTRIBUTION_TEXT = 'Distribución de aciertos'
 export const NEW_WORD_TEXT = 'Próximo canarismo en'
