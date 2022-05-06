@@ -138,7 +138,7 @@ function App() {
 
     if (!isWordInWordList(currentGuess)) {
       setCurrentRowClass('jiggle')
-      return showErrorAlert(WORD_NOT_FOUND_MESSAGE[Math.floor(Math.random() * WORD_NOT_FOUND_MESSAGE.length)], {
+      return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
         onClose: clearCurrentRowClass,
       })
     }
