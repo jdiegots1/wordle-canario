@@ -82,8 +82,8 @@ const attemptShare = (shareData: object) => {
 
 export const getEmojiTiles = (isDarkMode: boolean, isHighContrastMode: boolean) => {
   let tiles: string[] = []
-  tiles.push(isHighContrastMode ? '🟪' : '🟨')
   tiles.push(isHighContrastMode ? '🟪' : '🟦')
+  tiles.push(isHighContrastMode ? '🟪' : '🟨')
   tiles.push(isDarkMode ? '🟪' : '⬜')
   return tiles
 }
