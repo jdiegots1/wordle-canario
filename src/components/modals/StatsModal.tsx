@@ -114,7 +114,7 @@ export const StatsModal = ({
         Puedes mandarnos sugerencias via{' '}
         <a href="https://twitter.com/wordlecanario" className="underline font-bold">
           Twitter
-        </a> y {' '} <a href="wordlecanario@gmail" className="underline font-bold">
+        </a> y {' '} <a href="mailto:wordlecanario@gmail" className="underline font-bold">
         correo</a>.
       </div>
     </BaseModal>
