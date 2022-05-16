@@ -14,7 +14,7 @@ export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen }: Props) => {
     <div className="navbar">
       <div className="navbar-banner px-5 py-2 bg-slate-200">
         <p className="text-sm color-red bold mx-10 text-center">
-          CONSULTA LAS NOVEDADES DEL LUNES 16 DE MAYO{' '}<a href="CANARISMOS_DE_LA_SEMANA.png" className="underline font-bold">AQUÍ</a>.
+          CONSULTA LAS NOVEDADES DEL LUNES 16 DE MAYO{' '}<a href="WORDLE_CANARIO_NOVEDADES_DOMINGO.png" className="underline font-bold">AQUÍ</a>.
         </p>
       </div>
       <div className="navbar-content px-5">
