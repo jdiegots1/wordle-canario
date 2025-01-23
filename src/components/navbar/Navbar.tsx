@@ -1,6 +1,7 @@
-import { ChartBarIcon, InformationCircleIcon, LightBulbIcon } from '@heroicons/react/outline';
+import { ChartBarIcon } from '@heroicons/react/outline';
 import { GAME_TITLE } from '../../constants/strings';
 import WCLOGO from '../../assets/WORDLE_CANARIO_LOGO.png';
+import twitter from '../../assets/x.png';
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void;
@@ -22,14 +23,22 @@ export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen }: Props) => {
           className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
           onClick={() => setIsStatsModalOpen(true)}
         />
-        <InformationCircleIcon
-          className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
-          onClick={() => setIsInfoModalOpen(true)}
-        />
-        <LightBulbIcon
+        <div className="flex h-6 w-6 mx-auto">
+          <a
+            title="Twitter"
+            href="https://twitter.com/wordlecanario"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={twitter} alt="Twitter" />
+          </a>
+        </div>
+
+        {/* Uncomment if needed */}
+        {/* <CogIcon
           className="h-6 w-6 cursor-pointer dark:stroke-white"
           onClick={() => setIsSettingsModalOpen(true)}
-        />
+        /> */}
       </div>
       
       <hr />
