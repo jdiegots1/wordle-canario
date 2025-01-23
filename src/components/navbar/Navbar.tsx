@@ -1,15 +1,15 @@
 import { ChartBarIcon, InformationCircleIcon, LightBulbIcon } from '@heroicons/react/outline';
 import { GAME_TITLE } from '../../constants/strings';
 import WCLOGO from '../../assets/WORDLE_CANARIO_LOGO.png';
-import x from '../../assets/x.png'; // Asegúrate de que la ruta es correcta
+import x from '../../assets/x.png'; // Asegúrate de que la ruta sea correcta
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void;
   setIsStatsModalOpen: (value: boolean) => void;
-  setIsSettingsModalOpen: (value: boolean) => void;
+  setIsSettingsModalOpen: (value: boolean) => void;  // Asegurado aquí
 };
 
-export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen }: Props) => {
+export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen, setIsSettingsModalOpen }: Props) => {
   return (
     <div>
       {/* Logo Section */}
