@@ -28,5 +28,3 @@ const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen, setIsSettingsModalOpe
     </div>
   )
 }
-
-export default Navbar
