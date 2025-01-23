@@ -26,11 +26,11 @@ export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen }: Props) => {
         <div className="flex h-6 w-6 mx-auto">
           <a
             title="Twitter"
-            href="https://twitter.com/wordlecanario"
+            href="https://x.com/wordlecanario"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={twitter} alt="Twitter" />
+            <img src={x} alt="X" />
           </a>
         </div>
 
