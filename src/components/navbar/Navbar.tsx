@@ -18,9 +18,9 @@ export const Navbar = ({
       {/* Eliminamos la sección de novedades del 16 de mayo */}
       <div className="navbar-banner px-5 py-2 bg-slate-200">
         <p className="text-sm color-red bold mx-10 text-center">
-          ¡Si te gusta este proyecto y quieres echarme una manita para mantener el juego vivo, puedes invitarme a un café ☕!{' '}
+          ¡Si te gusta el Wordle Canario, puedes invitarme a un leche y leche (o barraquito :) ) y ayudarme a mantenerlo vivo! ☕{' '}
           <a href="https://buymeacoffee.com/wordlecanario" className="underline font-bold text-lg text-green-600">
-            ¡Hazlo aquí y ayuda al desarrollo del Wordle Canario y a nuevos juegos!
+            ¡Hazlo pulsando aquí y echa una manita!
           </a>
         </p>
       </div>
