@@ -1,7 +1,7 @@
 import { ChartBarIcon, InformationCircleIcon, LightBulbIcon } from '@heroicons/react/outline'
 import { GAME_TITLE } from '../../constants/strings'
 import WCLOGO from '../../assets/WORDLE_CANARIO_LOGO.png'
-import twitter from '../../assets/twitter.png'
+import twitter from '../../assets/x.png'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void
