@@ -15,10 +15,13 @@ export const Navbar = ({
 }: Props) => {
   return (
     <div className="navbar">
+      {/* Eliminamos la sección de novedades del 16 de mayo */}
       <div className="navbar-banner px-5 py-2 bg-slate-200">
         <p className="text-sm color-red bold mx-10 text-center">
-          CONSULTA LAS NOVEDADES DEL LUNES 16 DE MAYO{' '}
-          <a href="https://i.imgur.com/6fuC5Yx.png" className="underline font-bold">AQUÍ</a>.
+          Si te gusta este proyecto y quieres ayudarme a pagarme un café, puedes hacerlo{' '}
+          <a href="https://buymeacoffee.com/wordlecanario" className="underline font-bold">
+            AQUÍ
+          </a>.
         </p>
       </div>
       <div className="navbar-content px-5">
