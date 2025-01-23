@@ -8,12 +8,17 @@ type Props = {
   setIsSettingsModalOpen: (value: boolean) => void
 }
 
-export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen }: Props) => {
+export const Navbar = ({
+  setIsInfoModalOpen,
+  setIsStatsModalOpen,
+  setIsSettingsModalOpen,  // Asegúrate de que esto esté aquí
+}: Props) => {
   return (
     <div className="navbar">
       <div className="navbar-banner px-5 py-2 bg-slate-200">
         <p className="text-sm color-red bold mx-10 text-center">
-          CONSULTA LAS NOVEDADES DEL LUNES 16 DE MAYO{' '}<a href="https://i.imgur.com/6fuC5Yx.png" className="underline font-bold">AQUÍ</a>.
+          CONSULTA LAS NOVEDADES DEL LUNES 16 DE MAYO{' '}
+          <a href="https://i.imgur.com/6fuC5Yx.png" className="underline font-bold">AQUÍ</a>.
         </p>
       </div>
       <div className="navbar-content px-5">
@@ -23,18 +28,21 @@ export const Navbar = ({ setIsInfoModalOpen, setIsStatsModalOpen }: Props) => {
         />
 
         <div className="flex w-40 mx-auto items-center mb-5 mt-8">
-        <img
-          src={WCLOGO}
-          alt=""
-        />
+          <img src={WCLOGO} alt="Logo" />
         </div>
+        
         <div className="right-icons">
           <ChartBarIcon
             className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
             onClick={() => setIsStatsModalOpen(true)}
           />
+          <LightBulbIcon
+            className="h-6 w-6 mr-3 cursor-pointer dark:stroke-white"
+            onClick={() => setIsSettingsModalOpen(true)} // Asegúrate de llamar esta función
+          />
+        </div>
       </div>
-      <hr></hr>
+      <hr />
     </div>
   )
 }
