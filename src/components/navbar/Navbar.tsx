@@ -29,6 +29,8 @@ export const Navbar = ({
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
           onClick={() => setIsInfoModalOpen(true)}
         />
+        <span className="text-lg text-blue-600"> CÓMO JUGAR</span>
+        </div> 
 
         <div className="flex w-40 mx-auto items-center mb-5 mt-8">
           <img src={WCLOGO} alt="Logo" />
