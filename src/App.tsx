@@ -47,7 +47,10 @@ function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isBuyMeACoffeeVisible, setIsBuyMeACoffeeVisible] = useState(true)
+  const [isBuyMeACoffeeVisible, setIsBuyMeACoffeeVisible] = useState(() => {
+  const isHidden = localStorage.getItem('buyMeACoffeeSeen')
+  return isHidden ? false : true
+})
   const [isAnterioresModalOpen, setIsAnterioresModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
@@ -176,6 +179,11 @@ function App() {
       }
     }
   }
+
+  const handleCloseBuyMeACoffee = () => {
+  setIsBuyMeACoffeeVisible(false)
+  localStorage.setItem('buyMeACoffeeSeen', 'true')
+}
     return (
     <div className="h-screen flex flex-col">
       <Navbar
@@ -187,14 +195,14 @@ function App() {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center">
       <p className="text-lg font-medium mb-4">
-        ¡Gracias por jugar al Wordle Canario! 🌟 Si disfrutas el juego, considera apoyarme con un café en <strong>BuyMeACoffee</strong>.
+        ¡Hola! 🙌 Soy Diego Tejera y me hace mucha ilusión que estés jugando al Wordle Canario. 🌟 Si te lo pasas bien y quieres apoyar el proyecto de manera opcional, puedes invitarme a un cafecito <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">haciendo click aquí</a>. ¡Gracias por ser parte de esta aventura y sigue disfrutando del juego!
       </p>
       <button
-        onClick={() => setIsBuyMeACoffeeVisible(false)}
-        className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-      >
-        Continuar al juego
-      </button>
+  onClick={handleCloseBuyMeACoffee}
+  className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+>
+  Continuar al juego
+</button>
     </div>
   </div>
 )}
