@@ -193,16 +193,16 @@ function App() {
       />
       {isBuyMeACoffeeVisible && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <div className="bg-white rounded-lg shadow-lg p-6 text-center">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-sm w-full">
       <p className="text-lg font-medium mb-4">
-        ¡Hola! 🙌 Soy Diego Tejera y me hace mucha ilusión que estés jugando al Wordle Canario. 🌟 Si te lo pasas bien y quieres apoyar el proyecto de manera opcional, puedes invitarme a un cafecito <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">haciendo click aquí</a>. ¡Gracias por ser parte de esta aventura y sigue disfrutando del juego!
+        ¡Hola! Soy Diego Tejera, gracias por jugar al Wordle Canario. 🌟 Si te está gustando el juego, puedes apoyarlo invitándome a un café en <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">BuyMeACoffee</a>.
       </p>
       <button
-  onClick={handleCloseBuyMeACoffee}
-  className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
->
-  Continuar al juego
-</button>
+        onClick={() => setIsBuyMeACoffeeVisible(false)}
+        className="mt-2 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+      >
+        Continuar al juego
+      </button>
     </div>
   </div>
 )}
