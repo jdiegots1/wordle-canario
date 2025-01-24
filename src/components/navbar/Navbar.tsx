@@ -19,7 +19,7 @@ export const Navbar = ({
       <div className="navbar-banner px-5 py-2 bg-slate-200">
         <p className="text-sm color-red bold mx-10 text-center">
           ¡Si te gusta el Wordle Canario, puedes invitarme a un leche y leche (o a un barraquito ☺️ ) y ayudarme a mantenerlo vivo! ☕{' '}
-          <a href="https://buymeacoffee.com/wordlecanario" className="underline font-bold text-lg text-green-600">
+          <a href="https://www.paypal.com/paypalme/wordlecanario" className="underline font-bold text-lg text-green-600">
             ¡Hazlo pulsando aquí y echa una manita!
           </a>
         </p>
@@ -29,7 +29,6 @@ export const Navbar = ({
           <InformationCircleIcon
             className="h-6 w-6 mr-2 dark:stroke-white"
           />
-          <span className="text-lg text-blue-600">CÓMO JUGAR</span>
         </div>
 
         <div className="flex w-40 mx-auto items-center mb-5 mt-8">
