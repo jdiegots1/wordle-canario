@@ -195,7 +195,12 @@ function App() {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-sm w-full">
       <p className="text-lg font-medium mb-4">
-        ¡Hola! Soy Diego Tejera, gracias por jugar al Wordle Canario. 🌟 Si te está gustando el juego, puedes apoyarlo invitándome a un café en <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">BuyMeACoffee</a>.
+        ¡Hola! 🙌<br />
+        Soy Diego Tejera, creador del Wordle Canario <br />
+        Me hace mucha ilusión que estés jugando 🌟<br />
+        Si te lo pasas bien y quieres apoyar el proyecto de manera opcional, puedes invitarme a un cafecito haciendo <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">click aquí</a>.<br />
+        ¡Gracias por ser parte de esta aventura! Estoy trabajando en nuevos y entretenidos juegos para ti. <br />
+        Mientras tanto, ¡sigue disfrutando del Wordle Canario!
       </p>
       <button
         onClick={() => setIsBuyMeACoffeeVisible(false)}
@@ -206,6 +211,7 @@ function App() {
     </div>
   </div>
 )}
+
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6">
           <Grid
