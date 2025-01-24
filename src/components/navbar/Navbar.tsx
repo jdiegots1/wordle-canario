@@ -11,7 +11,7 @@ type Props = {
 export const Navbar = ({
   setIsInfoModalOpen,
   setIsStatsModalOpen,
-  setIsSettingsModalOpen,  // Asegúrate de que esto esté aquí
+  setIsSettingsModalOpen,
 }: Props) => {
   return (
     <div className="navbar">
@@ -25,12 +25,12 @@ export const Navbar = ({
         </p>
       </div>
       <div className="navbar-content px-5">
-        <divclassName="flex items-center cursor-pointer" onClick){(setIsInfoModalOpen(true)}>
-        <InformationCircleIcon
-          className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-        />
-        <span className="text-lg text-blue-600"> CÓMO JUGAR</span>
-        </div> 
+        <div className="flex items-center cursor-pointer" onClick={() => setIsInfoModalOpen(true)}>
+          <InformationCircleIcon
+            className="h-6 w-6 mr-2 dark:stroke-white"
+          />
+          <span className="text-lg text-blue-600">CÓMO JUGAR</span>
+        </div>
 
         <div className="flex w-40 mx-auto items-center mb-5 mt-8">
           <img src={WCLOGO} alt="Logo" />
