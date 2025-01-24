@@ -25,9 +25,9 @@ export const Navbar = ({
         </p>
       </div>
       <div className="navbar-content px-5">
+        <divclassName="flex items-center cursor-pointer" onClick){(setIsInfoModalOpen(true)}>
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
-          onClick={() => setIsInfoModalOpen(true)}
         />
         <span className="text-lg text-blue-600"> CÓMO JUGAR</span>
         </div> 
