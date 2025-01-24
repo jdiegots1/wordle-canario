@@ -193,13 +193,12 @@ function App() {
       />
       {isBuyMeACoffeeVisible && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-sm w-full">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-md w-full">
       <p className="text-lg font-medium mb-4">
         ¡Hola! 🙌<br /> <br />
-        Soy Diego Tejera, creador del Wordle Canario <br /> <br />
-        Me hace mucha ilusión que estés jugando 🌟<br /> <br />
-        Si te lo pasas bien y quieres apoyar el proyecto de manera opcional, puedes invitarme a un cafecito haciendo <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">click aquí</a>.<br /> <br />
-        ¡Gracias por ser parte de esta aventura! Estoy trabajando en nuevos y entretenidos juegos para ti. <br /> <br />
+        Soy Diego Tejera, creador del Wordle Canario y me hace mucha iluisón que estés disfrutando del juego <br /> <br />
+        Si te lo pasas bien  jugando y te gustaría apoyar el proyecto de forma opcional, ¡puedes invitarme a un cafecito ☕ haciendo <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">clic aquí</a>.<br /> <br />
+        Gracias por formar parte de esta aventura. Estoy trabajando en nuevas mejoras y juegos entretenidos para que sigas aquí :). <br /> <br />
         Mientras tanto, ¡sigue disfrutando del Wordle Canario!
       </p>
       <button
