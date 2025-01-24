@@ -195,7 +195,7 @@ function App() {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full">
       <p className="text-lg font-medium mb-4">
-        ¡Hola! 🙌 Soy Diego Tejera, creador del Wordle Canario<br /> <br />
+        ¡Hola! 🙌 Soy Diego Tejera, creador del Wordle Canario.<br /> <br />
         Me hace mucha ilusión que estés disfrutando del juego 🌟<br /> <br />
         Si te lo pasas bien  jugando y te gustaría apoyar el proyecto de forma opcional... <br /> <br />
         <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">¡Puedes invitarme a un cafecito ☕ haciendo clic aquí!</a><br /> <br />
