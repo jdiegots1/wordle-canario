@@ -184,6 +184,9 @@ function App() {
   setIsBuyMeACoffeeVisible(false)
   localStorage.setItem('buyMeACoffeeSeen', 'true')
 }
+  const handleCloseInfoModal = () => {
+  setIsInfoModalOpen(false)
+}
     return (
     <div className="h-screen flex flex-col">
       <Navbar
