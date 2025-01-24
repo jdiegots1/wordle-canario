@@ -201,7 +201,7 @@ function App() {
       ¡Hola! 🙌 Soy Diego Tejera, creador del Wordle Canario.<br /> <br />
       Me hace mucha ilusión que estés disfrutando del juego 🌟<br /> <br />
       Si te lo pasas bien jugando y te gustaría apoyar el proyecto de forma opcional... <br /> <br />
-      <a href="https://buymeacoffee.com/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">¡Puedes invitarme a un cafecito ☕ haciendo clic aquí!</a><br /> <br />
+      <a href="https://www.paypal.com/paypalme/wordlecanario" target="_blank" className="text-indigo-600 font-semibold">¡Puedes invitarme a un cafecito ☕ haciendo clic aquí!</a><br /> <br />
       Gracias por formar parte de esta aventura. <br /> <br />
       Estoy trabajando en nuevas mejoras y juegos entretenidos para que sigas aquí :) <br /> <br />
       Mientras tanto, ¡sigue disfrutando del Wordle Canario!
