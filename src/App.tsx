@@ -55,86 +55,61 @@ function App() {
   }, []);
 
   const clearCurrentRowClass = () => {
-    setCurrentRowClass('');
-  };
+  // Eliminar cualquier clase de fila actual
+  setCurrentRowClass('');
+};
 
-  useEffect(() => {
-    saveGameStateToLocalStorage({ guesses, solution });
-  }, [guesses]);
+const onChar = (value: string) => {
+  if (unicodeLength(`${currentGuess}${value}`) <= MAX_WORD_LENGTH && guesses.length < MAX_CHALLENGES && !isGameWon) {
+    setCurrentGuess(`${currentGuess}${value}`);
+  }
+};
 
-  useEffect(() => {
-    if (isGameWon) {
-      const winMessage = WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)];
-      const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH;
+const onEnter = () => {
+  if (isGameWon || isGameLost) {
+    return;
+  }
 
-      showSuccessAlert(winMessage, {
-        delayMs,
-        onClose: () => setIsStatsModalOpen(true),
+  if (!(unicodeLength(currentGuess) === MAX_WORD_LENGTH)) {
+    clearCurrentRowClass(); // Usamos la función definida aquí
+    return showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE, {
+      onClose: clearCurrentRowClass,
+    });
+  }
+
+  if (!isWordInWordList(currentGuess)) {
+    clearCurrentRowClass(); // Usamos la función definida aquí
+    return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
+      onClose: clearCurrentRowClass,
+    });
+  }
+
+  setIsRevealing(true);
+  setTimeout(() => {
+    setIsRevealing(false);
+  }, REVEAL_TIME_MS * MAX_WORD_LENGTH);
+
+  const winningWord = isWinningWord(currentGuess);
+
+  if (unicodeLength(currentGuess) === MAX_WORD_LENGTH && guesses.length < MAX_CHALLENGES && !isGameWon) {
+    setGuesses([...guesses, currentGuess]);
+    setCurrentGuess('');
+
+    if (winningWord) {
+      setStats(addStatsForCompletedGame(stats, guesses.length));
+      return setIsGameWon(true);
+    }
+
+    if (guesses.length === MAX_CHALLENGES - 1) {
+      setStats(addStatsForCompletedGame(stats, guesses.length + 1));
+      setIsGameLost(true);
+      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+        persist: true,
+        delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
       });
     }
-
-    if (isGameLost) {
-      setTimeout(() => {
-        setIsStatsModalOpen(true);
-      }, GAME_LOST_INFO_DELAY);
-    }
-  }, [isGameWon, isGameLost, showSuccessAlert]);
-
-  const onChar = (value: string) => {
-    if (unicodeLength(`${currentGuess}${value}`) <= MAX_WORD_LENGTH && guesses.length < MAX_CHALLENGES && !isGameWon) {
-      setCurrentGuess(`${currentGuess}${value}`);
-    }
-  };
-
-  const onDelete = () => {
-    setCurrentGuess(new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join(''));
-  };
-
-  const onEnter = () => {
-    if (isGameWon || isGameLost) {
-      return;
-    }
-
-    if (!(unicodeLength(currentGuess) === MAX_WORD_LENGTH)) {
-      setCurrentRowClass('jiggle');
-      return showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE, {
-        onClose: clearCurrentRowClass,
-      });
-    }
-
-    if (!isWordInWordList(currentGuess)) {
-      setCurrentRowClass('jiggle');
-      return showErrorAlert(WORD_NOT_FOUND_MESSAGE, {
-        onClose: clearCurrentRowClass,
-      });
-    }
-
-    setIsRevealing(true);
-    setTimeout(() => {
-      setIsRevealing(false);
-    }, REVEAL_TIME_MS * MAX_WORD_LENGTH);
-
-    const winningWord = isWinningWord(currentGuess);
-
-    if (unicodeLength(currentGuess) === MAX_WORD_LENGTH && guesses.length < MAX_CHALLENGES && !isGameWon) {
-      setGuesses([...guesses, currentGuess]);
-      setCurrentGuess('');
-
-      if (winningWord) {
-        setStats(addStatsForCompletedGame(stats, guesses.length));
-        return setIsGameWon(true);
-      }
-
-      if (guesses.length === MAX_CHALLENGES - 1) {
-        setStats(addStatsForCompletedGame(stats, guesses.length + 1));
-        setIsGameLost(true);
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
-          persist: true,
-          delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
-        });
-      }
-    }
-  };
+  }
+};
 
   const handleStartGame = () => {
     setIsWelcomeModalOpen(false);
