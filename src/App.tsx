@@ -204,12 +204,26 @@ function App() {
       {isWelcomeScreenOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      {/* Párrafo 1: Bienvenida */}
       <p className="text-xs sm:text-sm font-medium mb-4">
-        ¡Bienvenido al Wordle Canario! 🌴 El juego inspirado en el famoso Wordle pero con nuestro toque
+        <strong>¡Bienvenido al Wordle Canario! 🌴</strong>
       </p>
-      <p className="text-base sm:text-sm font-medium mb-4">
-        ¿Te gusta el juego? ¡Puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
+      
+      {/* Párrafo 2: Explicación corta del juego */}
+      <p className="text-xs sm:text-sm font-medium mb-4">
+        El juego inspirado en el famoso Wordle, pero con <strong>nuestro toque</strong>.
       </p>
+      
+      {/* Párrafo 3: Mantenimiento y nuevos juegos */}
+      <p className="text-xs sm:text-sm font-medium mb-4">
+        El juego está en constante mantenimiento para seguir mejorando tu experiencia. <strong>Estoy trabajando en nuevos juegos</strong> para que puedas disfrutar aún más, y lo mejor de todo es que <strong>puedes jugar sin publicidad</strong>. <strong>Tu apoyo es esencial</strong> para poder seguir ofreciendo juegos gratuitos y de calidad.
+      </p>
+      
+      {/* Párrafo 4: Petición de donaciones */}
+      <p className="text-xs sm:text-sm font-medium mb-4">
+        Así que, si te gusta el juego, ¡puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
+      </p>
+      
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
           onClick={() => {
@@ -233,7 +247,7 @@ function App() {
   className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
 >
   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
   </svg>
   <span className="text-sm mt-2">Mis estadísticas</span>
 </div>
@@ -250,6 +264,7 @@ function App() {
     </div>
   </div>
 )}
+
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6">
           <Grid
