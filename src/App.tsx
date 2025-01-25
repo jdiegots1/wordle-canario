@@ -216,7 +216,7 @@ function App() {
       
       {/* Párrafo 3: Mantenimiento y nuevos juegos */}
       <p className="text-xs sm:text-sm font-medium mb-4">
-        El juego está en constante mantenimiento para seguir mejorando tu experiencia. <strong>Estoy trabajando en nuevos juegos</strong> para que puedas disfrutar aún más, y lo mejor de todo es que <strong>puedes jugar sin publicidad</strong>. <strong>Tu apoyo es esencial</strong> para poder seguir ofreciendo juegos gratuitos y de calidad.
+        El juego está en constante mantenimiento para seguir mejorando tu experiencia. <strong>Estoy trabajando en nuevos juegos</strong> para que puedas disfrutar aún más, y lo mejor de todo es que <strong><u>puedes jugar sin publicidad</u></strong>. <strong>Tu apoyo es esencial</strong> para poder seguir ofreciendo juegos gratuitos y de calidad.
       </p>
       
       {/* Párrafo 4: Petición de donaciones */}
