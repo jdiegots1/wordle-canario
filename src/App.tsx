@@ -180,6 +180,10 @@ function App() {
 
   const handleCloseInfoModal = () => {
   setIsInfoModalOpen(false)
+  if (fromWelcomeScreen) {
+    setIsWelcomeScreenOpen(true)
+    setFromWelcomeScreen(false)
+  }
 }
     return (
     <div className="h-screen flex flex-col">
@@ -201,10 +205,10 @@ function App() {
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
           onClick={() => {
-            setIsInfoModalOpen(true);
-            setIsWelcomeScreenOpen(false);
-            setFromWelcomeScreen(true);
-          }}
+  setIsInfoModalOpen(true)
+  setIsWelcomeScreenOpen(false)
+  setFromWelcomeScreen(true)
+}}
           className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -256,9 +260,9 @@ function App() {
           isRevealing={isRevealing}
         />
         <InfoModal
-          isOpen={isInfoModalOpen}
-          handleClose={() => setIsInfoModalOpen(false)}
-        />
+  isOpen={isInfoModalOpen}
+  handleClose={handleCloseInfoModal}
+/>
         <StatsModal
           isOpen={isStatsModalOpen}
           handleClose={() => setIsStatsModalOpen(false)}
