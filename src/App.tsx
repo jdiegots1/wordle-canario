@@ -51,6 +51,7 @@ function App() {
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isRevealing, setIsRevealing] = useState(false)
+  const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -187,33 +188,41 @@ function App() {
         setIsSettingsModalOpen={(value: boolean): void => {}}
       />
 
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-  <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-    <p className="text-base sm:text-lg font-medium mb-4">
-      ¡Bienvenido al Wordle Canario! 🌴 Elige una opción para comenzar:
-    </p>
-    <div className="flex flex-col gap-4">
-      <button
-        onClick={() => setIsInfoModalOpen(true)}
-        className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-      >
-        Cómo jugar
-      </button>
-      <button
-        onClick={() => setIsStatsModalOpen(true)}
-        className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
-      >
-        Mis estadísticas
-      </button>
-      <button
-        onClick={() => console.log('Continuar al juego')}
-        className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-      >
-        Continuar al juego
-      </button>
+      {isWelcomeScreenOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-base sm:text-lg font-medium mb-4">
+        ¡Bienvenido al Wordle Canario! 🌴 Elige una opción para comenzar:
+      </p>
+      <div className="flex flex-col gap-4">
+        <button
+          onClick={() => {
+            setIsInfoModalOpen(true)
+            setIsWelcomeScreenOpen(false)
+          }}
+          className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        >
+          Cómo jugar
+        </button>
+        <button
+          onClick={() => {
+            setIsStatsModalOpen(true)
+            setIsWelcomeScreenOpen(false)
+          }}
+          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+        >
+          Mis estadísticas
+        </button>
+        <button
+          onClick={() => setIsWelcomeScreenOpen(false)}
+          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        >
+          Continuar al juego
+        </button>
+      </div>
     </div>
   </div>
-</div>
+)}
 
 
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
