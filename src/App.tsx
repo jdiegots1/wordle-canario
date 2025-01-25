@@ -238,25 +238,25 @@ function App() {
   </svg>
   <span className="text-sm mt-2">Cómo jugar</span>
 </div>
-        <div
-  onClick={() => {
-    setAccessedFromBlock(true);
-    setIsStatsModalOpen(true);
-    setIsWelcomeScreenOpen(false);
-  }}
-  className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
->
-  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
-  </svg>
-  <span className="text-sm mt-2">Mis estadísticas</span>
-</div>
-        <div
+         <div
+          onClick={() => {
+            setAccessedFromBlock(true);
+            setIsStatsModalOpen(true);
+            setIsWelcomeScreenOpen(false);
+          }}
+          className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+            <path d="M18.375 2.25c-1.035 0-1.875.84-1.875 1.875v15.75c0 1.035.84 1.875 1.875 1.875h.75c1.035 0 1.875-.84 1.875-1.875V4.125c0-1.036-.84-1.875-1.875-1.875h-.75ZM9.75 8.625c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v11.25c0 1.035-.84 1.875-1.875 1.875h-.75a1.875 1.875 0 0 1-1.875-1.875V8.625ZM3 13.125c0-1.036.84-1.875 1.875-1.875h.75c1.036 0 1.875.84 1.875 1.875v6.75c0 1.035-.84 1.875-1.875 1.875h-.75A1.875 1.875 0 0 1 3 19.875v-6.75Z" />
+          </svg>
+          <span className="text-sm mt-2">Mis estadísticas</span>
+        </div>
+         <div
           onClick={() => setIsWelcomeScreenOpen(false)}
           className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 8v8m0-8v8m0 8h.01m-6.364-2.95l1.415-1.414m12.728 0l1.414 1.414M4.929 4.929l1.414 1.414m12.728-1.414l1.414 1.414" />
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-6">
+            <path d="M11.25 5.337c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.036 1.007-1.875 2.25-1.875S15 2.34 15 3.375c0 .369-.128.713-.349 1.003-.215.283-.401.604-.401.959 0 .332.278.598.61.578 1.91-.114 3.79-.342 5.632-.676a.75.75 0 0 1 .878.645 49.17 49.17 0 0 1 .376 5.452.657.657 0 0 1-.66.664c-.354 0-.675-.186-.958-.401a1.647 1.647 0 0 0-1.003-.349c-1.035 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401.31 0 .557.262.534.571a48.774 48.774 0 0 1-.595 4.845.75.75 0 0 1-.61.61c-1.82.317-3.673.533-5.555.642a.58.58 0 0 1-.611-.581c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.035-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959a.641.641 0 0 1-.658.643 49.118 49.118 0 0 1-4.708-.36.75.75 0 0 1-.645-.878c.293-1.614.504-3.257.629-4.924A.53.53 0 0 0 5.337 15c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.036 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.369 0 .713.128 1.003.349.283.215.604.401.959.401a.656.656 0 0 0 .659-.663 47.703 47.703 0 0 0-.31-4.82.75.75 0 0 1 .83-.832c1.343.155 2.703.254 4.077.294a.64.64 0 0 0 .657-.642Z" />
           </svg>
           <span className="text-sm mt-2">Continuar al juego</span>
         </div>
