@@ -192,7 +192,10 @@ function App() {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
       <p className="text-base sm:text-sm font-medium mb-4">
-        ¡Bienvenido al Wordle Canario! 🌴 Elige una opción para comenzar:
+        ¡Bienvenido al Wordle Canario! 🌴 El juego inspirado en el famoso Wordle pero con nuestro toque
+      </p>
+      <p className="text-base sm:text-sm font-medium mb-4">
+      ¿Te gusta el juego? ¡Puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" class="underline text-blue-500">www.paypal.me/wordlecanario</a>!
       </p>
       <div className="flex flex-col gap-4">
         <button
