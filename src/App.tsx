@@ -44,14 +44,15 @@ function App() {
     useAlert()
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
+  const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
+  const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [isAnterioresModalOpen, setIsAnterioresModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isRevealing, setIsRevealing] = useState(false)
-  const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -202,6 +203,7 @@ function App() {
           onClick={() => {
             setIsInfoModalOpen(true);
             setIsWelcomeScreenOpen(false);
+            setFromWelcomeScreen(true);
           }}
           className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
         >
@@ -218,7 +220,7 @@ function App() {
           className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
         >
           <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
           </svg>
           <span className="text-sm mt-2">Mis estadísticas</span>
         </div>
