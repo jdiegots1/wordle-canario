@@ -22,7 +22,6 @@ export const Navbar = ({
         ¡Hazlo aquí!
       </a>
     </p>
-  </div>
 </div>
       <div className="navbar-content px-5">
         <div className="flex items-center cursor-pointer" onClick={() => setIsInfoModalOpen(true)}>
