@@ -226,18 +226,18 @@ function App() {
       
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
-          onClick={() => {
-  setIsInfoModalOpen(true)
-  setIsWelcomeScreenOpen(false)
-  setFromWelcomeScreen(true)
-}}
-          className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
-  <path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3V6ZM3 15.75a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2.25Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3v-2.25Z" clip-rule="evenodd" />
-</svg>
-          <span className="text-sm mt-2">Cómo jugar</span>
-        </div>
+  onClick={() => {
+    setIsInfoModalOpen(true)
+    setIsWelcomeScreenOpen(false)
+    setFromWelcomeScreen(true)
+  }}
+  className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
+    <path fillRule="evenodd" d="M3 6a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3v2.25a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3V6ZM3 15.75a3 3 0 0 1 3-3h2.25a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3v-2.25Zm9.75 0a3 3 0 0 1 3-3H18a3 3 0 0 1 3 3V18a3 3 0 0 1-3 3h-2.25a3 3 0 0 1-3-3v-2.25Z" clipRule="evenodd" />
+  </svg>
+  <span className="text-sm mt-2">Cómo jugar</span>
+</div>
         <div
   onClick={() => {
     setAccessedFromBlock(true);
