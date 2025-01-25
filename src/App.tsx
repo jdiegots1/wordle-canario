@@ -195,8 +195,8 @@ function App() {
         ¡Bienvenido al Wordle Canario! 🌴 El juego inspirado en el famoso Wordle pero con nuestro toque
       </p>
       <p className="text-base sm:text-sm font-medium mb-4">
-      ¿Te gusta el juego? ¡Puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" class="underline text-blue-500">www.paypal.me/wordlecanario</a>!
-      </p>
+  ¿Te gusta el juego? ¡Puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
+</p>
       <div className="flex flex-col gap-4">
         <button
           onClick={() => {
