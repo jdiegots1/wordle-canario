@@ -195,33 +195,42 @@ function App() {
         ¡Bienvenido al Wordle Canario! 🌴 El juego inspirado en el famoso Wordle pero con nuestro toque
       </p>
       <p className="text-base sm:text-sm font-medium mb-4">
-  ¿Te gusta el juego? ¡Puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
-</p>
-      <div className="flex flex-col gap-4">
-        <button
+        ¿Te gusta el juego? ¡Puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
+      </p>
+      <div className="grid grid-cols-3 gap-4 items-center">
+        <div
           onClick={() => {
-            setIsInfoModalOpen(true)
-            setIsWelcomeScreenOpen(false)
+            setIsInfoModalOpen(true);
+            setIsWelcomeScreenOpen(false);
           }}
-          className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
         >
-          Cómo jugar
-        </button>
-        <button
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 8v8m0-8v8m0 8h.01m-6.364-2.95l1.415-1.414m12.728 0l1.414 1.414M4.929 4.929l1.414 1.414m12.728-1.414l1.414 1.414" />
+          </svg>
+          <span className="text-sm mt-2">Cómo jugar</span>
+        </div>
+        <div
           onClick={() => {
-            setIsStatsModalOpen(true)
-            setIsWelcomeScreenOpen(false)
+            setIsStatsModalOpen(true);
+            setIsWelcomeScreenOpen(false);
           }}
-          className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500"
+          className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
         >
-          Mis estadísticas
-        </button>
-        <button
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
+          </svg>
+          <span className="text-sm mt-2">Mis estadísticas</span>
+        </div>
+        <div
           onClick={() => setIsWelcomeScreenOpen(false)}
-          className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
         >
-          Continuar al juego
-        </button>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M12 8v8m0-8v8m0 8h.01m-6.364-2.95l1.415-1.414m12.728 0l1.414 1.414M4.929 4.929l1.414 1.414m12.728-1.414l1.414 1.414" />
+          </svg>
+          <span className="text-sm mt-2">Continuar al juego</span>
+        </div>
       </div>
     </div>
   </div>
