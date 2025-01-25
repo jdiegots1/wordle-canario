@@ -206,7 +206,7 @@ function App() {
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
       <div className="mb-4">
         <img 
-          src="./assets/WORDLE_CANARIO_LOGO.png" 
+          src="/assets/WORDLE_CANARIO_LOGO.png" 
           alt="Logo de Wordle Canario" 
           className="w-24 mx-auto" // Ajusta el tamaño según sea necesario
         />
