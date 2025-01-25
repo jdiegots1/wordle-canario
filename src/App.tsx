@@ -56,7 +56,7 @@ function App() {
 
   const clearCurrentRowClass = () => {
   // Eliminar cualquier clase de fila actual
-  setCurrentRowClass('');
+  // Esta es la función que hemos definido
 };
 
 const onChar = (value: string) => {
