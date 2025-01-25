@@ -191,7 +191,7 @@ function App() {
       {isWelcomeScreenOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-base sm:text-lg font-medium mb-4">
+      <p className="text-base sm:text-sm font-medium mb-4">
         ¡Bienvenido al Wordle Canario! 🌴 Elige una opción para comenzar:
       </p>
       <div className="flex flex-col gap-4">
