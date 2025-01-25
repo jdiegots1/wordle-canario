@@ -204,7 +204,7 @@ function App() {
       {isWelcomeScreenOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-base sm:text-sm font-medium mb-4">
+      <p className="text-xs sm:text-sm font-medium mb-4">
         ¡Bienvenido al Wordle Canario! 🌴 El juego inspirado en el famoso Wordle pero con nuestro toque
       </p>
       <p className="text-base sm:text-sm font-medium mb-4">
@@ -233,7 +233,7 @@ function App() {
   className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
 >
   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
   </svg>
   <span className="text-sm mt-2">Mis estadísticas</span>
 </div>
@@ -250,8 +250,6 @@ function App() {
     </div>
   </div>
 )}
-
-
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6">
           <Grid
