@@ -208,7 +208,7 @@ function App() {
         <img 
           src="/WORDLE_CANARIO_LOGO.png" 
           alt="Logo de Wordle Canario"
-          className="w-35 mx-auto"
+          className="w-30 mx-auto"
           // Ajusta el tamaño según sea necesario
         />
       </div>
