@@ -48,6 +48,7 @@ function App() {
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
+  const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [isAnterioresModalOpen, setIsAnterioresModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
@@ -185,6 +186,13 @@ function App() {
     setFromWelcomeScreen(false)
   }
 }
+  const handleCloseStatsModal = () => {
+  setIsStatsModalOpen(false);
+  if (accessedFromBlock) {
+    setIsWelcomeScreenOpen(true);
+    setAccessedFromBlock(false);
+  }
+};
     return (
     <div className="h-screen flex flex-col">
       <Navbar
@@ -217,17 +225,18 @@ function App() {
           <span className="text-sm mt-2">Cómo jugar</span>
         </div>
         <div
-          onClick={() => {
-            setIsStatsModalOpen(true);
-            setIsWelcomeScreenOpen(false);
-          }}
-          className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
-          </svg>
-          <span className="text-sm mt-2">Mis estadísticas</span>
-        </div>
+  onClick={() => {
+    setAccessedFromBlock(true);
+    setIsStatsModalOpen(true);
+    setIsWelcomeScreenOpen(false);
+  }}
+  className="flex flex-col items-center cursor-pointer text-green-600 hover:text-green-700"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h11m-6 6h7m-5-12h6m4 6a2 2 0 100-4 2 2 0 000 4zM6 20h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6m-6 0h6" />
+  </svg>
+  <span className="text-sm mt-2">Mis estadísticas</span>
+</div>
         <div
           onClick={() => setIsWelcomeScreenOpen(false)}
           className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
@@ -265,7 +274,7 @@ function App() {
 />
         <StatsModal
           isOpen={isStatsModalOpen}
-          handleClose={() => setIsStatsModalOpen(false)}
+          handleClose={handleCloseStatsModal}
           guesses={guesses}
           gameStats={stats}
           isGameLost={isGameLost}
