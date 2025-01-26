@@ -42,15 +42,11 @@ import { Navbar } from './components/navbar/Navbar'
 function App() {
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert()
- const [hasAnsweredQuestion, setHasAnsweredQuestion] = useState(() => {
-  return localStorage.getItem('hasAnsweredQuestion') === 'true'
-})
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
-  const [UserAnswer, setUserAnswer] = useState('')
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
@@ -58,6 +54,7 @@ function App() {
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isRevealing, setIsRevealing] = useState(false)
+  const [hasAnsweredCorrectly, setHasAnsweredCorrectly] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -114,17 +111,6 @@ function App() {
       }, GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
-    const handleQuestionAnswer = (answer) => {
-  // Guarda la respuesta si es necesario (opcional)
-  console.log('Respuesta del usuario:', answer)
-  setHasAnsweredQuestion(true)
-  localStorage.setItem('hasAnsweredQuestion', 'true')
-}
-  useEffect(() => {
-  if (hasAnsweredQuestion) {
-    setIsWelcomeScreenOpen(false)
-  }
-}, [hasAnsweredQuestion])
 
   const onChar = (value: string) => {
     if (
@@ -197,7 +183,8 @@ function App() {
   const handleCloseInfoModal = () => {
   setIsInfoModalOpen(false)
   if (fromWelcomeScreen) {
-    setIsWelcomeScreenOpen(false)
+    setIsWelcomeScreenOpen(true)
+    setFromWelcomeScreen(false)
   }
 }
   const handleCloseStatsModal = () => {
@@ -214,11 +201,50 @@ function App() {
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={(value: boolean): void => {}}
       />
-
+useEffect(() => {
+  if (!hasAnsweredCorrectly) {
+    const userAnswer = window.prompt('¿Sabrías decirme cómo sigue la siguiente frase? "Abre los ojos y..."')
+    if (userAnswer?.toLowerCase().trim() === 'desparrama la vista') {
+      setHasAnsweredCorrectly(true)
+      localStorage.setItem('hasAnsweredCorrectly', 'true') // Guardar la respuesta para futuras visitas
+      alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.')
+    } else {
+      alert('Pista: "desparrama la vista"')
+    }
+  }
+}, [hasAnsweredCorrectly])
+      useEffect(() => {
+  const answeredBefore = localStorage.getItem('hasAnsweredCorrectly')
+  if (answeredBefore !== 'true') {
+    setHasAnsweredCorrectly(false) // No se ha respondido correctamente antes
+  }
+}, [])
       {isWelcomeScreenOpen && (
+  {!hasAnsweredCorrectly && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <div className="mb-4">
+      <p className="text-lg font-semibold mb-4">
+        ¿Sabrías decirme cómo sigue la siguiente frase? "Abre los ojos y..."
+      </p>
+      <button
+        onClick={() => {
+          const userAnswer = window.prompt('¿Sabrías decirme cómo sigue la siguiente frase? "Abre los ojos y..."')
+          if (userAnswer?.toLowerCase().trim() === 'desparrama la vista') {
+            setHasAnsweredCorrectly(true)
+            localStorage.setItem('hasAnsweredCorrectly', 'true')
+            alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.')
+          } else {
+            alert('Pista: "desparrama la vista"')
+          }
+        }}
+        className="text-xl bg-blue-500 text-white py-2 px-4 rounded mt-4"
+      >
+        Intentar responder
+      </button>
+    </div>
+  </div>
+)}
+
         <img 
           src="/WORDLE_CANARIO_LOGO.png" 
           alt="Logo de Wordle Canario"
@@ -245,43 +271,7 @@ function App() {
       <p className="text-xs sm:text-sm font-medium mb-4">
         Así que, si te gusta el juego, ¡puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
       </p>
-      {!hasAnsweredQuestion && (
-  <div className="mb-6">
-  <p className="text-sm font-medium mb-4">
-    Oye, antes de que comiences a jugar al Wordle, tengo una pregunta...
-  </p>
-  <p className="text-sm font-medium mb-2">
-    <strong>¿Sabrías decirme cómo continúa la siguiente frase?</strong>
-  </p>
-  <p className="text-sm italic mb-4">
-    "Abre el ojo y..."
-  </p>
-  <input
-    type="text"
-    placeholder="Tu respuesta aquí"
-    className="border rounded p-2 w-full text-sm mb-2"
-    onChange={(e) => setUserAnswer(e.target.value)}
-    value={UserAnswer}
-  />
-  <button
-    className="bg-indigo-600 text-white rounded px-4 py-2 text-sm hover:bg-indigo-700"
-    onClick={() => {
-      if (UserAnswer.trim().toLowerCase() === 'desparrama la vista') {
-        showSuccessAlert(
-          '¡PUNTAL! Muy pronto estará disponible el nuevo modo de juego del Wordle Canario, en el que cada día tendrás que adivinar nuestros decires, además de la palabra del día.'
-        )
-      } else {
-        showErrorAlert(
-          "Mira a ver si te falta una 'D' o algún juego de palabras con 'vista'. ¡Inténtalo de nuevo!"
-        )
-      }
-    }}
-  >
-    Comprobar
-  </button>
-</div>
-     </div>
-)}
+      
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
   onClick={() => {
