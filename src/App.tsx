@@ -52,6 +52,8 @@ function App() {
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [questionAnswer, setQuestionAnswer] = useState('');
+  const [isAnswerModalOpen, setIsAnswerModalOpen] = useState(false);
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
   const [isAnterioresModalOpen, setIsAnterioresModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
@@ -286,31 +288,36 @@ function App() {
     </div>
   </div>
 )}
-      { !questionAnswered && (
+      {isAnswerModalOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-sm sm:text-md font-medium mb-4">¿Sabrías decirme cómo sigue la siguiente frase? <strong>"Abre los ojos y..."</strong></p>
-      <input 
-        type="text" 
-        value={questionAnswer} 
-        onChange={(e) => setQuestionAnswer(e.target.value)} 
-        className="mb-4 p-2 border rounded" 
-        placeholder="Escribe la respuesta..." 
-      />
-      <button 
-        onClick={() => {
-          if (questionAnswer.trim().toLowerCase() === 'desparrama la vista') {
-  setQuestionAnswered(true);
-  localStorage.setItem('questionAnswered', 'true'); // Guardar en el localStorage
-  alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.');
-} else {
-  alert('Inténtalo de nuevo, piensa en el dicho canario...');
-}
-        }}
-        className="bg-indigo-600 text-white p-2 rounded mt-2"
-      >
-        Comprobar
-      </button>
+      <p className="text-xl mb-4">
+        {isCorrectAnswer ? '¡Puntal! Has acertado la frase.' : '¡No! Has fallado, la respuesta era diferente.'}
+      </p>
+      <div className="grid grid-cols-2 gap-4">
+        <button
+          onClick={() => {
+            setIsAnswerModalOpen(false); // Cerrar modal
+            // Continuar con el juego
+            // Aquí puedes redirigir a la pantalla del Wordle Canario
+          }}
+          className="bg-indigo-600 text-white py-2 px-4 rounded-md"
+        >
+          Continuar al Wordle
+        </button>
+        {!isCorrectAnswer && (
+          <button
+            onClick={() => {
+              setIsAnswerModalOpen(false); // Cerrar modal
+              // Reiniciar la pregunta o permitir otro intento
+              // Aquí podrías volver a mostrar la pregunta o cualquier lógica
+            }}
+            className="bg-red-600 text-white py-2 px-4 rounded-md"
+          >
+            Intentar de nuevo
+          </button>
+        )}
+      </div>
     </div>
   </div>
 )}
