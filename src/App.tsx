@@ -44,27 +44,6 @@ function App() {
     useAlert()
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
-  const [isQuestionScreenOpen, setIsQuestionScreenOpen] = useState(true) // Este es el nuevo estado
-  // Función para comprobar la respuesta
-const handleComprobar = () => {
-  if (currentGuess.toLowerCase() === 'desparrama la vista') {
-    setIsQuestionScreenOpen(false); // Cerrar la pantalla de la pregunta
-    showSuccessAlert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible...', { delayMs: 2000 });
-  } else {
-    showErrorAlert('Respuesta incorrecta. Intenta de nuevo.', { delayMs: 2000 });
-  }
-};
-
-const handleSaltar = () => {
-  setIsQuestionScreenOpen(false); // Cerrar la pantalla de la pregunta
-};
-
-useEffect(() => {
-  if (isQuestionScreenOpen === false) {
-    // Lógica para que la pantalla de pregunta se oculte y el juego comience
-    setIsWelcomeScreenOpen(true); // Asegúrate de que la pantalla de bienvenida esté visible si el estado lo requiere
-  }
-}, [isQuestionScreenOpen]);
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
@@ -199,37 +178,7 @@ useEffect(() => {
       }
     }
   }
-if (isQuestionScreenOpen) {
-  return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-      <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-        <p className="text-lg font-bold mb-4">Oye... Una pregunta antes de comenzar el Wordle Canario...</p>
-        <p className="text-sm mb-4">¿Sabrías decirme cómo sigue la siguiente frase?</p>
-        <p className="text-sm font-medium mb-4">"Abre los ojos y..."</p>
-        <input
-          type="text"
-          className="border border-gray-300 rounded p-2 mb-4"
-          placeholder="Escribe tu respuesta"
-          onChange={(e) => setCurrentGuess(e.target.value)}
-        />
-        <div className="flex justify-center gap-4">
-          <button
-            className="px-4 py-2 bg-green-600 text-white rounded"
-            onClick={handleComprobar} // Al hacer clic en comprobar, se verifica la respuesta
-          >
-            Comprobar
-          </button>
-          <button
-            className="px-4 py-2 bg-gray-600 text-white rounded"
-            onClick={handleSaltar} // Si se quiere saltar la pregunta, se cierra
-          >
-            Saltar
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
+
   const handleCloseInfoModal = () => {
   setIsInfoModalOpen(false)
   if (fromWelcomeScreen) {
