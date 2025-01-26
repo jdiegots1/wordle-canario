@@ -300,17 +300,13 @@ function App() {
       <button 
         onClick={() => {
           if (questionAnswer.trim().toLowerCase() === 'desparrama la vista') {
-            setQuestionAnswered(true);
-            alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.');
-          } else {
-            alert('Inténtalo de nuevo, piensa en el dicho canario...');
-          }
-        }}
-        if (questionAnswer.trim().toLowerCase() === 'desparrama la vista') {
   setQuestionAnswered(true);
   localStorage.setItem('questionAnswered', 'true'); // Guardar en el localStorage
   alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.');
+} else {
+  alert('Inténtalo de nuevo, piensa en el dicho canario...');
 }
+        }}
         className="bg-indigo-600 text-white p-2 rounded mt-2"
       >
         Comprobar
