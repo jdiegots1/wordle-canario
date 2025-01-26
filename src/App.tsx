@@ -45,6 +45,11 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isQuestionScreenOpen, setIsQuestionScreenOpen] = useState(true) // Este es el nuevo estado
+  useEffect(() => {
+  if (!isQuestionScreenOpen) {
+    // Aquí podrías hacer alguna acción adicional si lo necesitas
+  }
+}, [isQuestionScreenOpen]);
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
@@ -111,9 +116,9 @@ function App() {
       }, GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
-  if (isQuestionScreenOpen) {
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+ if (isQuestionScreenOpen) {
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
         <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
           <p className="text-lg font-bold mb-4">Oye... Una pregunta antes de comenzar el Wordle Canario...</p>
           <p className="text-sm mb-4">¿Sabrías decirme cómo sigue la siguiente frase?</p>
@@ -125,19 +130,19 @@ function App() {
             onChange={(e) => setCurrentGuess(e.target.value)}
           />
           <div className="flex justify-center gap-4">
-            <button 
-              className="px-4 py-2 bg-green-600 text-white rounded"
-              onClick={() => {
-                if (currentGuess.toLowerCase() === 'desparrama la vista') {
-                  setIsQuestionScreenOpen(false); // Cerrar la pantalla de la pregunta
-                  showSuccessAlert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible...', { delayMs: 2000 });
-                } else {
-                  showErrorAlert('Respuesta incorrecta. Intenta de nuevo.', { delayMs: 2000 });
-                }
-              }}
-            >
-              Comprobar
-            </button>
+            <button
+  className="px-4 py-2 bg-green-600 text-white rounded"
+  onClick={() => {
+    if (currentGuess.toLowerCase() === 'desparrama la vista') {
+      setIsQuestionScreenOpen(false); // Cerrar la pantalla de la pregunta
+      showSuccessAlert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible...', { delayMs: 2000 });
+    } else {
+      showErrorAlert('Respuesta incorrecta. Intenta de nuevo.', { delayMs: 2000 });
+    }
+  }}
+>
+  Comprobar
+</button>
             <button 
               className="px-4 py-2 bg-gray-600 text-white rounded"
               onClick={() => setIsQuestionScreenOpen(false)} // Opción de saltar la pregunta
@@ -147,8 +152,8 @@ function App() {
           </div>
         </div>
       </div>
-    );
-  }
+  );
+}
 
   const onChar = (value: string) => {
     if (
