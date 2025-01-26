@@ -239,8 +239,12 @@ function App() {
       
       {/* Párrafo 4: Petición de donaciones */}
       <p className="text-xs sm:text-sm font-medium mb-4">
-        Así que, si te gusta el juego, ¡puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
-      </p>
+  Así que, si te gusta el juego, ¡puedes apoyarme donando en{' '}
+  <a href="https://www.paypal.me/wordlecanario" target="_blank" rel="noopener noreferrer">
+    PayPal
+  </a>
+  .
+</p>
       
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
