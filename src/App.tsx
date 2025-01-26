@@ -288,6 +288,29 @@ function App() {
     </div>
   </div>
 )}
+      {isWelcomeScreenOpen && !questionAnswered && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-lg font-medium mb-4">¿Sabrías decirme cómo sigue la siguiente frase?</p>
+      <p className="text-xs sm:text-sm font-medium mb-4">"Abre los ojos y..."</p>
+      
+      <input
+        type="text"
+        className="mb-4 p-2 border border-gray-300 rounded"
+        placeholder="Escribe tu respuesta"
+        value={questionAnswer}
+        onChange={(e) => setQuestionAnswer(e.target.value)}
+      />
+      
+      <button
+        onClick={() => handleAnswerCheck()}
+        className="bg-blue-600 text-white p-2 rounded"
+      >
+        Comprobar
+      </button>
+    </div>
+  </div>
+)}
       {isAnswerModalOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
