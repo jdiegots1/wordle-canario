@@ -197,8 +197,7 @@ function App() {
   const handleCloseInfoModal = () => {
   setIsInfoModalOpen(false)
   if (fromWelcomeScreen) {
-    setIsWelcomeScreenOpen(true)
-    setFromWelcomeScreen(false)
+    setIsWelcomeScreenOpen(false)
   }
 }
   const handleCloseStatsModal = () => {
