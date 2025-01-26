@@ -47,6 +47,7 @@ function App() {
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
+  const [UserAnswer, setUserAnswer] = useState('')
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
@@ -231,7 +232,40 @@ function App() {
       <p className="text-xs sm:text-sm font-medium mb-4">
         Así que, si te gusta el juego, ¡puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
       </p>
-      
+      <div className="mb-6">
+  <p className="text-sm font-medium mb-4">
+    Oye, antes de que comiences a jugar al Wordle, tengo una pregunta...
+  </p>
+  <p className="text-sm font-medium mb-2">
+    <strong>¿Sabrías decirme cómo continúa la siguiente frase?</strong>
+  </p>
+  <p className="text-sm italic mb-4">
+    "Abre el ojo y..."
+  </p>
+  <input
+    type="text"
+    placeholder="Tu respuesta aquí"
+    className="border rounded p-2 w-full text-sm mb-2"
+    onChange={(e) => setUserAnswer(e.target.value)}
+    value={userAnswer}
+  />
+  <button
+    className="bg-indigo-600 text-white rounded px-4 py-2 text-sm hover:bg-indigo-700"
+    onClick={() => {
+      if (userAnswer.trim().toLowerCase() === 'desparrama la vista') {
+        showSuccessAlert(
+          '¡PUNTAL! Muy pronto estará disponible el nuevo modo de juego del Wordle Canario, en el que cada día tendrás que adivinar nuestros decires, además de la palabra del día.'
+        )
+      } else {
+        showErrorAlert(
+          "Mira a ver si te falta una 'D' o algún juego de palabras con 'vista'. ¡Inténtalo de nuevo!"
+        )
+      }
+    }}
+  >
+    Comprobar
+  </button>
+</div>
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
   onClick={() => {
