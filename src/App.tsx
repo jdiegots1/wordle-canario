@@ -42,6 +42,9 @@ import { Navbar } from './components/navbar/Navbar'
 function App() {
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
     useAlert()
+ const [hasAnsweredQuestion, setHasAnsweredQuestion] = useState(() => {
+  return localStorage.getItem('hasAnsweredQuestion') === 'true'
+})
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
@@ -111,6 +114,17 @@ function App() {
       }, GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
+    const handleQuestionAnswer = (answer) => {
+  // Guarda la respuesta si es necesario (opcional)
+  console.log('Respuesta del usuario:', answer)
+  setHasAnsweredQuestion(true)
+  localStorage.setItem('hasAnsweredQuestion', 'true')
+}
+  useEffect(() => {
+  if (hasAnsweredQuestion) {
+    setIsWelcomeScreenOpen(false)
+  }
+}, [hasAnsweredQuestion])
 
   const onChar = (value: string) => {
     if (
@@ -232,7 +246,8 @@ function App() {
       <p className="text-xs sm:text-sm font-medium mb-4">
         Así que, si te gusta el juego, ¡puedes apoyarme donando en <a href="https://www.paypal.me/wordlecanario" target="_blank" className="underline text-blue-500">www.paypal.me/wordlecanario</a>!
       </p>
-      <div className="mb-6">
+      {!hasAnsweredQuestion && (
+  <div className="mb-6">
   <p className="text-sm font-medium mb-4">
     Oye, antes de que comiences a jugar al Wordle, tengo una pregunta...
   </p>
@@ -266,6 +281,8 @@ function App() {
     Comprobar
   </button>
 </div>
+     </div>
+)}
       <div className="grid grid-cols-3 gap-4 items-center">
         <div
   onClick={() => {
