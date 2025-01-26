@@ -50,11 +50,12 @@ function App() {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
+  const [questionAnswered, setQuestionAnswered] = useState(false);
+  const [questionAnswer, setQuestionAnswer] = useState('');
   const [isAnterioresModalOpen, setIsAnterioresModalOpen] = useState(false)
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isRevealing, setIsRevealing] = useState(false)
-  const [hasAnsweredCorrectly, setHasAnsweredCorrectly] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
@@ -84,6 +85,14 @@ function App() {
       }, WELCOME_INFO_MODAL_MS)
     }
   }, [])
+
+  useEffect(() => {
+  const isAnswered = localStorage.getItem('questionAnswered');
+  if (isAnswered === 'true') {
+    setQuestionAnswered(true);
+  }
+}, []);
+
 
   const clearCurrentRowClass = () => {
     setCurrentRowClass('')
@@ -201,50 +210,11 @@ function App() {
         setIsStatsModalOpen={setIsStatsModalOpen}
         setIsSettingsModalOpen={(value: boolean): void => {}}
       />
-useEffect(() => {
-  if (!hasAnsweredCorrectly) {
-    const userAnswer = window.prompt('¿Sabrías decirme cómo sigue la siguiente frase? "Abre los ojos y..."')
-    if (userAnswer?.toLowerCase().trim() === 'desparrama la vista') {
-      setHasAnsweredCorrectly(true)
-      localStorage.setItem('hasAnsweredCorrectly', 'true') // Guardar la respuesta para futuras visitas
-      alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.')
-    } else {
-      alert('Pista: "desparrama la vista"')
-    }
-  }
-}, [hasAnsweredCorrectly])
-      useEffect(() => {
-  const answeredBefore = localStorage.getItem('hasAnsweredCorrectly')
-  if (answeredBefore !== 'true') {
-    setHasAnsweredCorrectly(false) // No se ha respondido correctamente antes
-  }
-}, [])
+
       {isWelcomeScreenOpen && (
-  {!hasAnsweredCorrectly && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-lg font-semibold mb-4">
-        ¿Sabrías decirme cómo sigue la siguiente frase? "Abre los ojos y..."
-      </p>
-      <button
-        onClick={() => {
-          const userAnswer = window.prompt('¿Sabrías decirme cómo sigue la siguiente frase? "Abre los ojos y..."')
-          if (userAnswer?.toLowerCase().trim() === 'desparrama la vista') {
-            setHasAnsweredCorrectly(true)
-            localStorage.setItem('hasAnsweredCorrectly', 'true')
-            alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.')
-          } else {
-            alert('Pista: "desparrama la vista"')
-          }
-        }}
-        className="text-xl bg-blue-500 text-white py-2 px-4 rounded mt-4"
-      >
-        Intentar responder
-      </button>
-    </div>
-  </div>
-)}
-
+      <div className="mb-4">
         <img 
           src="/WORDLE_CANARIO_LOGO.png" 
           alt="Logo de Wordle Canario"
@@ -309,6 +279,38 @@ useEffect(() => {
           <span className="text-sm mt-2">Jugar al Wordle Canario</span>
         </div>
       </div>
+    </div>
+  </div>
+)}
+      { !questionAnswered && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-sm sm:text-md font-medium mb-4">¿Sabrías decirme cómo sigue la siguiente frase? <strong>"Abre los ojos y..."</strong></p>
+      <input 
+        type="text" 
+        value={questionAnswer} 
+        onChange={(e) => setQuestionAnswer(e.target.value)} 
+        className="mb-4 p-2 border rounded" 
+        placeholder="Escribe la respuesta..." 
+      />
+      <button 
+        onClick={() => {
+          if (questionAnswer.trim().toLowerCase() === 'desparrama la vista') {
+            setQuestionAnswered(true);
+            alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.');
+          } else {
+            alert('Inténtalo de nuevo, piensa en el dicho canario...');
+          }
+        }}
+        if (questionAnswer.trim().toLowerCase() === 'desparrama la vista') {
+  setQuestionAnswered(true);
+  localStorage.setItem('questionAnswered', 'true'); // Guardar en el localStorage
+  alert('¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.');
+}
+        className="bg-indigo-600 text-white p-2 rounded mt-2"
+      >
+        Comprobar
+      </button>
     </div>
   </div>
 )}
