@@ -58,6 +58,10 @@ function App() {
   const [currentRowClass, setCurrentRowClass] = useState('')
   const [isGameLost, setIsGameLost] = useState(false)
   const [isRevealing, setIsRevealing] = useState(false)
+  const handleAnswerCheck = () => {
+  // Lógica que debe ejecutarse cuando se haga clic en "Comprobar"
+  console.log('Comprobando respuesta');
+};
   const [guesses, setGuesses] = useState<string[]>(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded?.solution !== solution) {
