@@ -247,12 +247,12 @@ function App() {
     placeholder="Tu respuesta aquí"
     className="border rounded p-2 w-full text-sm mb-2"
     onChange={(e) => setUserAnswer(e.target.value)}
-    value={userAnswer}
+    value={UserAnswer}
   />
   <button
     className="bg-indigo-600 text-white rounded px-4 py-2 text-sm hover:bg-indigo-700"
     onClick={() => {
-      if (userAnswer.trim().toLowerCase() === 'desparrama la vista') {
+      if (UserAnswer.trim().toLowerCase() === 'desparrama la vista') {
         showSuccessAlert(
           '¡PUNTAL! Muy pronto estará disponible el nuevo modo de juego del Wordle Canario, en el que cada día tendrás que adivinar nuestros decires, además de la palabra del día.'
         )
