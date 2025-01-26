@@ -311,35 +311,45 @@ function App() {
     </div>
   </div>
 )}
-      {isAnswerModalOpen && (
+
+{isAnswerModalOpen && !questionAnswered && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-xl mb-4">
-        {isCorrectAnswer ? '¡Puntal! Has acertado la frase.' : '¡No! Has fallado, la respuesta era diferente.'}
-      </p>
-      <div className="grid grid-cols-2 gap-4">
-        <button
-          onClick={() => {
-            setIsAnswerModalOpen(false); // Cerrar modal
-            // Continuar con el juego
-            // Aquí puedes redirigir a la pantalla del Wordle Canario
-          }}
-          className="bg-indigo-600 text-white py-2 px-4 rounded-md"
-        >
-          Continuar al Wordle
-        </button>
-        {!isCorrectAnswer && (
+      {isCorrectAnswer ? (
+        <p className="text-lg font-medium mb-4">¡PUNTAL! Muy pronto estará un nuevo modo de juego disponible, en el que, además de la palabra del día, podrás adivinar también un decir canario.</p>
+      ) : (
+        <div>
+          <p className="text-lg font-medium mb-4">Respuesta incorrecta. Pista: Se refiere a un verbo relacionado con la vista.</p>
           <button
-            onClick={() => {
-              setIsAnswerModalOpen(false); // Cerrar modal
-              // Reiniciar la pregunta o permitir otro intento
-              // Aquí podrías volver a mostrar la pregunta o cualquier lógica
-            }}
-            className="bg-red-600 text-white py-2 px-4 rounded-md"
+            onClick={() => setIsAnswerModalOpen(false)}
+            className="bg-gray-500 text-white p-2 rounded"
           >
             Intentar de nuevo
           </button>
-        )}
+        </div>
+      )}
+    </div>
+  </div>
+)}
+
+{isWelcomeScreenOpen && questionAnswered && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-xs sm:text-sm font-medium mb-4">
+        El juego está listo. ¡Haz clic en el siguiente botón para empezar!
+      </p>
+      <div className="grid grid-cols-3 gap-4 items-center">
+        {/* Botón para cerrar y comenzar el juego */}
+        <div
+          onClick={() => {
+            setIsInfoModalOpen(true);
+            setIsWelcomeScreenOpen(false);
+            setFromWelcomeScreen(true);
+          }}
+          className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
+        >
+          <span className="text-sm mt-2">Empezar a jugar</span>
+        </div>
       </div>
     </div>
   </div>
