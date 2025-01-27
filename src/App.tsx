@@ -324,9 +324,9 @@ function App() {
       <p className="text-3xl font-extrabold text-green-600">¡CORRECTO!</p>
       
       {/* Contenido mejorado */}
-      <div className="text-left mt-6 space-y-4">
-        <p className="text-lg">
-          <span className="font-bold">¡Felicidades!</span> Has acertado la respuesta. Tu conocimiento y rapidez te han llevado a la victoria. 🎉
+      <div className="text-center mt-6 space-y-4">
+        <p className="text-md">
+          <span className="font-bold">¡PUNTAL!</span> Acertaste la respuesta. 🎉
         </p>
         <p className="text-md">
           Muy pronto estará disponible un nuevo modo de juego en el que tendrás que <span className="font-semibold">adivinar nuestros decires canarios</span>. 
