@@ -358,14 +358,28 @@ function App() {
           ¿Quieres intentarlo de nuevo? ¡Puedes hacerlo mejor la próxima vez!
         </p>
       </div>
-      <div
-        onClick={() => {
-          setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
-          setAnswer(""); // Limpia la respuesta
-        }}
-        className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
-      >
-        Intentar de nuevo
+      <div className="mt-8 flex justify-center gap-4">
+        {/* Botón para intentar de nuevo */}
+        <div
+          onClick={() => {
+            setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
+            setAnswer(""); // Limpia la respuesta
+          }}
+          className="px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
+        >
+          Intentar de nuevo
+        </div>
+
+        {/* Botón para ir al Wordle Canario */}
+        <div
+          onClick={() => {
+            setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
+            setIsQuestionModalOpen(false); // Cierra también el modal de la pregunta
+          }}
+          className="px-6 py-3 bg-green-600 text-white rounded-lg cursor-pointer hover:bg-green-700 transition duration-300"
+        >
+          Seguir al Wordle Canario
+        </div>
       </div>
     </div>
   </div>
