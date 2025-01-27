@@ -49,6 +49,7 @@ function App() {
   const [answer, setAnswer] = useState('');
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
+  const [isIncorrectAnswer, setIsIncorrectAnswer] = useState(false);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
@@ -281,8 +282,7 @@ function App() {
 )}
 
 {/* Modal de la pregunta */}
-{/* Modal de la pregunta */}
-{isQuestionModalOpen && !isCorrectAnswer && (
+{isQuestionModalOpen && !isCorrectAnswer && !isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
       <p className="text-lg font-bold">Oye... Tengo una pregunta.</p>
@@ -305,7 +305,7 @@ function App() {
           if (answer.toLowerCase().trim() === "desparrama la vista") { // Cambia "la respuesta correcta" por la respuesta esperada
             setIsCorrectAnswer(true);
           } else {
-            alert("Inténtalo de nuevo.");
+            setIsIncorrectAnswer(true); // Mostrar la pantalla de fallo en lugar de una alerta
           }
         }}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
@@ -320,10 +320,7 @@ function App() {
 {isCorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-green-500 bg-opacity-90">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      {/* Título principal */}
       <p className="text-3xl font-extrabold text-green-600">¡CORRECTO!</p>
-      
-      {/* Contenido mejorado */}
       <div className="text-center mt-6 space-y-4">
         <p className="text-md">
           <span className="font-bold">¡PUNTAL!</span> Acertaste la respuesta. 🎉
@@ -335,8 +332,6 @@ function App() {
           Mientras tanto, <span className="italic">¡sigue disfrutando del Wordle Canario!</span> 🌴
         </p>
       </div>
-      
-      {/* Botón para cerrar */}
       <div
         onClick={() => {
           setIsCorrectAnswer(false);
@@ -345,6 +340,32 @@ function App() {
         className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
       >
         Cerrar
+      </div>
+    </div>
+  </div>
+)}
+
+{/* Pantalla de fallo */}
+{isIncorrectAnswer && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-red-500 bg-opacity-90">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-3xl font-extrabold text-red-600">¡ERROR!</p>
+      <div className="text-center mt-6 space-y-4">
+        <p className="text-md">
+          <span className="font-bold">¡Vaya!</span> No acertaste esta vez. 😓
+        </p>
+        <p className="text-md">
+          ¿Quieres intentarlo de nuevo? ¡Puedes hacerlo mejor la próxima vez!
+        </p>
+      </div>
+      <div
+        onClick={() => {
+          setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
+          setAnswer(""); // Limpia la respuesta
+        }}
+        className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
+      >
+        Intentar de nuevo
       </div>
     </div>
   </div>
