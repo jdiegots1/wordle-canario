@@ -318,7 +318,7 @@ function App() {
           } else {
             setIsIncorrectAnswer(true); // Mostrar la pantalla de fallo en lugar de una alerta
           }
-        }}
+        }}}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
       >
         Probar
