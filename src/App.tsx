@@ -434,7 +434,6 @@ function App() {
         /> */}
         <AlertContainer />
       </div>
-  )
 }
 
 export default App
