@@ -311,14 +311,13 @@ function App() {
       {/* Botón para confirmar */}
       <div
         onClick={() => {
-          const handleAnswerSubmit = () => {
           if (answer.toLowerCase().trim() === "desparrama la vista") { // Cambia "la respuesta correcta" por la respuesta esperada
             setIsCorrectAnswer(true);
             localStorage.setItem("hasAnsweredCorrectly", "true");
           } else {
             setIsIncorrectAnswer(true); // Mostrar la pantalla de fallo en lugar de una alerta
           }
-        }}}
+        }}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
       >
         Probar
