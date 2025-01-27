@@ -121,15 +121,13 @@ function App() {
       setTimeout(() => {
         setIsStatsModalOpen(true)
       }, GAME_LOST_INFO_DELAY)
-    }
-  }, [isGameWon, isGameLost, showSuccessAlert])
-
-  useEffect(() => {
+    }, [isGameWon, isGameLost, showSuccessAlert])
+  
   const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
   if (hasAnsweredCorrectly === "true") {
     setIsQuestionModalOpen(false); // No mostrar la pantalla de la pregunta si ya ha acertado antes.
   } else {
-    setIsQuestionModalOpen(true);
+    setIsQuestionModalOpen(true); // Mostrar el modal si no ha respondido correctamente aún.
   }
 }, []);
 
