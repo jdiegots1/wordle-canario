@@ -267,7 +267,10 @@ const handleStartGameClick = () => {
           <span className="text-sm mt-2">Mis estadísticas</span>
         </div>
          <div
-          onClick={() => setIsWelcomeScreenOpen(false)}
+          onClick={() => { 
+            setIsWelcomeScreenOpen(false);
+            setIsQuestionModalOpen(true);
+          }}                        
           className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
         >
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-8 w-8">
