@@ -279,15 +279,30 @@ function App() {
 )}
 
 {/* Modal de la pregunta */}
+{/* Modal de la pregunta */}
 {isQuestionModalOpen && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
       <p className="text-lg font-bold">Oye... Tengo una pregunta.</p>
       <p className="text-md mt-4">¿Sabrías decirme cómo sigue la frase?</p>
       <p className="text-md font-semibold mt-2">"Abre los ojos y..."</p>
-      <p className="text-sm mt-4 text-gray-600">Respuesta: <strong>desparrama la vista</strong></p>
+      
+      {/* Campo de entrada para la respuesta */}
+      <div className="mt-4">
+        <input
+          type="text"
+          placeholder="Escribe tu respuesta aquí"
+          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          onChange={(e) => setAnswer(e.target.value)} // Reemplaza 'setAnswer' por el estado correspondiente
+        />
+      </div>
+
+      {/* Botón para confirmar */}
       <div
-        onClick={() => setIsQuestionModalOpen(false)}
+        onClick={() => {
+          console.log(answer); // Muestra la respuesta ingresada en la consola
+          setIsQuestionModalOpen(false); // Cierra el modal
+        }}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
       >
         ¡Entendido!
