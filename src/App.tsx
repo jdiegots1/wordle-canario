@@ -302,7 +302,7 @@ function App() {
       {/* Botón para confirmar */}
       <div
         onClick={() => {
-          if (answer.toLowerCase().trim() === "la respuesta correcta") { // Cambia "la respuesta correcta" por la respuesta esperada
+          if (answer.toLowerCase().trim() === "desparrama la vista") { // Cambia "la respuesta correcta" por la respuesta esperada
             setIsCorrectAnswer(true);
           } else {
             alert("Inténtalo de nuevo.");
@@ -321,7 +321,7 @@ function App() {
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-green-500 bg-opacity-90">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
       <p className="text-2xl font-bold text-green-600">¡CORRECTO!</p>
-      <p className="text-md mt-4">¡Felicidades, acertaste la respuesta!</p>
+      <p className="text-md mt-4">¡Felicidades, acertaste la respuesta! Muy pronto estará disponible un nuevo modo de juego en el que tendrás que adivinar nuestros decires canarios. Mientras tanto, ¡sigue disfrutando del Wordle Canario!</p>
       
       <div
         onClick={() => {
