@@ -311,6 +311,7 @@ function App() {
         onClick={() => {
           if (answer.toLowerCase().trim() === "desparrama la vista") { // Cambia "la respuesta correcta" por la respuesta esperada
             setIsCorrectAnswer(true);
+            localStorage.setItem("hasAnsweredCorrectly", "true";
           } else {
             setIsIncorrectAnswer(true); // Mostrar la pantalla de fallo en lugar de una alerta
           }
