@@ -262,7 +262,8 @@ function App() {
           <span className="text-sm mt-2">Mis estadísticas</span>
         </div>
          <div
-          onClick={() => { 
+          onClick={() => {
+            setIsWelcomeScrenOpen(false);
             setIsQuestionModalOpen(true);
           }}                        
           className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
@@ -274,6 +275,9 @@ function App() {
       </div>
     </div>
   </div>
+  </div>
+  </div>
+)}
 
 {/* Modal de la pregunta */}
 {isQuestionModalOpen && (
@@ -292,8 +296,6 @@ function App() {
     </div>
   </div>
 )}
-  </div>
-      )}
 
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6">
