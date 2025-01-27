@@ -121,7 +121,8 @@ function App() {
       setTimeout(() => {
         setIsStatsModalOpen(true)
       }, GAME_LOST_INFO_DELAY)
-    }, [isGameWon, isGameLost, showSuccessAlert])
+    }
+  }, [isGameWon, isGameLost, showSuccessAlert])
   
   const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
   if (hasAnsweredCorrectly === "true") {
