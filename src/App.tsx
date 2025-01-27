@@ -276,7 +276,6 @@ function App() {
     </div>
   </div>
   </div>
-  </div>
 )}
 
 {/* Modal de la pregunta */}
