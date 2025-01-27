@@ -198,6 +198,17 @@ function App() {
     setAccessedFromBlock(false);
   }
 };
+  const correctAnswer = "desparrama la vista";
+
+  const handleCheckAnswer = () => {
+    if (answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
+      setIsCorrectScreenOpen(true);
+    } else {
+      setIsIncorrectScreenOpen(true);
+    }
+    setIsQuestionModalOpen(false);
+  };
+  
     return (
     <div className="h-screen flex flex-col">
       <Navbar
@@ -434,6 +445,8 @@ function App() {
         /> */}
         <AlertContainer />
       </div>
+    </div>
+  )
 }
 
 export default App
