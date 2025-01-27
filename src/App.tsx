@@ -48,6 +48,7 @@ function App() {
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [answer, setAnswer] = useState('');
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
+  const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
@@ -280,7 +281,8 @@ function App() {
 )}
 
 {/* Modal de la pregunta */}
-{isQuestionModalOpen && (
+{/* Modal de la pregunta */}
+{isQuestionModalOpen && !isCorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
       <p className="text-lg font-bold">Oye... Tengo una pregunta.</p>
@@ -301,11 +303,10 @@ function App() {
       <div
         onClick={() => {
           if (answer.toLowerCase().trim() === "la respuesta correcta") { // Cambia "la respuesta correcta" por la respuesta esperada
-            alert("¡CORRECTO!");
+            setIsCorrectAnswer(true);
           } else {
             alert("Inténtalo de nuevo.");
           }
-          setIsQuestionModalOpen(false); // Cierra el modal
         }}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
       >
@@ -314,6 +315,27 @@ function App() {
     </div>
   </div>
 )}
+
+{/* Pantalla de acierto */}
+{isCorrectAnswer && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-green-500 bg-opacity-90">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-2xl font-bold text-green-600">¡CORRECTO!</p>
+      <p className="text-md mt-4">¡Felicidades, acertaste la respuesta!</p>
+      
+      <div
+        onClick={() => {
+          setIsCorrectAnswer(false);
+          setIsQuestionModalOpen(false);
+        }}
+        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
+      >
+        Cerrar
+      </div>
+    </div>
+  </div>
+)}
+
 
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6">
