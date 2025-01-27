@@ -75,7 +75,7 @@ function App() {
       })
     }
     return loaded.guesses
-  });
+  })
   useEffect(() => {
   const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
   if (hasAnsweredCorrectly === "true") {
