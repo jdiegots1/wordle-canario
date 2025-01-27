@@ -263,7 +263,7 @@ function App() {
         </div>
          <div
           onClick={() => {
-            setIsWelcomeScrenOpen(false);
+            setIsWelcomeScreenOpen(false);
             setIsQuestionModalOpen(true);
           }}                        
           className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
