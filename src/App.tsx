@@ -124,12 +124,13 @@ function App() {
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
   
-  const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
-  if (hasAnsweredCorrectly === "true") {
+  useEffect (() => {
+    const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
+    if (hasAnsweredCorrectly === "true") {
     setIsQuestionModalOpen(false); // No mostrar la pantalla de la pregunta si ya ha acertado antes.
-  } else {
+    } else {
     setIsQuestionModalOpen(true); // Mostrar el modal si no ha respondido correctamente aún.
-  }
+    }
 }, []);
 
   const onChar = (value: string) => {
@@ -318,13 +319,13 @@ function App() {
       {/* Botón para confirmar */}
       <div
         onClick={() => {
-          if (answer.toLowerCase().trim() === "desparrama la vista") { // Cambia "la respuesta correcta" por la respuesta esperada
+          if (answer.toLowerCase().trim() === "desparrama la vista") {
             setIsCorrectAnswer(true);
             localStorage.setItem("hasAnsweredCorrectly", "true");
           } else {
-            setIsIncorrectAnswer(true); // Mostrar la pantalla de fallo en lugar de una alerta
+            setIsIncorrectAnswer(true);
           }
-        }}
+            }}
         className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
       >
         Probar
