@@ -46,11 +46,6 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
-
-const handleStartGameClick = () => {
-  setIsWelcomeScreenOpen(false); // Ocultar la pantalla de bienvenida
-  setIsQuestionModalOpen(true);  // Mostrar el modal de la pregunta
-};
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
@@ -268,7 +263,6 @@ const handleStartGameClick = () => {
         </div>
          <div
           onClick={() => { 
-            setIsWelcomeScreenOpen(false);
             setIsQuestionModalOpen(true);
           }}                        
           className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
