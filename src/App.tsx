@@ -277,7 +277,6 @@ const handleStartGameClick = () => {
       </div>
     </div>
   </div>
-)}
 
 {/* Modal de la pregunta */}
 {isQuestionModalOpen && (
