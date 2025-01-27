@@ -320,15 +320,29 @@ function App() {
 {isCorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-green-500 bg-opacity-90">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-2xl font-bold text-green-600">¡CORRECTO!</p>
-      <p className="text-md mt-4">¡Felicidades, acertaste la respuesta! Muy pronto estará disponible un nuevo modo de juego en el que tendrás que adivinar nuestros decires canarios. Mientras tanto, ¡sigue disfrutando del Wordle Canario!</p>
+      {/* Título principal */}
+      <p className="text-3xl font-extrabold text-green-600">¡CORRECTO!</p>
       
+      {/* Contenido mejorado */}
+      <div className="text-left mt-6 space-y-4">
+        <p className="text-lg">
+          <span className="font-bold">¡Felicidades!</span> Has acertado la respuesta. Tu conocimiento y rapidez te han llevado a la victoria. 🎉
+        </p>
+        <p className="text-md">
+          Muy pronto estará disponible un nuevo modo de juego en el que tendrás que <span className="font-semibold">adivinar nuestros decires canarios</span>. 
+        </p>
+        <p className="text-md">
+          Mientras tanto, <span className="italic">¡sigue disfrutando del Wordle Canario!</span> 🌴
+        </p>
+      </div>
+      
+      {/* Botón para cerrar */}
       <div
         onClick={() => {
           setIsCorrectAnswer(false);
           setIsQuestionModalOpen(false);
         }}
-        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
+        className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
       >
         Cerrar
       </div>
