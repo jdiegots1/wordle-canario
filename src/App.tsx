@@ -47,8 +47,6 @@ function App() {
   const [isGameWon, setIsGameWon] = useState(false)
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
   const [answer, setAnswer] = useState('');
-  const [isCorrectScreenOpen, setIsCorrectScreenOpen] = useState(false);
-  const [isIncorrectScreenOpen, setIsIncorrectScreenOpen] = useState(false);
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
   const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
@@ -198,17 +196,6 @@ function App() {
     setAccessedFromBlock(false);
   }
 };
-  const correctAnswer = "desparrama la vista";
-
-  const handleCheckAnswer = () => {
-    if (answer.trim().toLowerCase() === correctAnswer.toLowerCase()) {
-      setIsCorrectScreenOpen(true);
-    } else {
-      setIsIncorrectScreenOpen(true);
-    }
-    setIsQuestionModalOpen(false);
-  };
-  
     return (
     <div className="h-screen flex flex-col">
       <Navbar
@@ -294,82 +281,36 @@ function App() {
 
 {/* Modal de la pregunta */}
 {/* Modal de la pregunta */}
-      {isQuestionModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-            <p className="text-lg font-bold">Oye... Tengo una pregunta.</p>
-            <p className="text-md mt-4">¿Sabrías decirme cómo sigue la frase?</p>
-            <p className="text-md font-semibold mt-2">"Abre los ojos y..."</p>
-            <div className="mt-4">
-              <input
-                type="text"
-                placeholder="Escribe tu respuesta aquí"
-                className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                onChange={(e) => setAnswer(e.target.value)}
-              />
-            </div>
-            <div
-              onClick={handleCheckAnswer}
-              className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
-            >
-              Probar
-            </div>
-          </div>
-        </div>
-      )}
+{isQuestionModalOpen && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
+      <p className="text-lg font-bold">Oye... Tengo una pregunta.</p>
+      <p className="text-md mt-4">¿Sabrías decirme cómo sigue la frase?</p>
+      <p className="text-md font-semibold mt-2">"Abre los ojos y..."</p>
+      
+      {/* Campo de entrada para la respuesta */}
+      <div className="mt-4">
+        <input
+          type="text"
+          placeholder="Escribe tu respuesta aquí"
+          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+          onChange={(e) => setAnswer(e.target.value)} // Reemplaza 'setAnswer' por el estado correspondiente
+        />
+      </div>
 
-      {/* Pantalla si acierta */}
-      {isCorrectScreenOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-            <p className="text-lg font-bold">¡PUNTAL!</p>
-            <p className="text-md mt-4">
-              Próximamente estará disponible un nuevo modo de juego: además de la palabra del día, podrás adivinar nuestros decires.
-            </p>
-            <div
-              onClick={() => {
-                setIsCorrectScreenOpen(false);
-                setIsWelcomeScreenOpen(true);
-              }}
-              className="mt-6 px-4 py-2 bg-green-600 text-white rounded-lg cursor-pointer"
-            >
-              Continuar al Wordle Canario
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* Pantalla si falla */}
-      {isIncorrectScreenOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-            <p className="text-lg font-bold">Intenta probar de nuevo</p>
-            <div className="mt-6 flex justify-around">
-              <div
-                onClick={() => {
-                  setIsIncorrectScreenOpen(false);
-                  setIsQuestionModalOpen(true);
-                }}
-                className="px-4 py-2 bg-yellow-600 text-white rounded-lg cursor-pointer"
-              >
-                Reintentar
-              </div>
-              <div
-                onClick={() => {
-                  setIsIncorrectScreenOpen(false);
-                  setIsWelcomeScreenOpen(true);
-                }}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
-              >
-                Continuar al Wordle Canario
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* Botón para confirmar */}
+      <div
+        onClick={() => {
+          console.log(answer); // Muestra la respuesta ingresada en la consola
+          setIsQuestionModalOpen(false); // Cierra el modal
+        }}
+        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
+      >
+        ¡Entendido!
+      </div>
     </div>
-  );
-};
+  </div>
+)}
 
       <div className="pt-2 px-1 pb-8 md:max-w-7xl w-full mx-auto sm:px-6 lg:px-8 flex flex-col grow">
         <div className="pb-6">
@@ -445,6 +386,8 @@ function App() {
         /> */}
         <AlertContainer />
       </div>
-        </div>
+    </div>
+  )
+}
 
 export default App
