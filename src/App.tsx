@@ -120,6 +120,8 @@ function App() {
   const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
   if (hasAnsweredCorrectly === "true") {
     setIsQuestionModalOpen(false); // No mostrar la pantalla de la pregunta si ya ha acertado antes.
+  } else {
+    setIsQuestionModalOpen(true);
   }
 }, []);
 
