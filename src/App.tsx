@@ -116,14 +116,15 @@ function App() {
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
   
-  useEffect (() => {
-    const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
-    if (hasAnsweredCorrectly === "true") {
+  useEffect(() => {
+  const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
+  if (hasAnsweredCorrectly === "true") {
     setIsQuestionModalOpen(false); // No mostrar la pantalla de la pregunta si ya ha acertado antes.
-    } else {
+  } else {
     setIsQuestionModalOpen(true); // Mostrar el modal si no ha respondido correctamente aún.
-    }
-}, []);
+  }
+}, []); // Esto solo se ejecuta una vez cuando la app carga
+
 
   const onChar = (value: string) => {
     if (
@@ -310,18 +311,20 @@ function App() {
 
       {/* Botón para confirmar */}
       <div
-        onClick={() => {
-          if (answer.toLowerCase().trim() === "desparrama la vista") {
-            setIsCorrectAnswer(true);
-            localStorage.setItem("hasAnsweredCorrectly", "true");
-          } else {
-            setIsIncorrectAnswer(true);
-          }
-            }}
-        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
-      >
-        Probar
-      </div>
+  onClick={() => {
+    if (answer.toLowerCase().trim() === "desparrama la vista") {
+      setIsCorrectAnswer(true);  // Muestra que la respuesta es correcta
+      localStorage.setItem("hasAnsweredCorrectly", "true");  // Guarda la respuesta correcta en el localStorage
+      setIsQuestionModalOpen(false);  // Cierra el modal de la pregunta
+    } else {
+      setIsIncorrectAnswer(true);  // Muestra que la respuesta es incorrecta
+    }
+  }}
+  className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
+>
+  Probar
+</div>
+
     </div>
   </div>
 )}
