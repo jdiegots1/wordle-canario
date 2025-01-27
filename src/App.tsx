@@ -311,6 +311,7 @@ function App() {
       {/* Botón para confirmar */}
       <div
         onClick={() => {
+          const handleAnswerSubmit = () => {
           if (answer.toLowerCase().trim() === "desparrama la vista") { // Cambia "la respuesta correcta" por la respuesta esperada
             setIsCorrectAnswer(true);
             localStorage.setItem("hasAnsweredCorrectly", "true");
