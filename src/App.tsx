@@ -75,7 +75,15 @@ function App() {
       })
     }
     return loaded.guesses
-  })
+  });
+  useEffect(() => {
+  const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
+  if (hasAnsweredCorrectly === "true") {
+    setIsQuestionModalOpen(false); // No mostrar la pantalla de la pregunta si ya ha acertado antes.
+  } else {
+    setIsQuestionModalOpen(true); // Mostrar el modal si no ha respondido correctamente aún.
+  }
+}, []);
 
   const [stats, setStats] = useState(() => loadStats())
 
