@@ -342,7 +342,7 @@ function App() {
           Muy pronto podrás disfrutar de un nuevo modo de juego donde tendrás que <span className="font-bold">adivinar nuestros decires canarios</span>, además de adivinar la palabra del día. 
         </p>
         <p className="text-md">
-          Mientras tanto, <span className="italic">¡sigue gozándote el Wordle Canario y demostrando que eres un/a *crass*!</span> 🌴
+          Mientras tanto, ¡sigue gozándote el Wordle Canario y demostrando que eres un/a <span className="italic">crass</span>! 🌴
         </p>
       </div>
       <div
@@ -368,7 +368,7 @@ function App() {
     <span className="font-bold">¡Uy!</span> ¡Casi lo tienes! 😅
   </p>
   <p className="text-md">
-    Va, te doy una ayudita: 🐚 Si quieres lapas, ¡prepárate para mojarte un poco! 🍑🌊 ¿Ya sabes cómo sigue?
+    Va, te doy una ayudita: 🐚 Si quieres lapas, ¡prepárate para mojarte un poco! 🍑🌊 <br>¿Ya sabes cómo sigue?</br>
   </p>
   <p className="text-md">
     ¡Vamos, que puedes! 💪 Dale una vueltita y a por ello. 🍀
