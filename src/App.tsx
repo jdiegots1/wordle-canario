@@ -46,7 +46,7 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameWon, setIsGameWon] = useState(false)
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false);
-  const [answer, setAnswer] = useState('');
+  const [answer, setAnswer] = useState("");
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isCorrectAnswer, setIsCorrectAnswer] = useState(false);
   const [isIncorrectAnswer, setIsIncorrectAnswer] = useState(false);
@@ -361,22 +361,21 @@ function App() {
 {isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-red-500 bg-opacity-90">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-     <p className="text-3xl font-extrabold text-red-600">¡ERROR!</p>
-<div className="text-center mt-6 space-y-4">
-  <p className="text-md">
-    <span className="font-bold">¡Uy!</span> ¡Casi lo tienes! 😅
-  </p>
-  <p className="text-md">
-    Va, te doy una ayudita: 🐚 Si quieres lapas, ¡prepárate para mojarte un poco! 🍑🌊 <br>¿Ya sabes cómo sigue?</br>
-  </p>
-  <p className="text-md">
-    ¡Vamos, que puedes! 💪 Dale una vueltita y a por ello. 🍀
-  </p>
-</div>
+      <p className="text-3xl font-extrabold text-red-600">¡ERROR!</p>
+      <div className="text-center mt-6 space-y-4">
+        <p className="text-md">
+          <span className="font-bold">¡Uy!</span> ¡Casi lo tienes! 😅
+        </p>
+        <p className="text-md">
+          Va, te doy una ayudita: 🐚 Si quieres lapas, ¡prepárate para mojarte un poco! 🍑🌊 <br />¿Ya sabes cómo sigue?
+        </p>
+        <p className="text-md">
+          ¡Vamos, que puedes! 💪 Dale una vueltita y a por ello. 🍀
+        </p>
       </div>
       <div className="mt-8 flex justify-center gap-4">
         {/* Botón para intentar de nuevo */}
-        <div
+        <button
           onClick={() => {
             setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
             setAnswer(""); // Limpia la respuesta
@@ -384,10 +383,10 @@ function App() {
           className="px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
         >
           Intentar de nuevo
-        </div>
+        </button>
 
         {/* Botón para ir al Wordle Canario */}
-        <div
+        <button
           onClick={() => {
             setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
             setIsQuestionModalOpen(false); // Cierra también el modal de la pregunta
@@ -395,9 +394,10 @@ function App() {
           className="px-6 py-3 bg-green-600 text-white rounded-lg cursor-pointer hover:bg-green-700 transition duration-300"
         >
           Seguir al Wordle Canario
-        </div>
+        </button>
       </div>
     </div>
+  </div>
 )}
 
 
