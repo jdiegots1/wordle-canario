@@ -295,9 +295,9 @@ function App() {
 {isQuestionModalOpen && !isCorrectAnswer && !isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-lg font-bold">Oye... Tengo una pregunta.</p>
-      <p className="text-md mt-4">¿Sabrías decirme cómo sigue la frase?</p>
-      <p className="text-md font-semibold mt-2">"Abre los ojos y..."</p>
+      <p className="text-lg font-bold">🧐 Oye... Antes de comenzar... ¡Tengo una pregunta para ti!</p>
+      <p className="text-md mt-4">🤔 ¿Sabrías decirme cómo sigue la frase?</p>
+      <p className="text-md font-semibold mt-2">"El que quiera lapas..."</p>
 
       {/* Campo de entrada para la respuesta */}
       <div className="mt-4">
@@ -312,7 +312,7 @@ function App() {
       {/* Botón para confirmar */}
       <div
   onClick={() => {
-    if (answer.toLowerCase().trim() === "desparrama la vista") {
+    if (answer.toLowerCase().trim() === "que se moje el culo") {
       setIsCorrectAnswer(true);  // Muestra que la respuesta es correcta
       localStorage.setItem("hasAnsweredCorrectly", "true");  // Guarda la respuesta correcta en el localStorage
       setIsQuestionModalOpen(false);  // Cierra el modal de la pregunta
@@ -339,10 +339,10 @@ function App() {
           <span className="font-bold">¡PUNTAL!</span> Acertaste la respuesta. 🎉
         </p>
         <p className="text-md">
-          Muy pronto estará disponible un nuevo modo de juego en el que tendrás que <span className="font-semibold">adivinar nuestros decires canarios</span>. 
+          Muy pronto podrás disfrutar de un nuevo modo de juego donde tendrás que <span className="font-bold">adivinar nuestros decires canarios</span>, además de adivinar la palabra del día. 
         </p>
         <p className="text-md">
-          Mientras tanto, <span className="italic">¡sigue disfrutando del Wordle Canario!</span> 🌴
+          Mientras tanto, <span className="italic">¡sigue gozándote el Wordle Canario y demostrando que eres un/a *crass*!</span> 🌴
         </p>
       </div>
       <div
@@ -362,14 +362,18 @@ function App() {
 {isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-red-500 bg-opacity-90">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-3xl font-extrabold text-red-600">¡ERROR!</p>
-      <div className="text-center mt-6 space-y-4">
-        <p className="text-md">
-          <span className="font-bold">¡Vaya!</span> No acertaste esta vez. 😓
-        </p>
-        <p className="text-md">
-          ¿Quieres intentarlo de nuevo? ¡Puedes hacerlo mejor la próxima vez!
-        </p>
+     <p className="text-3xl font-extrabold text-red-600">¡ERROR!</p>
+<div className="text-center mt-6 space-y-4">
+  <p className="text-md">
+    <span className="font-bold">¡Uy!</span> ¡Casi lo tienes! 😅
+  </p>
+  <p className="text-md">
+    Va, te doy una ayudita: 🐚 Si quieres lapas, ¡prepárate para mojarte un poco! 🍑🌊 ¿Ya sabes cómo sigue?
+  </p>
+  <p className="text-md">
+    ¡Vamos, que puedes! 💪 Dale una vueltita y a por ello. 🍀
+  </p>
+</div>
       </div>
       <div className="mt-8 flex justify-center gap-4">
         {/* Botón para intentar de nuevo */}
