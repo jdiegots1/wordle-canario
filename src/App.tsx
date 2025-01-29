@@ -311,7 +311,10 @@ function App() {
       {/* Botón para confirmar */}
       <div
   onClick={() => {
-    if (answer.toLowerCase().trim() === "que se moje el culo") {
+    // Elimina espacios al inicio y final, convierte a minúsculas y elimina el punto final si existe
+    const cleanedAnswer = answer.toLowerCase().trim().replace(/\.$/, '');
+    
+    if (cleanedAnswer === "que se moje el culo") {
       setIsCorrectAnswer(true);  // Muestra que la respuesta es correcta
       localStorage.setItem("hasAnsweredCorrectly", "true");  // Guarda la respuesta correcta en el localStorage
       setIsQuestionModalOpen(false);  // Cierra el modal de la pregunta
