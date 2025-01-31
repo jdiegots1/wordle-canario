@@ -111,9 +111,9 @@ export const StatsModal = ({
       </h4>
       <Histogram gameStats={gameStats} />
       <div className="mt-5">
-        Puedes mandarnos sugerencias via{' '}
-        <a href="https://twitter.com/wordlecanario" className="underline font-bold">
-          Twitter
+        Puedes seguirnos via{' '}
+        <a href="https://www.facebook.com/profile.php?id=61572247307263" className="underline font-bold">
+          Facebook
         </a> y {' '} <a href="mailto:wordlecanario@gmail" className="underline font-bold">
         correo</a>.
       </div>
