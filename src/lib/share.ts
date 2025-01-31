@@ -23,7 +23,7 @@ export const shareStatus = (
     }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
     generateEmojiGrid(guesses, getEmojiTiles(false, false)) +
     '\n\n' +
-    '@WordleCanario'
+    '#WordleCanario'
 
   const shareData = { text: textToShare }
 
