@@ -117,13 +117,13 @@ function App() {
   }, [isGameWon, isGameLost, showSuccessAlert])
   
   useEffect(() => {
-  const hasAnsweredCorrectly = localStorage.getItem("hasAnsweredCorrectly");
-  if (hasAnsweredCorrectly === "true") {
-    setIsQuestionModalOpen(false); // No mostrar la pantalla de la pregunta si ya ha acertado antes.
+  const hasSeenFacebookModal = localStorage.getItem("hasSeenFacebookModal");
+  if (hasSeenFacebookModal === "true") {
+    setIsQuestionModalOpen(false); // No mostrar el modal si ya ha sido visto
   } else {
-    setIsQuestionModalOpen(true); // Mostrar el modal si no ha respondido correctamente aún.
+    setIsQuestionModalOpen(true); // Mostrar el modal si no ha sido visto
   }
-}, []); // Esto solo se ejecuta una vez cuando la app carga
+}, []);
 
 
   const onChar = (value: string) => {
@@ -290,7 +290,6 @@ function App() {
   </div>
 )}
 
-{/* Modal de la pregunta */}
 {/* Modal de la nueva página de Facebook */}
 {isQuestionModalOpen && !isCorrectAnswer && !isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
@@ -313,83 +312,11 @@ function App() {
       <div
         onClick={() => {
           setIsQuestionModalOpen(false);
-          localStorage.setItem("hasAnsweredCorrectly", "true");  // Guarda que el usuario ha visto el mensaje
+          localStorage.setItem("hasSeenFacebookModal", "true");  // Nueva clave para el modal de Facebook
         }}
         className="mt-4 px-4 py-2 bg-gray-600 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition duration-300"
       >
         Cerrar
-      </div>
-    </div>
-  </div>
-)}
-
-{/* Pantalla de acierto */}
-{isCorrectAnswer && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-green-500 bg-opacity-90">
-    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-3xl font-extrabold text-green-600">¡CORRECTO!</p>
-      <div className="text-center mt-6 space-y-4">
-        <p className="text-md">
-          <span className="font-bold">¡PUNTAL!</span> Acertaste la respuesta. 🎉
-        </p>
-        <p className="text-md">
-          Muy pronto podrás disfrutar de un nuevo modo de juego donde tendrás que <span className="font-bold">adivinar nuestros decires canarios</span>, además de adivinar la palabra del día. 
-        </p>
-        <p className="text-md">
-          Mientras tanto, ¡sigue gozándote el Wordle Canario y demostrando que eres un/a <span className="italic">crass</span>! 🌴
-        </p>
-      </div>
-      <div
-        onClick={() => {
-          setIsCorrectAnswer(false);
-          setIsQuestionModalOpen(false);
-        }}
-        className="mt-8 px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
-      >
-        Cerrar
-      </div>
-    </div>
-  </div>
-)}
-
-{/* Pantalla de fallo */}
-{isIncorrectAnswer && (
-  <div className="fixed inset-0 z-50 flex items-center justify-center bg-red-500 bg-opacity-90">
-    <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-3xl font-extrabold text-red-600">¡ERROR!</p>
-      <div className="text-center mt-6 space-y-4">
-        <p className="text-md">
-          <span className="font-bold">¡Uy!</span> ¡Casi lo tienes! 😅
-        </p>
-        <p className="text-md">
-          Va, te doy una ayudita: 🐚 Si quieres lapas, ¡prepárate para mojarte un poco! 🍑🌊 <br />¿Ya sabes cómo sigue?
-        </p>
-        <p className="text-md">
-          ¡Vamos, que puedes! 💪 Dale una vueltita y a por ello. 🍀
-        </p>
-      </div>
-      <div className="mt-8 flex justify-center gap-4">
-        {/* Botón para intentar de nuevo */}
-        <button
-          onClick={() => {
-            setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
-            setAnswer(""); // Limpia la respuesta
-          }}
-          className="px-6 py-3 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
-        >
-          Intentar de nuevo
-        </button>
-
-        {/* Botón para ir al Wordle Canario */}
-        <button
-          onClick={() => {
-            setIsIncorrectAnswer(false); // Cierra la pantalla de fallo
-            setIsQuestionModalOpen(false); // Cierra también el modal de la pregunta
-          }}
-          className="px-6 py-3 bg-green-600 text-white rounded-lg cursor-pointer hover:bg-green-700 transition duration-300"
-        >
-          Seguir al Wordle Canario
-        </button>
       </div>
     </div>
   </div>
