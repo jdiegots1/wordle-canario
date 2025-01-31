@@ -291,42 +291,34 @@ function App() {
 )}
 
 {/* Modal de la pregunta */}
+{/* Modal de la nueva página de Facebook */}
 {isQuestionModalOpen && !isCorrectAnswer && !isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-lg font-bold">🧐 Oye... Antes de comenzar... ¡Tengo una pregunta para ti!</p>
-      <p className="text-md mt-4">🤔 ¿Sabrías decirme cómo sigue la frase?</p>
-      <p className="text-md font-semibold mt-2">"El que quiera lapas..."</p>
+      <p className="text-lg font-bold">¡Tenemos una nueva página de Facebook! 🌟</p>
+      <p className="text-md mt-4">📱 Ahora puedes contactar conmigo de forma más sencilla a través de nuestra página de Facebook.</p>
+      <p className="text-md mt-2">¡Síguenos para estar al tanto de las últimas novedades, actualizaciones y más!</p>
 
-      {/* Campo de entrada para la respuesta */}
-      <div className="mt-4">
-        <input
-          type="text"
-          placeholder="Escribe tu respuesta aquí"
-          className="w-full p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-          onChange={(e) => setAnswer(e.target.value)} // Reemplaza 'setAnswer' por el estado correspondiente
-        />
-      </div>
+      {/* Botón para ir a la página de Facebook */}
+      <a
+        href="https://www.facebook.com/tupagina"  // Reemplaza con el enlace a tu página de Facebook
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
+      >
+        Visitar nuestra página de Facebook
+      </a>
 
-      {/* Botón para confirmar */}
+      {/* Botón para cerrar el modal */}
       <div
-  onClick={() => {
-    // Elimina espacios al inicio y final, convierte a minúsculas y elimina el punto final si existe
-    const cleanedAnswer = answer.toLowerCase().trim().replace(/\.$/, '');
-    
-    if (cleanedAnswer === "que se moje el culo") {
-      setIsCorrectAnswer(true);  // Muestra que la respuesta es correcta
-      localStorage.setItem("hasAnsweredCorrectly", "true");  // Guarda la respuesta correcta en el localStorage
-      setIsQuestionModalOpen(false);  // Cierra el modal de la pregunta
-    } else {
-      setIsIncorrectAnswer(true);  // Muestra que la respuesta es incorrecta
-    }
-  }}
-  className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer"
->
-  Probar
-</div>
-
+        onClick={() => {
+          setIsQuestionModalOpen(false);
+          localStorage.setItem("hasAnsweredCorrectly", "true");  // Guarda que el usuario ha visto el mensaje
+        }}
+        className="mt-4 px-4 py-2 bg-gray-600 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition duration-300"
+      >
+        Cerrar
+      </div>
     </div>
   </div>
 )}
