@@ -298,14 +298,14 @@ function App() {
       <p className="text-md mt-4">📱 Ahora puedes contactar conmigo de forma más sencilla a través de nuestra página de Facebook.</p>
       <p className="text-md mt-2">¡Síguenos para estar al tanto de las últimas novedades, actualizaciones y más!</p>
 
-      {/* Botón para ir a la página de Facebook (más pequeño) */}
+      {/* Botón para ir a la página de Facebook (más pequeño y con más margen superior) */}
       <a
-        href="https://www.facebook.com/profile.php?id=61572247307263"  // Reemplaza con el enlace a tu página de Facebook
+        href="https://www.facebook.com/tupagina"  // Reemplaza con el enlace a tu página de Facebook
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 px-3 py-1.5 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300 text-sm"
+        className="mt-8 px-3 py-1.5 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300 text-sm"
       >
-        Visitar nuestra página de Facebook
+        Ir al Facebook
       </a>
 
       {/* Botón para cerrar el modal (también más pequeño) */}
