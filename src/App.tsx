@@ -294,27 +294,27 @@ function App() {
 {isQuestionModalOpen && !isCorrectAnswer && !isIncorrectAnswer && (
   <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
     <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-      <p className="text-lg font-bold">¡Tenemos una nueva página de Facebook! 🌟</p>
+      <p className="text-lg font-bold">¡Tenemos una nueva página de Facebook! 📘🌟</p>
       <p className="text-md mt-4">📱 Ahora puedes contactar conmigo de forma más sencilla a través de nuestra página de Facebook.</p>
       <p className="text-md mt-2">¡Síguenos para estar al tanto de las últimas novedades, actualizaciones y más!</p>
 
-      {/* Botón para ir a la página de Facebook */}
+      {/* Botón para ir a la página de Facebook (más pequeño) */}
       <a
-        href="https://www.facebook.com/tupagina"  // Reemplaza con el enlace a tu página de Facebook
+        href="https://www.facebook.com/profile.php?id=61572247307263"  // Reemplaza con el enlace a tu página de Facebook
         target="_blank"
         rel="noopener noreferrer"
-        className="mt-6 px-4 py-2 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300"
+        className="mt-6 px-3 py-1.5 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300 text-sm"
       >
         Visitar nuestra página de Facebook
       </a>
 
-      {/* Botón para cerrar el modal */}
+      {/* Botón para cerrar el modal (también más pequeño) */}
       <div
         onClick={() => {
           setIsQuestionModalOpen(false);
           localStorage.setItem("hasSeenFacebookModal", "true");  // Nueva clave para el modal de Facebook
         }}
-        className="mt-4 px-4 py-2 bg-gray-600 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition duration-300"
+        className="mt-4 px-3 py-1.5 bg-gray-600 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition duration-300 text-sm"
       >
         Cerrar
       </div>
