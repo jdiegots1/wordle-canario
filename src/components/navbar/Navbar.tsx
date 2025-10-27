@@ -14,8 +14,8 @@ export const Navbar = ({
 }: Props) => {
   return (
     <header className="w-full">
-      <div className="px-5 py-2 bg-slate-200">
-        <p className="text-sm text-center">
+      <div className="px-3 py-1 bg-slate-200">
+        <p className="text-xs md:text-sm text-center leading-tight">
           ¿Te gusta el Wordle Canario? ¡Puedes apoyarme para mantenerlo en marcha! 😊{' '}
           <a
             href="https://www.paypal.com/paypalme/wordlecanario"
@@ -28,44 +28,49 @@ export const Navbar = ({
         </p>
       </div>
 
-      <div className="px-5 py-3 flex items-center justify-between">
+      {/* Barra compacta: altura controlada por el alto del logo */}
+      <div className="px-3 md:px-5 py-1 md:py-2 flex items-center justify-between gap-2">
         <button
           type="button"
           onClick={() => setIsInfoModalOpen(true)}
-          className="p-1"
+          className="p-1.5"
           aria-label="Información y cómo jugar"
           title="Información"
         >
-          <InformationCircleIcon className="h-6 w-6 text-gray-900 dark:text-white" />
+          <InformationCircleIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
         </button>
 
-        <div className="w-40 mx-auto flex items-center justify-center">
-          <img src={WCLOGO} alt="Wordle Canario" className="block w-full h-auto" />
+        <div className="flex-1 flex items-center justify-center min-w-0">
+          <img
+            src={WCLOGO}
+            alt="Wordle Canario"
+            className="h-6 md:h-7 w-auto select-none pointer-events-none"
+          />
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <button
             type="button"
             onClick={() => setIsStatsModalOpen(true)}
-            className="p-1"
+            className="p-1.5"
             aria-label="Ver estadísticas"
             title="Estadísticas"
           >
-            <ChartBarIcon className="h-6 w-6 text-gray-900 dark:text-white" />
+            <ChartBarIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
           </button>
           <button
             type="button"
             onClick={() => setIsSettingsModalOpen(true)}
-            className="p-1"
+            className="p-1.5"
             aria-label="Ajustes"
             title="Ajustes"
           >
-            <LightBulbIcon className="h-6 w-6 text-gray-900 dark:text-white" />
+            <LightBulbIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
           </button>
         </div>
       </div>
 
-      <hr className="border-slate-200 dark:border-slate-700" />
+      <div className="border-b border-slate-200 dark:border-slate-700" />
     </header>
   )
 }
