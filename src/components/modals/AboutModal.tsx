@@ -7,28 +7,60 @@ type Props = {
 
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal
-      title="SOBRE ESTE JUEGO"
-      isOpen={isOpen}
-      handleClose={handleClose}
-    >
-      <p className="text-sm text-gray-500 dark:text-gray-300">
-        Por {' '}
-        <a
-          href="https://twitter.com/JDiegoTejeraS"
-          className="underline font-bold"
-        >
-          @JDiegoTejeraS
-        </a>{' '}
-        {' '} - A partir del código abierto y los canarismos incluídos en el 
-        Diccionario Básico de Canarismos (Fuente: Academia Canaria de la Lengua) 
-        - Encuentra el código {' '} <a href="https://github.com/cwackerfuss/react-wordle" className="underline font-bold">
-        aquí </a>{' '}y los canarismos 
-        {' '}
-        <a
-          href="https://www.academiacanarialengua.org/diccionario/" className="underline font-bold">
-          aquí</a>{' '}.
-      </p>
+    <BaseModal title="SOBRE ESTE JUEGO" isOpen={isOpen} handleClose={handleClose}>
+      <div className="text-sm text-gray-700 dark:text-gray-200 space-y-3">
+        <p>
+          Hecho por{' '}
+          <a
+            href="https://x.com/jdiegotejeras"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-bold"
+          >
+            @jdiegotejeras
+          </a>
+          . Inspirado en Wordle y adaptado al habla canaria.
+        </p>
+
+        <p>
+          Los canarismos proceden del{' '}
+          <a
+            href="https://www.academiacanarialengua.org/diccionario/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-bold"
+          >
+            Diccionario Básico de Canarismos (ACL)
+          </a>
+          .
+        </p>
+
+        <p>
+          Código del proyecto:{' '}
+          <a
+            href="https://github.com/jdiegots1/wordle-canario"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-bold"
+          >
+            GitHub
+          </a>
+          .
+        </p>
+
+        <p>
+          Si te gusta, puedes apoyar el desarrollo en{' '}
+          <a
+            href="https://www.paypal.me/wordlecanario"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline font-bold"
+          >
+            PayPal
+          </a>
+          .
+        </p>
+      </div>
     </BaseModal>
   )
 }
