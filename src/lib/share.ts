@@ -1,15 +1,14 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
-import { GAME_TITLE } from '../constants/strings'
 import { MAX_CHALLENGES } from '../constants/settings'
 import { UAParser } from 'ua-parser-js'
 
-const webShareApiDeviceTypes: string[] = ['mobile', 'smarttv', 'wearable']
+const webShareApiDeviceTypes: string[] = ['mobile', 'smarttv', 'wearable', 'tablet']
 const parser = new UAParser()
 const browser = parser.getBrowser()
 const device = parser.getDevice()
 
-export const shareStatus = (
+export const shareStatus = async (
   guesses: string[],
   lost: boolean,
   isHardMode: boolean,
@@ -18,34 +17,28 @@ export const shareStatus = (
   handleShareToClipboard: () => void
 ) => {
   const textToShare =
-    `🇮🇨 wordlecanario.com #${solutionIndex} ${
-      lost ? 'X' : guesses.length
-    }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-    generateEmojiGrid(guesses, getEmojiTiles(false, false)) +
-    '\n\n' +
-    '#WordleCanario'
+    `🇮🇨 wordlecanario.com #${solutionIndex} ${lost ? 'X' : guesses.length}/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
+    generateEmojiGrid(guesses, getEmojiTiles(isDarkMode, isHighContrastMode)) +
+    '\n\n#WordleCanario'
 
   const shareData = { text: textToShare }
-
-  let shareSuccess = false
+  const canUseWebShare = attemptShare(shareData)
 
   try {
-    if (attemptShare(shareData)) {
-      navigator.share(shareData)
-      fetch("https://api.countapi.xyz/hit/wordlecanario.com/sharetotal")
-      fetch("https://api.countapi.xyz/hit/wordlecanario.com/sharefancy")
-      shareSuccess = true
+    if (canUseWebShare) {
+      await navigator.share(shareData as any)
+      fetch('https://api.countapi.xyz/hit/wordlecanario.com/sharetotal')
+      fetch('https://api.countapi.xyz/hit/wordlecanario.com/sharefancy')
+      return
     }
-  } catch (error) {
-    shareSuccess = false
-  }
+  } catch {}
 
-  if (!shareSuccess) {
-    navigator.clipboard.writeText(textToShare)
-    handleShareToClipboard()
-    fetch("https://api.countapi.xyz/hit/wordlecanario.com/sharetotal")
-    fetch("https://api.countapi.xyz/hit/wordlecanario.com/shareclipboard")
-  }
+  try {
+    await navigator.clipboard.writeText(textToShare)
+  } catch {}
+  handleShareToClipboard()
+  fetch('https://api.countapi.xyz/hit/wordlecanario.com/sharetotal')
+  fetch('https://api.countapi.xyz/hit/wordlecanario.com/shareclipboard')
 }
 
 export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
@@ -70,20 +63,17 @@ export const generateEmojiGrid = (guesses: string[], tiles: string[]) => {
 }
 
 const attemptShare = (shareData: object) => {
-  return (
-    // Deliberately exclude Firefox Mobile, because its Web Share API isn't working correctly
-    browser.name?.toUpperCase().indexOf('FIREFOX') === -1 &&
-    webShareApiDeviceTypes.indexOf(device.type ?? '') !== -1 &&
-    navigator.canShare &&
-    navigator.canShare(shareData) &&
-    navigator.share
-  )
+  if (typeof navigator === 'undefined') return false
+  const isFirefox = !!browser.name && browser.name.toUpperCase().includes('FIREFOX')
+  const supportedDevice = webShareApiDeviceTypes.includes(device.type ?? '')
+  const hasApi =
+    typeof (navigator as any).canShare === 'function' &&
+    (navigator as any).canShare(shareData) &&
+    typeof (navigator as any).share === 'function'
+  return !isFirefox && supportedDevice && hasApi
 }
 
 export const getEmojiTiles = (isDarkMode: boolean, isHighContrastMode: boolean) => {
-  let tiles: string[] = []
-  tiles.push(isHighContrastMode ? '🟪' : '🟦')
-  tiles.push(isHighContrastMode ? '🟪' : '🟨')
-  tiles.push(isDarkMode ? '🟪' : '⬜')
-  return tiles
+  if (isHighContrastMode) return ['🟦', '🟧', isDarkMode ? '⬛' : '⬜']
+  return ['🟩', '🟨', isDarkMode ? '⬛' : '⬜']
 }
