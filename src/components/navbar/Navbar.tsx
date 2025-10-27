@@ -14,9 +14,9 @@ export const Navbar = ({
 }: Props) => {
   return (
     <header className="w-full">
-      <div className="px-3 py-1 bg-slate-200">
+      <div className="px-3 py-0.5 bg-slate-200">
         <p className="text-xs md:text-sm text-center leading-tight">
-          ¿Te gusta el Wordle Canario? ¡Puedes apoyarme para mantenerlo en marcha! 😊{' '}
+          ¿Te gusta el Wordle Canario? ¡Puedes apoyarme!{' '}
           <a
             href="https://www.paypal.com/paypalme/wordlecanario"
             target="_blank"
@@ -28,7 +28,7 @@ export const Navbar = ({
         </p>
       </div>
 
-      {/* Barra con altura fija: ajusta h-12/md:h-14 si quieres más/menos alto */}
+      {/* Altura fija de la barra; el logo se escala por transform sin cambiar el alto */}
       <div className="px-3 md:px-5 h-12 md:h-14 flex items-center justify-between gap-2 border-b border-slate-200 dark:border-slate-700">
         <button
           type="button"
@@ -40,11 +40,11 @@ export const Navbar = ({
           <InformationCircleIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
         </button>
 
-        <div className="flex-1 flex items-center justify-center min-w-0 h-full">
+        <div className="relative flex-1 flex items-center justify-center min-w-0 h-full overflow-visible">
           <img
             src={WCLOGO}
             alt="Wordle Canario"
-            className="h-full w-auto select-none pointer-events-none"
+            className="h-full w-auto select-none pointer-events-none transform scale-125 md:scale-150 -my-1"
           />
         </div>
 
