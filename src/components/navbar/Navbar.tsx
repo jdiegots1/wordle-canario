@@ -28,27 +28,26 @@ export const Navbar = ({
         </p>
       </div>
 
-      {/* Barra compacta: altura controlada por el alto del logo */}
-      <div className="px-3 md:px-5 py-1 md:py-2 flex items-center justify-between gap-2">
+      <div className="px-3 md:px-5 py-1 flex items-center justify-between gap-2">
         <button
           type="button"
           onClick={() => setIsInfoModalOpen(true)}
-          className="p-1.5"
+          className="p-1.5 shrink-0"
           aria-label="Información y cómo jugar"
           title="Información"
         >
-          <InformationCircleIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
+          <InformationCircleIcon className="h-6 w-6 text-gray-900 dark:text-white" />
         </button>
 
         <div className="flex-1 flex items-center justify-center min-w-0">
           <img
             src={WCLOGO}
             alt="Wordle Canario"
-            className="h-6 md:h-7 w-auto select-none pointer-events-none"
+            className="h-9 sm:h-10 md:h-12 w-auto select-none pointer-events-none"
           />
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             type="button"
             onClick={() => setIsStatsModalOpen(true)}
@@ -56,7 +55,7 @@ export const Navbar = ({
             aria-label="Ver estadísticas"
             title="Estadísticas"
           >
-            <ChartBarIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
+            <ChartBarIcon className="h-6 w-6 text-gray-900 dark:text-white" />
           </button>
           <button
             type="button"
@@ -65,7 +64,7 @@ export const Navbar = ({
             aria-label="Ajustes"
             title="Ajustes"
           >
-            <LightBulbIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
+            <LightBulbIcon className="h-6 w-6 text-gray-900 dark:text-white" />
           </button>
         </div>
       </div>
