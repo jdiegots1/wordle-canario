@@ -65,7 +65,7 @@ function App() {
   const lostStatsTimeoutRef = useRef<number | null>(null)
   const infoTimeoutRef = useRef<number | null>(null)
 
-  // --- Hydration from localStorage (safe: no setState during render) ---
+  // --- Hydration from localStorage ---
   useEffect(() => {
     const loaded = loadGameStateFromLocalStorage()
     if (loaded && loaded.solution === solution) {
@@ -82,7 +82,7 @@ function App() {
     setHydrated(true)
   }, [showErrorAlert])
 
-  // --- First-visit HOW-TO modal (with cleanup) ---
+  // --- First-visit HOW-TO modal ---
   useEffect(() => {
     const hasState = !!loadGameStateFromLocalStorage()
     if (!hasState) {
@@ -106,7 +106,7 @@ function App() {
     saveGameStateToLocalStorage({ guesses, solution })
   }, [hydrated, guesses, solution])
 
-  // --- Win/Lose side-effects with cleanup ---
+  // --- Win/Lose side-effects ---
   useEffect(() => {
     if (isGameWon) {
       const winMessage = WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
@@ -128,7 +128,7 @@ function App() {
     }
   }, [isGameLost])
 
-  // --- Cleanup on unmount (reveal timeout) ---
+  // --- Cleanup on unmount ---
   useEffect(() => {
     return () => {
       if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current)
@@ -397,18 +397,15 @@ function App() {
           handleClose={() => setIsAboutModalOpen(false)}
         />
 
-        <div className="flex">
-          <div className="w-1/4 p-0" />
-          <div className="w-1/4 p-0">
-            <button
-              type="button"
-              className="mx-auto mt-4 flex px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
-              onClick={() => setIsAboutModalOpen(true)}
-            >
-              {ABOUT_GAME_MESSAGE}
-            </button>
-          </div>
-          <div className="w-1/4 p-0" />
+        {/* Botón "Sobre el juego" CENTRADO */}
+        <div className="mt-4 flex justify-center">
+          <button
+            type="button"
+            className="px-3 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
+            onClick={() => setIsAboutModalOpen(true)}
+          >
+            {ABOUT_GAME_MESSAGE}
+          </button>
         </div>
 
         <AlertContainer />
