@@ -4,7 +4,6 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { AboutModal } from './components/modals/AboutModal'
-import { AnterioresModal } from './components/modals/AnterioresModal'
 import {
   WIN_MESSAGES,
   GAME_COPIED_MESSAGE,
@@ -12,7 +11,6 @@ import {
   WORD_NOT_FOUND_MESSAGE,
   CORRECT_WORD_MESSAGE,
   ABOUT_GAME_MESSAGE,
-  ANTERIORES_GAME_MESSAGE,
 } from './constants/strings'
 import {
   MAX_WORD_LENGTH,
@@ -59,7 +57,6 @@ function App() {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isAnterioresModalOpen, setIsAnterioresModalOpen] = useState(false)
   const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false)
 
   // --- Utils / refs ---
@@ -171,7 +168,6 @@ function App() {
       return showErrorAlert(WORD_NOT_FOUND_MESSAGE, { onClose: clearCurrentRowClass })
     }
 
-    // Reveal ON with timeout cleanup
     setIsRevealing(true)
     if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current)
     revealTimeoutRef.current = window.setTimeout(() => {
@@ -413,34 +409,8 @@ function App() {
               {ABOUT_GAME_MESSAGE}
             </button>
           </div>
-
-          <div className="w-1/4 p-0">
-            <AnterioresModal
-              isOpen={isAnterioresModalOpen}
-              handleClose={() => setIsAnterioresModalOpen(false)}
-            />
-
-            <button
-              type="button"
-              className="mx-auto mt-4 flex px-2.5 py-1.5 border border-transparent text-xs font-medium rounded text-indigo-700 bg-indigo-100 hover:bg-indigo-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 select-none"
-              onClick={() => setIsAnterioresModalOpen(true)}
-            >
-              {ANTERIORES_GAME_MESSAGE}
-            </button>
-          </div>
           <div className="w-1/4 p-0" />
         </div>
-
-        {/* <SettingsModal
-          isOpen={isSettingsModalOpen}
-          handleClose={() => setIsSettingsModalOpen(false)}
-          isHardMode={isHardMode}
-          handleHardMode={handleHardMode}
-          isDarkMode={isDarkMode}
-          handleDarkMode={handleDarkMode}
-          isHighContrastMode={isHighContrastMode}
-          handleHighContrastMode={handleHighContrastMode}
-        /> */}
 
         <AlertContainer />
       </div>
