@@ -7,7 +7,7 @@ type Props = {
 
 export const AboutModal = ({ isOpen, handleClose }: Props) => {
   return (
-    <BaseModal title="SOBRE ESTE JUEGO" isOpen={isOpen} handleClose={handleClose}>
+    <BaseModal title="SOBRE EL JUEGO" isOpen={isOpen} handleClose={handleClose}>
       <div className="text-sm text-gray-700 dark:text-gray-200 space-y-3">
         <p>
           Hecho por{' '}
