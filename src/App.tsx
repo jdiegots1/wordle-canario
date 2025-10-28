@@ -57,7 +57,6 @@ function App() {
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
-  const [isQuestionModalOpen, setIsQuestionModalOpen] = useState(false)
 
   // --- Utils / refs ---
   const splitter = useMemo(() => new GraphemeSplitter(), [])
@@ -92,12 +91,6 @@ function App() {
         if (infoTimeoutRef.current) window.clearTimeout(infoTimeoutRef.current)
       }
     }
-  }, [])
-
-  // --- Facebook nudge (persisted) ---
-  useEffect(() => {
-    const hasSeen = localStorage.getItem('hasSeenFacebookModal')
-    setIsQuestionModalOpen(hasSeen === 'true' ? false : true)
   }, [])
 
   // --- Persist game state ---
@@ -315,46 +308,6 @@ function App() {
                 <span className="text-sm mt-2">Jugar al Wordle Canario</span>
               </button>
             </div>
-          </div>
-        </div>
-      )}
-
-      {/* Modal nueva página de Facebook */}
-      {isQuestionModalOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50"
-          role="dialog"
-          aria-modal="true"
-          aria-label="Nueva página de Facebook"
-        >
-          <div className="bg-white rounded-lg shadow-lg p-6 text-center max-w-lg w-full sm:max-w-md sm:p-4">
-            <p className="text-lg font-bold">¡Tenemos una nueva página de Facebook! 📘🌟</p>
-            <p className="text-md mt-4">
-              📱 Ahora puedes contactar conmigo de forma más sencilla a través de nuestra página de Facebook.
-            </p>
-            <p className="text-md mt-2">
-              ¡Síguenos para estar al tanto de las últimas novedades, actualizaciones y más!
-            </p>
-
-            <a
-              href="https://www.facebook.com/profile.php?id=61572247307263"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block mt-10 px-3 py-1.5 bg-blue-600 text-white rounded-lg cursor-pointer hover:bg-blue-700 transition duration-300 text-sm"
-            >
-              Ir al Facebook
-            </a>
-
-            <button
-              type="button"
-              onClick={() => {
-                setIsQuestionModalOpen(false)
-                localStorage.setItem('hasSeenFacebookModal', 'true')
-              }}
-              className="block mx-auto mt-4 px-3 py-1.5 bg-gray-600 text-white rounded-lg cursor-pointer hover:bg-gray-700 transition duration-300 text-sm"
-            >
-              Cerrar
-            </button>
           </div>
         </div>
       )}
