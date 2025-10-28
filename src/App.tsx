@@ -17,7 +17,6 @@ import {
   MAX_CHALLENGES,
   REVEAL_TIME_MS,
   GAME_LOST_INFO_DELAY,
-  WELCOME_INFO_MODAL_MS,
 } from './constants/settings'
 import {
   isWordInWordList,
@@ -53,16 +52,17 @@ function App() {
   // --- UI gates / modals ---
   const [isWelcomeScreenOpen, setIsWelcomeScreenOpen] = useState(true)
   const [isInfoModalOpen, setIsInfoModalOpen] = useState(false)
-  const [fromWelcomeScreen, setFromWelcomeScreen] = useState(false)
   const [isStatsModalOpen, setIsStatsModalOpen] = useState(false)
   const [accessedFromBlock, setAccessedFromBlock] = useState(false)
   const [isAboutModalOpen, setIsAboutModalOpen] = useState(false)
+
+  // Sólo mostrar "Cómo jugar" la primera vez que se pulsa Jugar
+  const [hasSeenHowTo, setHasSeenHowTo] = useState(false)
 
   // --- Utils / refs ---
   const splitter = useMemo(() => new GraphemeSplitter(), [])
   const revealTimeoutRef = useRef<number | null>(null)
   const lostStatsTimeoutRef = useRef<number | null>(null)
-  const infoTimeoutRef = useRef<number | null>(null)
 
   // --- Hydration from localStorage ---
   useEffect(() => {
@@ -78,20 +78,12 @@ function App() {
         showErrorAlert(CORRECT_WORD_MESSAGE(solution), { persist: true })
       }
     }
+    // cargar flag de "Cómo jugar" visto
+    const seen = localStorage.getItem('hasSeenHowTo') === 'true'
+    setHasSeenHowTo(seen)
+
     setHydrated(true)
   }, [showErrorAlert])
-
-  // --- First-visit HOW-TO modal ---
-  useEffect(() => {
-    const hasState = !!loadGameStateFromLocalStorage()
-    if (!hasState) {
-      const id = window.setTimeout(() => setIsInfoModalOpen(true), WELCOME_INFO_MODAL_MS)
-      infoTimeoutRef.current = id
-      return () => {
-        if (infoTimeoutRef.current) window.clearTimeout(infoTimeoutRef.current)
-      }
-    }
-  }, [])
 
   // --- Persist game state ---
   useEffect(() => {
@@ -126,7 +118,6 @@ function App() {
     return () => {
       if (revealTimeoutRef.current) window.clearTimeout(revealTimeoutRef.current)
       if (lostStatsTimeoutRef.current) window.clearTimeout(lostStatsTimeoutRef.current)
-      if (infoTimeoutRef.current) window.clearTimeout(infoTimeoutRef.current)
     }
   }, [])
 
@@ -192,10 +183,6 @@ function App() {
 
   const handleCloseInfoModal = () => {
     setIsInfoModalOpen(false)
-    if (fromWelcomeScreen) {
-      setIsWelcomeScreenOpen(true)
-      setFromWelcomeScreen(false)
-    }
   }
 
   const handleCloseStatsModal = () => {
@@ -206,12 +193,25 @@ function App() {
     }
   }
 
+  // Abrir "Cómo jugar" y marcar como visto (se guarda en localStorage)
+  const openHowToAndMarkSeen = () => {
+    setIsInfoModalOpen(true)
+    if (!hasSeenHowTo) {
+      setHasSeenHowTo(true)
+      localStorage.setItem('hasSeenHowTo', 'true')
+    }
+  }
+
   if (!hydrated) return null
 
   return (
     <div className="h-screen flex flex-col">
       <Navbar
-        setIsInfoModalOpen={setIsInfoModalOpen}
+        // Si se abre desde el icono de info, también lo marcamos como visto
+        setIsInfoModalOpen={(val: boolean) => {
+          if (val) openHowToAndMarkSeen()
+          else setIsInfoModalOpen(false)
+        }}
         setIsStatsModalOpen={setIsStatsModalOpen}
       />
 
@@ -260,12 +260,12 @@ function App() {
             </p>
 
             <div className="grid grid-cols-3 gap-4 items-center">
+              {/* Si eligen "Cómo jugar", lo mostramos encima y cerramos la bienvenida */}
               <button
                 type="button"
                 onClick={() => {
-                  setIsInfoModalOpen(true)
                   setIsWelcomeScreenOpen(false)
-                  setFromWelcomeScreen(true)
+                  openHowToAndMarkSeen()
                 }}
                 className="flex flex-col items-center cursor-pointer text-indigo-600 hover:text-indigo-700"
                 aria-label="Cómo jugar"
@@ -296,9 +296,15 @@ function App() {
                 <span className="text-sm mt-2">Mis estadísticas</span>
               </button>
 
+              {/* Al pulsar "Jugar", sólo mostramos "Cómo jugar" si es la PRIMERA vez */}
               <button
                 type="button"
-                onClick={() => setIsWelcomeScreenOpen(false)}
+                onClick={() => {
+                  setIsWelcomeScreenOpen(false)
+                  if (!hasSeenHowTo) {
+                    openHowToAndMarkSeen()
+                  }
+                }}
                 className="flex flex-col items-center cursor-pointer text-blue-600 hover:text-blue-700"
                 aria-label="Jugar al Wordle Canario"
               >
