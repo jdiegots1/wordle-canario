@@ -220,7 +220,6 @@ function App() {
       <Navbar
         setIsInfoModalOpen={setIsInfoModalOpen}
         setIsStatsModalOpen={setIsStatsModalOpen}
-        setIsSettingsModalOpen={(value: boolean): void => {}}
       />
 
       {isWelcomeScreenOpen && (
