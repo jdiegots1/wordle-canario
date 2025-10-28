@@ -1,20 +1,18 @@
-import { ChartBarIcon, InformationCircleIcon, LightBulbIcon } from '@heroicons/react/outline'
+import { ChartBarIcon, InformationCircleIcon } from '@heroicons/react/outline'
 import WCLOGO from '../../assets/WORDLE_CANARIO_LOGO.png'
 
 type Props = {
   setIsInfoModalOpen: (value: boolean) => void
   setIsStatsModalOpen: (value: boolean) => void
-  setIsSettingsModalOpen: (value: boolean) => void
 }
 
 export const Navbar = ({
   setIsInfoModalOpen,
   setIsStatsModalOpen,
-  setIsSettingsModalOpen,
 }: Props) => {
   return (
     <header className="w-full">
-      <div className="px-3 py-1 bg-slate-200">
+      <div className="px-3 py-0.5 bg-slate-200">
         <p className="text-xs md:text-sm text-center leading-tight">
           ¿Te gusta el Wordle Canario? ¡Puedes apoyarme!{' '}
           <a
@@ -56,15 +54,6 @@ export const Navbar = ({
             title="Estadísticas"
           >
             <ChartBarIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
-          </button>
-          <button
-            type="button"
-            onClick={() => setIsSettingsModalOpen(true)}
-            className="p-1.5"
-            aria-label="Ajustes"
-            title="Ajustes"
-          >
-            <LightBulbIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
           </button>
         </div>
       </div>
