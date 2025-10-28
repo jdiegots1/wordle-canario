@@ -12,12 +12,12 @@ export const AboutModal = ({ isOpen, handleClose }: Props) => {
         <p>
           Hecho por{' '}
           <a
-            href="https://x.com/jdiegotejeras"
+            href="https://www.linkedin.com/in/juandiegotejerasosa/"
             target="_blank"
             rel="noopener noreferrer"
             className="underline font-bold"
           >
-            @jdiegotejeras
+            Diego Tejera
           </a>
           . Inspirado en Wordle y adaptado al habla canaria.
         </p>
