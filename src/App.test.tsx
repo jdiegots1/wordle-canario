@@ -1,5 +1,4 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
 import { render, screen, waitFor } from '@testing-library/react'
 import { MemoryRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
@@ -22,11 +21,6 @@ beforeEach(() => {
     })),
   })
 })
-
-test('renders App component', () => {
-  render(<App />)
-  const linkElement = screen.getByText('boludle')
-  expect(linkElement).toBeInTheDocument()
 afterEach(() => {
   jest.resetAllMocks()
 })
