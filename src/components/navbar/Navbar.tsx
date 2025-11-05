@@ -1,4 +1,6 @@
 import { ChartBarIcon, InformationCircleIcon } from '@heroicons/react/outline'
+import { Link } from 'react-router-dom'
+import { useAuthContext } from '../../context/AuthContext'
 import WCLOGO from '../../assets/WORDLE_CANARIO_LOGO.png'
 
 type Props = {
