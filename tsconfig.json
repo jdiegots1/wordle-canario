@@ -19,5 +19,5 @@
     "useDefineForClassFields": true,
     "noEmit": true
   },
-  "include": ["src"]
+  "include": ["src", "api", "lib", "tests", "prisma"]
 }
