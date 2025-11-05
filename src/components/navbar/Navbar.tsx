@@ -12,6 +12,7 @@ export const Navbar = ({
   setIsInfoModalOpen,
   setIsStatsModalOpen,
 }: Props) => {
+  const { user } = useAuthContext()
   return (
     <header className="w-full">
       <div className="px-3 py-0.5 bg-slate-200">
@@ -47,7 +48,7 @@ export const Navbar = ({
           />
         </div>
 
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
           <button
             type="button"
             onClick={() => setIsStatsModalOpen(true)}
@@ -57,6 +58,11 @@ export const Navbar = ({
           >
             <ChartBarIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
           </button>
+          {user && (
+            <Link to="/logout" className="text-sm font-semibold text-green-700 hover:underline">
+              Salir
+            </Link>
+          )}
         </div>
       </div>
     </header>
