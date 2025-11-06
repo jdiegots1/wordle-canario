@@ -1,6 +1,10 @@
 import React from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, screen, waitFor } from '@testing-library/react'
+import { MemoryRouter } from 'react-router-dom'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from './App'
+import { AlertProvider } from './context/AlertContext'
+import { AuthProvider } from './context/AuthContext'
 
 beforeEach(() => {
   Object.defineProperty(window, 'matchMedia', {
@@ -18,8 +22,31 @@ beforeEach(() => {
   })
 })
 
-test('renders App component', () => {
-  render(<App />)
-  const linkElement = screen.getByText('boludle')
-  expect(linkElement).toBeInTheDocument()
+afterEach(() => {
+  jest.resetAllMocks()
+})
+
+const renderWithProviders = (ui: React.ReactElement) => {
+  const queryClient = new QueryClient()
+  return render(
+    <QueryClientProvider client={queryClient}>
+      <AlertProvider>
+        <AuthProvider>
+          <MemoryRouter>{ui}</MemoryRouter>
+        </AuthProvider>
+      </AlertProvider>
+    </QueryClientProvider>
+  )
+}
+
+test('renders login page by default', async () => {
+  global.fetch = jest
+    .fn()
+    .mockResolvedValue({ ok: false, json: async () => ({}) }) as unknown as typeof fetch
+
+  renderWithProviders(<App />)
+
+  await waitFor(() => {
+    expect(screen.getByText(/Iniciar sesión/i)).toBeInTheDocument()
+  })
 })
