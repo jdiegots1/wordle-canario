@@ -106,6 +106,17 @@ export const LoginPage = () => {
           Regístrate
         </Link>
       </p>
+
+      <div className="mt-6 text-center">
+        <p className="text-sm font-semibold">¿Solo quieres jugar?</p>
+        <Link
+          to="/play"
+          className="mt-2 inline-flex w-full justify-center rounded border border-green-600 px-4 py-2 text-sm font-semibold text-green-700 hover:bg-green-50"
+        >
+          Jugar sin registrarse
+        </Link>
+        <p className="mt-2 text-xs text-slate-500">Guardaremos tu partida en este dispositivo.</p>
+      </div>
     </div>
   )
 }

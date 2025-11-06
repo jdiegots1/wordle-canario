@@ -59,9 +59,13 @@ export const Navbar = ({
           >
             <ChartBarIcon className="h-5 w-5 md:h-6 md:w-6 text-gray-900 dark:text-white" />
           </button>
-          {user && (
+          {user ? (
             <Link to="/logout" className="text-sm font-semibold text-green-700 hover:underline">
               Salir
+            </Link>
+          ) : (
+            <Link to="/login" className="text-sm font-semibold text-green-700 hover:underline">
+              Iniciar sesión
             </Link>
           )}
         </div>

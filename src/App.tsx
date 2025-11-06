@@ -31,6 +31,7 @@ const App = () => {
             </PrivateRoute>
           }
         />
+        <Route path="/play" element={<GamePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
